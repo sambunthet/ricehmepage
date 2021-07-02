@@ -73,7 +73,7 @@ const BlogDetail = () => {
                 {post.fields.date}
               </div>
               <h1 className="font-display text-4xl font-bold my-6 text-secondary-500">
-                {post.title}
+                {post.fields.title}
               </h1>
               <div
                 className="prose max-w-full mb-20"
