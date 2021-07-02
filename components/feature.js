@@ -2,8 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 const FeaturesBox = (props) => {
-
-  return (
+  /* return (
     <div>
       {props.features.map((feature, key) => <div className="m-6 sm:m-20 md:m-32">
             <div className="grid grid-cols-1 sm:grid-cols-2  sm:gap:2 justify-items-center text-center">
@@ -38,40 +37,74 @@ const FeaturesBox = (props) => {
           </div>
           )}
     </div>
-  );
+  ); */
 
   return (
     <>
       {props.features.map((feature, key) =>
         feature.id % 2 !== 0 ? (
-          <div className="m-6 sm:m-20 md:m-32">
-            <div className="grid grid-cols-1 sm:grid-cols-2  sm:gap:2 justify-items-center text-center">
-              <div data-aos="fade-right">
-                <img
-                  className="h-48 w-48 sm:h-70 md:w-70 md:h-70 md:w-70 lg:h-80 lg:w-80 object-cover inline-block "
-                  src={feature.img}
-                />
-              </div>
-
-              <div className="mt-5 mt-sm-0 mb-4" data-aos="fade-left">
-                <div className="my-4">
-                  <i className={feature.icon}></i>
+          <div>
+            <div className="m-6 sm:m-20 md:m-32 hidden md:block">
+              <div className="grid grid-cols-1 sm:grid-cols-2  sm:gap:2 justify-items-center text-center">
+                <div data-aos="fade-right">
+                  <img
+                    className="h-48 w-48 sm:h-70 md:w-70 md:h-70 md:w-70 lg:h-80 lg:w-80 object-cover inline-block "
+                    src={feature.img}
+                  />
                 </div>
-                <h5 className="text-center sm:text-left text-2xl font-bold pt-3">
-                  {feature.title}
-                </h5>
-                <h5 className="text-center sm:text-left text-xl font-bold mb-3 ">
-                  $5.94{" "}
-                  <span className="text-gray-500 line-through text-xs">
-                    $6.99
-                  </span>
-                </h5>
-                <p className="text-center sm:text-left mb-3 f-15">
-                  {feature.desc}
-                </p>
-                <p className="text-center sm:text-left text-yellow-500">
-                  Read More <span className="">&#8594;</span>
-                </p>
+
+                <div className="mt-5 mt-sm-0 mb-4" data-aos="fade-left">
+                  <div className="my-4">
+                    <i className={feature.icon}></i>
+                  </div>
+                  <h5 className="text-center sm:text-left text-2xl font-bold pt-3">
+                    {feature.title}
+                  </h5>
+                  <h5 className="text-center sm:text-left text-xl font-bold mb-3 ">
+                    $5.94{" "}
+                    <span className="text-gray-500 line-through text-xs">
+                      $6.99
+                    </span>
+                  </h5>
+                  <p className="text-center sm:text-left mb-3 f-15">
+                    {feature.desc}
+                  </p>
+                  <p className="text-center sm:text-left text-yellow-500">
+                    Read More <span className="">&#8594;</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="sm:m-20 md:m-32 block md:hidden">
+              <div className="grid grid-cols-1 sm:grid-cols-2  sm:gap:2 justify-items-center text-center">
+                <div>
+                  <img
+                    className="h-48 w-48 sm:h-70 md:w-70 md:h-70 md:w-70 lg:h-80 lg:w-80 object-cover inline-block "
+                    src={feature.img}
+                  />
+                </div>
+
+                <div className="mt-5 mt-sm-0 mb-4">
+                  <div className="my-4">
+                    <i className={feature.icon}></i>
+                  </div>
+                  <h5 className="text-center sm:text-left text-2xl font-bold pt-3">
+                    {feature.title}
+                  </h5>
+                  <h5 className="text-center sm:text-left text-xl font-bold mb-3 ">
+                    $5.94{" "}
+                    <span className="text-gray-500 line-through text-xs">
+                      $6.99
+                    </span>
+                  </h5>
+                  <p className="text-center sm:text-left mb-3 f-15">
+                    {feature.desc}
+                  </p>
+                  <p className="text-center sm:text-left text-yellow-500">
+                    Read More <span className="">&#8594;</span>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -108,38 +141,37 @@ const FeaturesBox = (props) => {
               </div>
             </div>
 
-
             <div className="sm:m-20 md:m-32 block md:hidden">
-            <div className="grid grid-cols-1 sm:grid-cols-2  sm:gap:2 justify-items-center text-center">
-              <div data-aos="fade-right">
-                <img
-                  className="h-48 w-48 sm:h-70 md:w-70 md:h-70 md:w-70 lg:h-80 lg:w-80 object-cover inline-block "
-                  src={feature.img}
-                />
-              </div>
-
-              <div className="mt-5 mt-sm-0 mb-4" data-aos="fade-left">
-                <div className="my-4">
-                  <i className={feature.icon}></i>
+              <div className="grid grid-cols-1 sm:grid-cols-2  sm:gap:2 justify-items-center text-center">
+                <div>
+                  <img
+                    className="h-48 w-48 sm:h-70 md:w-70 md:h-70 md:w-70 lg:h-80 lg:w-80 object-cover inline-block "
+                    src={feature.img}
+                  />
                 </div>
-                <h5 className="text-center sm:text-left text-2xl font-bold pt-3">
-                  {feature.title}
-                </h5>
-                <h5 className="text-center sm:text-left text-xl font-bold mb-3 ">
-                  $5.94{" "}
-                  <span className="text-gray-500 line-through text-xs">
-                    $6.99
-                  </span>
-                </h5>
-                <p className="text-center sm:text-left mb-3 f-15">
-                  {feature.desc}
-                </p>
-                <p className="text-center sm:text-left text-yellow-500">
-                  Read More <span className="">&#8594;</span>
-                </p>
+
+                <div className="mt-5 mt-sm-0 mb-4">
+                  <div className="my-4">
+                    <i className={feature.icon}></i>
+                  </div>
+                  <h5 className="text-center sm:text-left text-2xl font-bold pt-3">
+                    {feature.title}
+                  </h5>
+                  <h5 className="text-center sm:text-left text-xl font-bold mb-3 ">
+                    $5.94{" "}
+                    <span className="text-gray-500 line-through text-xs">
+                      $6.99
+                    </span>
+                  </h5>
+                  <p className="text-center sm:text-left mb-3 f-15">
+                    {feature.desc}
+                  </p>
+                  <p className="text-center sm:text-left text-yellow-500">
+                    Read More <span className="">&#8594;</span>
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
           </div>
         )
       )}
