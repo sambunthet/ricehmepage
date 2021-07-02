@@ -47,9 +47,12 @@ const FeaturesBox = (props) => {
             <div className="m-6 sm:m-20 md:m-32 hidden md:block">
               <div className="grid grid-cols-1 sm:grid-cols-2  sm:gap:2 justify-items-center text-center">
                 <div data-aos="fade-right">
-                  <img
+                  <Image
                     className="h-48 w-48 sm:h-70 md:w-70 md:h-70 md:w-70 lg:h-80 lg:w-80 object-cover inline-block "
                     src={feature.img}
+                    alt={key}
+                    width={320}
+                    height={320}
                   />
                 </div>
 
@@ -79,9 +82,12 @@ const FeaturesBox = (props) => {
             <div className="sm:m-20 md:m-32 block md:hidden">
               <div className="grid grid-cols-1 sm:grid-cols-2  sm:gap:2 justify-items-center text-center">
                 <div>
-                  <img
+                  <Image
                     className="h-48 w-48 sm:h-70 md:w-70 md:h-70 md:w-70 lg:h-80 lg:w-80 object-cover inline-block "
                     src={feature.img}
+                    alt={key}
+                    width={320}
+                    height={320}
                   />
                 </div>
 
@@ -133,9 +139,12 @@ const FeaturesBox = (props) => {
                   </p>
                 </div>
                 <div data-aos="fade-left">
-                  <img
+                  <Image
                     className="h-48 w-48 sm:h-70 md:w-70 md:h-70 md:w-70 lg:h-80 lg:w-80 object-cover inline-block "
                     src={feature.img}
+                    alt={key}
+                    width={320}
+                    height={320}
                   />
                 </div>
               </div>
@@ -144,9 +153,12 @@ const FeaturesBox = (props) => {
             <div className="sm:m-20 md:m-32 block md:hidden">
               <div className="grid grid-cols-1 sm:grid-cols-2  sm:gap:2 justify-items-center text-center">
                 <div>
-                  <img
+                  <Image
                     className="h-48 w-48 sm:h-70 md:w-70 md:h-70 md:w-70 lg:h-80 lg:w-80 object-cover inline-block "
                     src={feature.img}
+                    alt={key}
+                    width={320}
+                    height={320}
                   />
                 </div>
 

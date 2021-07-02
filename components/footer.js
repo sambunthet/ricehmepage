@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const Footer = () => {
   return (
     <div className="bg-primary grid gap-2 grid-cols-1 sm:grid-cols-3 md:grid-cols-5 pt-10 pb-10 text-white">

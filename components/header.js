@@ -9,6 +9,8 @@ import {
   NavItem,
   NavLink
 } from 'reactstrap';
+import Image from "next/image";
+
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,7 +35,7 @@ const Header = () => {
         <Container>
           <NavbarBrand href="/">
             <div>
-              <img
+              <Image
                 src={"http://rice.com.kh/imgs/2/logo_03.png"}
                 alt=""
                 width={50}
