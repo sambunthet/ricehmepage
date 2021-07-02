@@ -4,11 +4,13 @@ import ImageNoodle from '../components/image-noodle';
 import Recipes from '../components/recipes';
 import About from '../components/aboutUs';
 import Feature from "../components/feature";
-import Header from "../components/header";
+import Hero from "../components/hero";
+import Navbar from "../components/navbar";
 
 function HomePage() { 
   return ( <div>
-    <Header />
+    <Navbar />
+    <Hero />
     <Feature />
     <About />
     <Recipes />
