@@ -1,7 +1,9 @@
 
 import React from "react";
 import { renderHTML } from "@agility/nextjs";
-import { AgilityImage } from "@agility/nextjs"
+import { AgilityImage } from "@agility/nextjs";
+import Footer from '../../components/Footer';
+import Navbar from "../../components/navbar";
 
 const BlogDetail = () => {
 
@@ -84,5 +86,15 @@ const BlogDetail = () => {
         </div>
       );
 }
+
+const BlogsExport = () => {
+  return (
+     <div>
+        <Navbar />
+        <BlogDetail />
+        <Footer />
+   </div>
+  );
+}
  
-export default BlogDetail;
+export default BlogsExport;

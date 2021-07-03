@@ -1,12 +1,12 @@
 
 import React from "react";
 import Link from "next/link";
-import { AgilityImage } from "@agility/nextjs"
-
+import { AgilityImage } from "@agility/nextjs";
+import Footer from '../components/Footer';
+import Navbar from "../components/navbar";
 
 
 const Blogs = () => {
-
     const posts = [
         {
            "contentID":112,
@@ -218,5 +218,15 @@ const Blogs = () => {
         </div>
       );
 }
+
+const BlogsExport = () => {
+   return (
+      <div>
+         <Navbar />
+         <Blogs />
+         <Footer />
+    </div>
+   );
+}
  
-export default Blogs;
+export default BlogsExport;

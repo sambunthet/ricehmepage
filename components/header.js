@@ -9,7 +9,7 @@ import {
   NavItem,
   NavLink
 } from 'reactstrap';
-import Image from "next/image";
+import { AgilityImage } from "@agility/nextjs";
 
 
 const Header = () => {
@@ -35,7 +35,7 @@ const Header = () => {
         <Container>
           <NavbarBrand href="/">
             <div>
-              <Image
+              <AgilityImage
                 src={"http://rice.com.kh/imgs/2/logo_03.png"}
                 alt=""
                 width={50}
@@ -57,7 +57,7 @@ const Header = () => {
                 <NavLink href="#feature">Product</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#service">Services</NavLink>
+                <NavLink href="#/blogs">Blogs</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="#about">About</NavLink>

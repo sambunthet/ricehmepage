@@ -5,8 +5,8 @@ const OurBrand = () => {
   <iframe src="https://www.youtube.com/embed/2e3RwqOKsmI" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
 </div>
             <div className="flex flex-col my-24" data-controller="slider">
-                <div className="text-black text-4xl text-left pb-10 pl-20 font-bold">Our <span className="text-yellow-500">Brand</span></div>
-                <div className="flex place-content-center text-center overflow-x-scroll hide-scroll-bar overscroll-x-contain gallery " data-slider-target="scrollContainer">
+                <div className="text-black text-4xl text-center pb-10 font-bold">Our <span className="text-yellow-500">Brand</span></div>
+                <div className="flex place-content-center text-center scrollbar-hide overflow-x-scroll hide-scroll-bar overscroll-x-contain gallery " data-slider-target="scrollContainer">
                     <div className="w-60 h-60 px-4 flex-shrink-0 gallery-item " data-slider-target="image" id="1">
                         <img className="inline-block" src="http://rice.com.kh/imgs/348/logo_03.png" />
                     </div>

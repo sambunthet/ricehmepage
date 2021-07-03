@@ -37,12 +37,10 @@ const Header = () => {
               Indochina Rice Mill has gained the confidence and trust of our
               valuable worldwide customers in our top quality rice and rice
               vermicelli products. Armed with a serious management team and our
-              stringent quality control, we are here to consistently provide the
-              most competitive price and the best quality rice and rice
-              vermicelli to our customers,...
+              stringent quality control,...
             </p>
         
-            <a class="inline-flex items-center h-8 px-4 m-2 text-sm text-indigo-100 transition-colors duration-150 bg-yellow-500 rounded-lg focus:shadow-outline hover:bg-indigo-800" href="#">Find Out How <span className="ml-2 right-icon">&#8594;</span></a>
+            <a className="inline-flex items-center h-8 px-4 m-2 text-sm text-indigo-100 transition-colors duration-150 bg-yellow-500 rounded-lg focus:shadow-outline hover:bg-indigo-800" href="#">Find Out How <span className="ml-2 right-icon">&#8594;</span></a>
           </div>
       </div>
     </div>

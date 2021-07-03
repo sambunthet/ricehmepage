@@ -1,3 +1,4 @@
+import { AgilityImage } from "@agility/nextjs";
 import Image from "next/image";
 
 const About = () => {
@@ -10,11 +11,11 @@ const About = () => {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2  sm:gap:2 justify-items-center text-center">
         <div className="pt-5">
-          <Image
-            className="h-48 w-48 sm:h-70 md:w-70 md:h-70 md:w-70 lg:h-80 lg:w-80 object-cover inline-block "
-            src="https://cdn.shopify.com/s/files/1/0506/3252/3965/articles/a-sha-shrimp-garlic-noodles_667x.jpg?v=1617709872"
+          <AgilityImage
             width={320}
             height={320}
+            className="h-48 w-48 sm:h-70 md:w-70 md:h-70 md:w-70 lg:h-80 lg:w-80 object-cover inline-block "
+            src="https://cdn.shopify.com/s/files/1/0506/3252/3965/articles/a-sha-shrimp-garlic-noodles_667x.jpg?v=1617709872"
           />
         </div>
         <div>
