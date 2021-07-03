@@ -6,6 +6,7 @@ import About from '../components/aboutUs';
 import Feature from "../components/feature";
 import Hero from "../components/hero";
 import Navbar from "../components/navbar";
+import OurBrand from "../components/ourBrand";
 
 function HomePage() { 
   return ( <div>
@@ -14,6 +15,7 @@ function HomePage() {
     <Feature />
     <About />
     <Recipes />
+    <OurBrand />
     <ImageNoodle />
     <Footer />
     </div>

@@ -22,8 +22,15 @@ module.exports = {
       display: ['hover', 'focus'],
       borderRadius: ['hover', 'focus'],
       position: ['hover', 'focus'],
+      alignSelf: ['hover', 'focus'],
+      placeContent: ['hover', 'focus'],
+      placeItems: ['hover', 'focus'],
+      alignItems: ['hover', 'focus'],
+      flexWrap: ['hover', 'focus'],
 
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/aspect-ratio'),
+  ],
 }
