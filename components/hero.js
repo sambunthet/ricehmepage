@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <div
       style={{
-        backgroundImage: "url(https://wallpaperaccess.com/full/1463517.jpg)",
+        backgroundImage: "url(https://www.killingthyme.net/wp-content/uploads/2015/10/homemade-ramen-bowls-5.jpg)",
         width: "100%",
         height: "455px",
         backgroundRepeat: "no-repeat",

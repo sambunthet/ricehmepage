@@ -7,9 +7,9 @@ const FeaturesBox = (props) => {
       {props.features.map((feature, key) =>
         feature.id % 2 !== 0 ? (
           <div>
-            <div className="m-6 sm:m-20 md:m-32 hidden md:block">
+            <div className="m-6 md:mt-10 sm:m-20 md:m-32 hidden md:block">
               <div className="grid grid-cols-1 sm:grid-cols-2  sm:gap:2 justify-items-center text-center">
-                <div data-aos="fade-right">
+                <div data-aos="fade-right" className="pl-32 ml-32">
                   <AgilityImage
                     width={320}
                     height={320}
@@ -101,7 +101,7 @@ const FeaturesBox = (props) => {
                     Read More <span className="">&#8594;</span>
                   </p>
                 </div>
-                <div data-aos="fade-left">
+                <div data-aos="fade-left" className="pr-32 mr-32">
                   <AgilityImage
                     className="h-48 w-48 sm:h-70 md:w-70 md:h-70 md:w-70 lg:h-80 lg:w-80 object-cover inline-block "
                     src={feature.img}
