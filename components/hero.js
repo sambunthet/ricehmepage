@@ -9,7 +9,7 @@ const Header = () => {
       style={{
         backgroundImage: "url(https://www.killingthyme.net/wp-content/uploads/2015/10/homemade-ramen-bowls-5.jpg)",
         width: "100%",
-        height: "455px",
+        height: "755px",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
       }}
