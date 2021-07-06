@@ -2,7 +2,7 @@ const OurBrand = () => {
     return (
         <div>
            <div className="aspect-w-16 aspect-h-9 md:p-80 sm:p-70 lg:p-90 md:ml-44 sm:ml-44 lg:ml-44  md:mr-44 sm:mr-44 lg:44">
-  <iframe src="https://www.youtube.com/embed/2e3RwqOKsmI" width="640" height="360" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+  <iframe src="https://www.youtube.com/embed/2e3RwqOKsmI" width="640" height="360" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe>
 </div>
             <div className="flex flex-col my-24" data-controller="slider">
                 <div className="text-black text-4xl text-center pb-10 font-bold">Our <span className="text-yellow-500">Brand</span></div>
