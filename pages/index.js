@@ -6,11 +6,12 @@ import About from '../components/aboutUs';
 import Feature from "../components/feature";
 import Hero from "../components/hero";
 import Navbar from "../components/navbar";
+import NavbarMb from "../components/navbar-mb";
 import OurBrand from "../components/ourBrand";
 
 function HomePage() { 
   return ( <div>
-    <Navbar />
+    <NavbarMb />
     <Hero />
     <Feature />
     <About />
