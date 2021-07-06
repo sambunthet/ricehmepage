@@ -1,0 +1,17 @@
+const url = process.env.PUBLIC_REST_API_ENDPOINT;
+const defaultConfig = {
+    offset: 0,
+    limit: 20,
+    distributorPath: '/distributors',
+    countPath: '/count'
+}
+
+export async function getDistributor({limit=defaultConfig.limit, offset=defaultConfig.offset}={}) {
+  const distributors = await fetch(`${url}${defaultConfig.distributorPath}?_sort=published_at:DESC&_limit=${limit}&_start=${offset}`);
+  return await distributors.json();
+}
+
+export async function getDistributorCount() {
+    const count = await fetch(`${url}${defaultConfig.distributorPath}${defaultConfig.countPath}`);
+    return await count.json();
+}
