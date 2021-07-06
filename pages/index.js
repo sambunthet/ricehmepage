@@ -6,7 +6,6 @@ import About from '../components/aboutUs';
 import Feature from "../components/feature";
 import Hero from "../components/hero";
 import Navbar from "../components/navbar";
-import NavbarMb from "../components/navbar-mb";
 import OurBrand from "../components/ourBrand";
 import { useState } from "react";
 
@@ -20,7 +19,7 @@ function HomePage() {
   };
 
   return ( <div>
-    <NavbarMb />
+    <Navbar />
     <Hero />
     <Feature />
     <About />
@@ -56,17 +55,20 @@ function HomePage() {
 
         {/* <!-- nav --> */}
         <nav>
-          <a href="#" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white">
+          <a href="/" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white">
             Home
           </a>
-          <a href="" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white">
-            About
+          <a href="/" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white">
+            Products
           </a>
-          <a href="" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white">
-            Features
+          <a href="/blogs" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white">
+            Blogs
           </a>
-          <a href="" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white">
-            Pricing
+          <a href="/" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white">
+            About us
+          </a>
+          <a href="/" className="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white">
+            About us
           </a>
         </nav>
       </div>
