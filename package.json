@@ -9,21 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-<<<<<<< HEAD
     "@agility/nextjs": "0.2.0",
     "@fortawesome/fontawesome-free": "5.15.3",
+    "@headlessui/react": "1.3.0",
+    "@heroicons/react": "1.0.1",
     "@material-ui/core": "4.11.4",
     "@material-ui/icons": "4.11.2",
     "aos": "3.0.0-beta.6",
-=======
-    "@agility/nextjs": "^0.2.0",
-    "@fortawesome/fontawesome-free": "^5.15.3",
-    "@headlessui/react": "^1.3.0",
-    "@heroicons/react": "^1.0.1",
-    "@material-ui/core": "^4.11.4",
-    "@material-ui/icons": "^4.11.2",
-    "aos": "^3.0.0-beta.6",
->>>>>>> 34aa91215b5c7b97c056e7d1956a3cd9a442c0ea
     "next": "11.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
