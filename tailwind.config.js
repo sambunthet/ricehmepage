@@ -10,6 +10,10 @@ module.exports = {
         'danger': '#e3342f',
        }),
     },
+    fontFamily: {
+      'display': ['Oswald'],
+      'body': ['Open Sans']
+    },
   },
   variants: {
     extend: {
@@ -27,6 +31,7 @@ module.exports = {
       placeItems: ['hover', 'focus'],
       alignItems: ['hover', 'focus'],
       flexWrap: ['hover', 'focus'],
+      fontFamily: ['hover', 'focus'],
 
     },
   },

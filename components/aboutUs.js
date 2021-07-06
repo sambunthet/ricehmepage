@@ -4,11 +4,6 @@ import Image from "next/image";
 const About = () => {
   return (
     <div className="sm:m-20 md:m-32 pt-5 sm:pt-0">
-      <div>
-        <h1 className="text-4xl pb-5 text-center font-bold">
-          About <span className="text-yellow-500">Us</span>
-        </h1>
-      </div>
       <div className="grid grid-cols-1 sm:grid-cols-2  sm:gap:2 justify-items-center text-center">
         <div className="pt-5">
           <AgilityImage
@@ -19,6 +14,9 @@ const About = () => {
           />
         </div>
         <div>
+        <h1 className="text-4xl pb-5 text-center font-bold">
+          About <span className="text-yellow-500">Us</span>
+        </h1>
           <p className="text-center p-5">
             Indochina Rice Mill has the capacity to produce large quantities of
             quality rice and rice vermicelli to our valuable customers all

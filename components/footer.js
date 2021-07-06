@@ -2,7 +2,7 @@ import { AgilityImage } from "@agility/nextjs";
 
 const Footer = () => {
   return (
-    <div className="bg-primary grid gap-2 grid-cols-1 sm:grid-cols-5 p-10">
+    <div className="bg-primary grid gap-2 grid-cols-1 sm:grid-cols-5 p-10 text-white">
       <div>
         <div className="text-center">
           <div>

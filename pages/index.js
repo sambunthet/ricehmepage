@@ -18,11 +18,11 @@ function HomePage() {
     setActive(!active);
   };
 
-  return ( <div>
+  return ( <div className="font-body">
     <Navbar />
     <Hero />
-    <Feature />
     <About />
+    <Feature />
     <Recipes />
     <OurBrand />
     <ImageNoodle />

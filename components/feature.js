@@ -187,7 +187,7 @@ const Feature = () => {
   ];
 
   return (
-    <div className="bg-white">
+    <div className="bg-white pt-10">
       <div className="mt-6 md:m-12 ">
         <div>
           <h1 className="text-4xl text-center font-bold">
