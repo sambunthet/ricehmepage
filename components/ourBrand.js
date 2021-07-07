@@ -1,4 +1,4 @@
-const url = global.apiEndPoint;
+const url = "https://cms.devcorp.me";
 const OurBrand = (brands) => {
     if (!brands)
         return <div></div>;
