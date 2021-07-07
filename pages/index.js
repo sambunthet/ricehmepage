@@ -21,14 +21,14 @@ function HomePage() {
   };
 
   return ( <div className="font-body">
-    <Navbar />
+    {/* <Navbar /> */}
     <Hero />
     <About />
     <Feature />
     <Recipes />
     <OurBrand />
     <ImageNoodle />
-    <Footer />
+    {/* <Footer /> */}
     </div>
   );
 
