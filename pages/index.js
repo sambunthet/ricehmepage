@@ -12,8 +12,7 @@ import { getBrand} from '../utils/api/our-brand';
 
 
 export async function getStaticProps() {
-  const about = await getAboutUs();
-  const brand = await getBrand();
+  const [about, brand] = await Promise.all([getAboutUs(), getBrand()]);
   return {
     props: {
       about,
