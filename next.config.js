@@ -1,3 +1,5 @@
+global.apiEndPoint = process.env.PUBLIC_REST_API_ENDPOINT;
+
 module.exports = {
   reactStrictMode: true,
   webpack5: true,
