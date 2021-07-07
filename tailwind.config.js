@@ -10,6 +10,10 @@ module.exports = {
         'danger': '#e3342f',
        }),
     },
+    fontFamily: {
+      'display': ['Oswald'],
+      'body': ['SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif']
+    },
 
   },
   variants: {
@@ -29,6 +33,7 @@ module.exports = {
       alignItems: ['hover', 'focus'],
       flexWrap: ['hover', 'focus'],
       fontFamily: ['hover', 'focus'],
+      dropShadow: ['hover', 'focus'],
 
     },
   },

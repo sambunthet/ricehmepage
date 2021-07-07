@@ -1,6 +1,5 @@
 import React from "react";
 import { AgilityImage } from "@agility/nextjs";
-
 const FeaturesBox = (props) => {
   return (
     <>
@@ -18,7 +17,6 @@ const FeaturesBox = (props) => {
                     alt={key}
                   />
                 </div>
-
                 <div className="mt-5 mt-sm-0 mb-4" data-aos="fade-left">
                   <div className="my-4">
                     <i className={feature.icon}></i>
@@ -41,7 +39,6 @@ const FeaturesBox = (props) => {
                 </div>
               </div>
             </div>
-
             <div className="sm:m-20 md:m-32 block md:hidden">
               <div className="grid grid-cols-1 sm:grid-cols-2  sm:gap:2 justify-items-center text-center">
                 <div>
@@ -53,7 +50,6 @@ const FeaturesBox = (props) => {
                     height={320}
                   />
                 </div>
-
                 <div className="mt-5 mt-sm-0 mb-4">
                   <div className="my-4">
                     <i className={feature.icon}></i>
@@ -112,7 +108,6 @@ const FeaturesBox = (props) => {
                 </div>
               </div>
             </div>
-
             <div className="sm:m-20 md:m-32 block md:hidden">
               <div className="grid grid-cols-1 sm:grid-cols-2  sm:gap:2 justify-items-center text-center">
                 <div>
@@ -124,7 +119,6 @@ const FeaturesBox = (props) => {
                     height={320}
                   />
                 </div>
-
                 <div className="mt-5 mt-sm-0 mb-4">
                   <div className="my-4">
                     <i className={feature.icon}></i>
@@ -153,7 +147,6 @@ const FeaturesBox = (props) => {
     </>
   );
 };
-
 const Feature = () => {
   const features = [
     {
@@ -185,9 +178,8 @@ const Feature = () => {
       link: "/",
     },
   ];
-
   return (
-    <div className="bg-white pt-10">
+    <div className="bg-white pt-10 font-body">
       <div className="mt-6 md:m-12 ">
         <div>
           <h1 className="text-4xl text-center font-bold">
@@ -195,8 +187,8 @@ const Feature = () => {
           </h1>
         </div>
         <div className="justify-items-center text-center">
-          <div>
-            <p className="text-center p-5">
+          <div className="grid grid-cols-6">
+            <p className="text-center text-sm md:text-sm lg:text-2xl p-5 tracking-wide col-start-2 col-span-4">
               Indochina Rice Mill has gained the confidence and trust of our
               valuable worldwide customers in our top quality rice and rice
               vermicelli products. Armed with a serious management team and our
@@ -212,5 +204,4 @@ const Feature = () => {
     </div>
   );
 };
-
 export default Feature;
