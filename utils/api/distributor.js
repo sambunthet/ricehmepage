@@ -1,4 +1,4 @@
-const url = process.env.PUBLIC_REST_API_ENDPOINT;
+const url = global.apiEndPoint;
 const defaultConfig = {
     offset: 0,
     limit: 20,

@@ -1,5 +1,4 @@
-import { apiEndPoint as url} from "./index";
-
+const url = global.apiEndPoint;
 const defaultConfig = {
     offset: 0,
     limit: 200,
