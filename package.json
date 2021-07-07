@@ -22,7 +22,7 @@
     "react-router-dom": "5.0.0",
     "reactstrap": "8.9.0",
     "tailwind-scrollbar-hide": "1.0.3",
-    "utils": "file:/utils"
+    "utils": "file:./utils"
   },
   "devDependencies": {
     "@tailwindcss/aspect-ratio": "0.2.1",
