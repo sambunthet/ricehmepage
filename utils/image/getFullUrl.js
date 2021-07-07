@@ -1,3 +1,3 @@
 export const getFullUrl = (path) => {
-    return `${global.apiEndPoint}${path}`
+    return `${"https://cms.devcorp.me"}${path}`
 };

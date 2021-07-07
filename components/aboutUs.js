@@ -2,7 +2,7 @@ import { AgilityImage } from "@agility/nextjs";
 import Image from "next/image";
 
 
-const url = global.apiEndPoint;
+const url = "https://cms.devcorp.me";
 const About = (about) => {
   
 

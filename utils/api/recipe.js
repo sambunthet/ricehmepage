@@ -1,4 +1,4 @@
-const url = global.apiEndPoint;
+const url = "https://cms.devcorp.me";
 const defaultConfig = {
     offset: 0,
     limit: 200,
