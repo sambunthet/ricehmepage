@@ -7,7 +7,7 @@ import Feature from "../components/feature";
 import Hero from "../components/hero";
 import OurBrand from "../components/ourBrand";
 import { useState } from "react";
-import { getAboutUs} from '../utils/api/about';
+import { getAboutUs} from '../utils/api/about-us';
 import { getBrand} from '../utils/api/our-brand';
 
 

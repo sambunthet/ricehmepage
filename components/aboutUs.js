@@ -7,7 +7,7 @@ const About = (about) => {
   
 
   const description = about.description || "";
-  var image =  "https://cms.devcorp.me"+ about.image.url;
+  var image =  url + about.image.url;
  
   if(!description)
       return <div></div>;
