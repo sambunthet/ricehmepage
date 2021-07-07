@@ -1,3 +1,4 @@
+const url = global.apiEndPoint;
 const OurBrand = (brands) => {
     if (!brands)
         return <div></div>;
@@ -13,7 +14,7 @@ const OurBrand = (brands) => {
 
                     {Object.values(brands).map((brand) => (
                         <div className="w-60 h-60 px-4 flex-shrink-0 gallery-item" data-slider-target="image" id="5">
-                            <img className="inline-block" src={`https://cms.devcorp.me${brand.image.url}`} />
+                            <img className="inline-block" src={`${url}${brand.image.url}`} />
 
                         </div>
                     ))}
