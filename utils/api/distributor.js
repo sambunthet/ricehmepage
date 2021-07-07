@@ -6,9 +6,14 @@ const defaultConfig = {
     countPath: '/count'
 }
 
-export async function getDistributor({limit=defaultConfig.limit, offset=defaultConfig.offset}={}) {
+export async function getDistributors({limit=defaultConfig.limit, offset=defaultConfig.offset}={}) {
   const distributors = await fetch(`${url}${defaultConfig.distributorPath}?_sort=published_at:DESC&_limit=${limit}&_start=${offset}`);
   return await distributors.json();
+}
+
+export async function getDistributor(distributorId) {
+  const distributor = await fetch(`${url}${defaultConfig.distributorPath}/${distributorId}`);
+  return await distributor.json();
 }
 
 export async function getDistributorCount() {
