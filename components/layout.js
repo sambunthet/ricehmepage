@@ -1,5 +1,5 @@
 import Navbar from "./../components/navbar";
-import Footer from './../components/Footer';
+import FooterRice from './../components/footer-rice';
 
 
 const Layout= ({children}) => {
@@ -13,7 +13,7 @@ const Layout= ({children}) => {
                 </div>
             </div>
 
-            <Footer></Footer>
+            <FooterRice></FooterRice>
 
 
 
