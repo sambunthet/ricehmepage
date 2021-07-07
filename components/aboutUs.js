@@ -1,6 +1,9 @@
 import { AgilityImage } from "@agility/nextjs";
 import Image from "next/image";
 
+
+
+
 const About = () => {
   return (
     <div className="sm:m-20 md:m-32 pt-5 sm:pt-0">

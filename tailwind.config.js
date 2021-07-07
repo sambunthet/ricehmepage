@@ -10,10 +10,7 @@ module.exports = {
         'danger': '#e3342f',
        }),
     },
-    fontFamily: {
-      'display': ['Oswald'],
-      'body': ['Open Sans']
-    },
+
   },
   variants: {
     extend: {

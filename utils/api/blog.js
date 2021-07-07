@@ -1,7 +1,8 @@
-const url = process.env.PUBLIC_REST_API_ENDPOINT;
+import { apiEndPoint as url} from "./index";
+
 const defaultConfig = {
     offset: 0,
-    limit: 20,
+    limit: 200,
     postPath: '/posts',
     countPath: '/count',
     blogCategoryPath: '/blog-categories',
@@ -13,6 +14,7 @@ export async function getBlogCategories() {
 }
 
 export async function getPosts({blogCategoryId, limit=defaultConfig.limit, offset=defaultConfig.offset}={}) {
+  console.log('=======>>>>>>', url);
   const posts = await fetch(`${url}${defaultConfig.postPath}?_sort=published_at:DESC&_limit=${limit}&_start=${offset}${blogCategoryId ? `&category.id=${blogCategoryId}`: ''}`);
   return await posts.json();
 }

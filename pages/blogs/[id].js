@@ -5,6 +5,7 @@ import { AgilityImage } from "@agility/nextjs";
 import Footer from '../../components/Footer';
 import Navbar from "../../components/navbar";
 
+
 const BlogDetail = () => {
 
     const post = {
