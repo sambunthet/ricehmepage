@@ -1,4 +1,4 @@
-const url = "https://cms.devcorp.me";
+const url = process.env.PUBLIC_REST_API_ENDPOINT;
 const defaultConfig = {
     offset: 0,
     limit: 20,
@@ -18,9 +18,13 @@ export async function getProductCategories() {
     return await productCategories.json();
 }
 
-export async function getProducts({productTypeId, productCategoryId, limit=defaultConfig.limit, offset=defaultConfig.offset}={}) {
-  const products = await fetch(`${url}${defaultConfig.productPath}?_sort=published_at:DESC&_limit=${limit}&_start=${offset}${productTypeId ? `&type.id=${productTypeId}`: ''}${productCategoryId ? `&categories.id=${productCategoryId}`: ''}`);
+export async function getProducts({productTypeId, productCategoryId, featured, limit=defaultConfig.limit, offset=defaultConfig.offset}={}) {
+  const products = await fetch(`${url}${defaultConfig.productPath}?_sort=published_at:DESC&_limit=${limit}&_start=${offset}${productTypeId ? `&type.id=${productTypeId}`: ''}${productCategoryId ? `&categories.id=${productCategoryId}`: ''}${featured ? `&is_featured=${featured}`: ''}`);
   return await products.json();
+}
+
+export async function getFeaturedProducts() {
+    return await getProducts({featured: true});
 }
 
 export async function getProduct(productId) {

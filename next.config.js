@@ -7,4 +7,8 @@ module.exports = {
   images: {
     domains: ["assets.vercel.com", "rice.com.kh", 'cdn.shopify.com'],
   },
+  env: {
+    LOCALE: global.locale,
+    PUBLIC_REST_API_ENDPOINT: global.apiEndPoint
+  }
 };

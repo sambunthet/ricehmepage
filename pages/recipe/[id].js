@@ -2,7 +2,7 @@
 import React from "react";
 import { renderHTML } from "@agility/nextjs";
 import { AgilityImage } from "@agility/nextjs";
-import {getPost} from"$/utils/api/blog";
+import {getRecipe} from"$/utils/api/recipe";
 import {getFullUrl} from"$/utils/image/getFullUrl";
 import ReactMarkdown from 'react-markdown'
 const gfm = require('remark-gfm')
@@ -18,48 +18,43 @@ export const getStaticPaths = async (context) => {
 export async function getStaticProps(context) {
 
   const id = context.params.id;
-  const post = await  getPost(id);
-
-
-
+  const recipe = await  getRecipe(id);
+  console.log("RecipeDetail:: ", recipe)
   return {
-    props: {post},
+    props: {recipe},
     revalidate: 3600 * 1 * 24, // a day in second
   }
 }
 
-const BlogDetail = ({post}) => {
-
-  console.log("-->> post detail --->> ", JSON.parse(post.oembed))
-   let embedHtml = JSON.parse(post.oembed)?.rawData.html;
+const RecipeDetail = ({recipe}) => {
+    // console.log("-->> post detail --->> ", JSON.parse(recipe.oembed))
+   let embedHtml = JSON.parse(recipe.embed)?.rawData.html;
    if (embedHtml) {
     embedHtml = embedHtml.replace('height="113"', 'height="350"').replace('width="200"', 'width="100%"')
    }
 
-    const dateStr = new Date(post.published_at).toLocaleDateString();
+    const dateStr = new Date(recipe.published_at).toLocaleDateString();
     
     return (
         <div className="relative px-8 pt-4 pb-4">
           <div className="max-w-screen-xl mx-auto">
             <div className="h-64 md:h-96 relative">
               <AgilityImage
-                src={getFullUrl(post.gallery[0].url)}
-                className="object-center rounded-lg"
+                src={getFullUrl(recipe.image.url)}
+                className="rounded-lg"
                 layout="fill"
               />
             </div>
             <div className="max-w-2xl mx-auto mt-4">
-              <div className="uppercase text-primary-500 text-xs font-bold tracking-widest leading-loose">
-              {post.category.name}
-              </div>
+              
               <div className="border-b-2 border-primary-500 w-8"></div>
               <div className="mt-4 uppercase text-gray-600 italic font-semibold text-xs">
                 {dateStr}
               </div>
               <h1 className="font-display text-4xl font-bold my-6 text-secondary-500">
-                {post.title}
+                {recipe.title}
               </h1>
-              <ReactMarkdown remarkPlugins={[gfm]} children={post.content} />
+              <ReactMarkdown remarkPlugins={[gfm]} children={recipe.description} />
 
               {
                 embedHtml ? <div>
@@ -78,5 +73,5 @@ const BlogDetail = ({post}) => {
         </div>
       );
 }
-
-export default BlogDetail;
+ 
+export default RecipeDetail;
