@@ -12,14 +12,14 @@ const defaultConfig = {
     productCategoriesPath: '/product-categories'
 }
 
-function getProductUrl(slug) {
-    const productUrl = `/product/${slug}`;
+function getProductUrl(id) {
+    const productUrl = `/product/${id}`;
     return productUrl;
 }
 
 function parseProduct(product)  {
-    const {slug, gallery} = product;
-    product.link = getProductUrl(slug);
+    const {id, gallery} = product;
+    product.link = getProductUrl(id);
     product.image = getImageLink(gallery[0]);
     product.gallery = gallery.map(e=>getImageLink(e));
     return product;
