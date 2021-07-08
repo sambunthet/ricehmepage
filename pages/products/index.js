@@ -10,7 +10,7 @@ export async function getStaticProps(context) {
  
     return {
       props: {products},
-      revalidate: 3600 * 1 * 24, // a day in second
+      revalidate: 3600 * 1 * 24,
     }
   }
 
