@@ -18,9 +18,10 @@ function getProductUrl(slug) {
 }
 
 function parseProduct(product)  {
-    const {slug, image} = product;
+    const {slug, gallery} = product;
     product.link = getProductUrl(slug);
-    product.image = getImageLink(image);
+    product.image = getImageLink(gallery[0]);
+    product.gallery = gallery.map(e=>getImageLink(e));
     return product;
 }
 
@@ -46,8 +47,10 @@ export async function getFeaturedProducts() {
 }
 
 export async function getProduct(productId) {
-    const product = await fetch(`${url}${defaultConfig.productPath}/${productId}?_locale=${locale}`);
-    return await product.json();
+    const data = await fetch(`${url}${defaultConfig.productPath}/${productId}?_locale=${locale}`);
+    const parsedData = await data.json();
+    const product = parseProduct(parsedData);
+    return product;
 }
 
 export async function getProductCount() {
