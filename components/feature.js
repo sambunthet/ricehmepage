@@ -27,10 +27,10 @@ const FeaturesBox = (props) => {
                     {feature.name}
                   </h5>
                   <h5 className="text-center sm:text-left text-xl font-bold mb-3 ">
-                    $5.94{" "}
-                    <span className="text-gray-500 line-through text-xs">
-                      $6.99
-                    </span>
+                    ${feature.salePrice > 0 ? feature.salePrice : feature.price}{" "}
+                    {feature.salePrice > 0 ? <span className="text-gray-500 line-through text-xs">
+                      ${feature.price}
+                    </span> : ""}
                   </h5>
                   <p className="text-center sm:text-left mb-3 f-15">
                     {feature.description}
@@ -64,10 +64,10 @@ const FeaturesBox = (props) => {
                     {feature.name}
                   </h5>
                   <h5 className="text-center sm:text-left text-xl font-bold mb-3 ">
-                    $5.94{" "}
-                    <span className="text-gray-500 line-through text-xs">
-                      $6.99
-                    </span>
+                    ${feature.salePrice > 0 ? feature.salePrice : feature.price}{" "}
+                    {feature.salePrice > 0 ? <span className="text-gray-500 line-through text-xs">
+                      ${feature.price}
+                    </span> : ""}
                   </h5>
                   <p className="text-center sm:text-left mb-3 f-15">
                     {feature.description}
@@ -95,10 +95,10 @@ const FeaturesBox = (props) => {
                     {feature.name}
                   </h5>
                   <h5 className="text-center sm:text-right text-xl font-bold mb-3 ">
-                    $5.94{" "}
-                    <span className="text-gray-500 line-through text-xs">
-                      $6.99
-                    </span>
+                    ${feature.salePrice > 0 ? feature.salePrice : feature.price}{" "}
+                    {feature.salePrice > 0 ? <span className="text-gray-500 line-through text-xs">
+                      ${feature.price}
+                    </span> : ""}
                   </h5>
                   <p className="text-center sm:text-right mb-3 f-15">
                     {feature.description}
@@ -142,10 +142,10 @@ const FeaturesBox = (props) => {
                     {feature.name}
                   </h5>
                   <h5 className="text-center sm:text-left text-xl font-bold mb-3 ">
-                    $5.94{" "}
-                    <span className="text-gray-500 line-through text-xs">
-                      $6.99
-                    </span>
+                    ${feature.salePrice > 0 ? feature.salePrice : feature.price}{" "}
+                    {feature.salePrice > 0 ? <span className="text-gray-500 line-through text-xs">
+                      ${feature.price}
+                    </span> : ""}
                   </h5>
                   <p className="text-center sm:text-left mb-3 f-15">
                     {feature.description}
