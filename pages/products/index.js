@@ -40,7 +40,6 @@ const Products = ({products}) => {
                         </div>
                         ))}
                         
-                        
 
                         {/* <div className="bg-white shadow-lg h-auto w-72 text-center pt-4">
                                 <AgilityImage
