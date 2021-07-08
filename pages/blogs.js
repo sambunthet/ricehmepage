@@ -5,6 +5,8 @@ import { AgilityImage } from "@agility/nextjs";
 import {getPosts} from"../utils/api/blog";
 import {getFullUrl} from"../utils/image/getFullUrl"
 import truncate from "truncate-html";
+import ReactMarkdown from 'react-markdown'
+const gfm = require('remark-gfm')
 
  export async function getStaticProps(context) {
 
@@ -65,9 +67,7 @@ const Blogs = ({posts}) => {
                             <h2 className="font-display text-secondary-500 mt-1 font-black text-2xl group-hover:text-primary-500 transition duration-300">
                                 {featuredPost.title}
                             </h2>
-                            <p className="text-sm mt-3 leading-loose text-gray-600 font-medium">
-                                {description}
-                            </p>
+                            <ReactMarkdown remarkPlugins={[gfm]} children={description} />
                         </div>
                     </div>
                 </Link>
