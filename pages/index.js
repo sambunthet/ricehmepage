@@ -9,21 +9,23 @@ import OurBrand from "$/components/ourBrand";
 import { useState } from "react";
 import { getAboutUs } from '$/utils/api/about-us';
 import { getFeaturedProducts } from '$/utils/api/product';
+import { getFeaturedRecipe } from '$/utils/api/recipe';
 import { getBrand } from '$/utils/api/our-brand';
 
 
 export async function getStaticProps() {
-  const [about, brand, products] = await Promise.all([getAboutUs(), getBrand(), getFeaturedProducts()]);
+  const [about, brand, products, recipes] = await Promise.all([getAboutUs(), getBrand(), getFeaturedProducts(), getFeaturedRecipe()]);
   return {
     props: {
       about,
       brand,
-      products
+      products,
+      recipes
     },
   }
 }
 
-function HomePage({about, brand, products}) {
+function HomePage({about, brand, products, recipes}) {
   
   const [active, setActive] = useState(false);
   const handleClick = () => {
@@ -35,7 +37,7 @@ function HomePage({about, brand, products}) {
     <Hero />
     <About {...about}/>
     <Feature features={products}/>
-    <Recipes />
+    <Recipes recipes={recipes}/>
     <OurBrand {...brand}/>
     <ImageNoodle />
     {/* <Footer /> */}

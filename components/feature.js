@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { AgilityImage } from "@agility/nextjs";
 
 const FeaturesBox = (props) => {
@@ -34,9 +35,13 @@ const FeaturesBox = (props) => {
                   <p className="text-center sm:text-left mb-3 f-15">
                     {feature.description}
                   </p>
-                  <p className="text-center sm:text-left text-yellow-500">
-                    Read More <span className="">&#8594;</span>
-                  </p>
+                  <Link href={feature.link}>
+                    <a>
+                      <p className="text-center sm:text-left text-yellow-500">
+                        Read More <span className="">&#8594;</span>
+                      </p>
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -67,9 +72,13 @@ const FeaturesBox = (props) => {
                   <p className="text-center sm:text-left mb-3 f-15">
                     {feature.description}
                   </p>
-                  <p className="text-center sm:text-left text-yellow-500">
-                    Read More <span className="">&#8594;</span>
-                  </p>
+                  <Link href={feature.link}>
+                    <a>
+                      <p className="text-center sm:text-left text-yellow-500">
+                        Read More <span className="">&#8594;</span>
+                      </p>
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -94,9 +103,14 @@ const FeaturesBox = (props) => {
                   <p className="text-center sm:text-right mb-3 f-15">
                     {feature.description}
                   </p>
-                  <p className="text-center sm:text-right text-yellow-500">
-                    Read More <span className="">&#8594;</span>
-                  </p>
+                  <Link href={feature.link}>
+                    <a>
+                      <p className="text-center sm:text-right text-yellow-500">
+                        Read More <span className="">&#8594;</span>
+                      </p>
+                    </a>
+                  </Link>
+  
                 </div>
                 <div data-aos="fade-left" className="pr-32 mr-32">
                   <AgilityImage
@@ -136,9 +150,14 @@ const FeaturesBox = (props) => {
                   <p className="text-center sm:text-left mb-3 f-15">
                     {feature.description}
                   </p>
-                  <p className="text-center sm:text-left text-yellow-500">
-                    Read More <span className="">&#8594;</span>
-                  </p>
+                  <Link href={`${feature.link}`}>
+                    <a>
+                      <p className="text-center sm:text-left text-yellow-500">
+                        Read More <span className="">&#8594;</span>
+                      </p>
+                    </a>
+                  </Link>
+
                 </div>
               </div>
             </div>

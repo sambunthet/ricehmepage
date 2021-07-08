@@ -13,7 +13,7 @@ const defaultConfig = {
 }
 
 function getProductUrl(slug) {
-    const productUrl = `/shop/${slug}`;
+    const productUrl = `/product/${slug}`;
     return productUrl;
 }
 
