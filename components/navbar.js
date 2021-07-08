@@ -298,6 +298,17 @@ const Navbar = props => {
         link: '/blogs'
     },
     {
+      text: 'Recipe',
+      icon: <InboxIcon />,
+      link: '/recipe'
+  },
+
+  {
+    text: 'Distributors',
+    icon: <InboxIcon />,
+    link: '/distributors'
+  },
+    {
         text: 'About Us',
         icon: <MailIcon />,
         link: '/'
