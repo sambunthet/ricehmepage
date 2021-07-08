@@ -8,6 +8,7 @@ module.exports = {
         'primary': '#42572E',
         'secondary': '#ffed4a',
         'danger': '#e3342f',
+        "bproduct" :"#f7f7f7"
        }),
     },
     fontFamily: {

@@ -13,14 +13,13 @@ import { getFeaturedRecipe } from '$/utils/api/recipe';
 import { getBrand } from '$/utils/api/our-brand';
 
 
+
 export async function getStaticProps() {
   const [about, brand, products, recipes] = await Promise.all([getAboutUs(), getBrand(), getFeaturedProducts(), getFeaturedRecipe()]);
   return {
     props: {
       about,
       brand,
-      products,
-      recipes
     },
   }
 }
