@@ -147,7 +147,8 @@ const FeaturesBox = (props) => {
     </>
   );
 };
-const Feature = () => {
+const Feature = (props) => {
+  // const features = props.products;
   const features = [
     {
       id: 1,

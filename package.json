@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "yarn basetag link && yarn basetag rebase"
   },
   "dependencies": {
     "@agility/nextjs": "0.2.0",
@@ -15,7 +16,7 @@
     "@heroicons/react": "1.0.1",
     "@material-ui/core": "4.11.4",
     "@material-ui/icons": "4.11.2",
-    "agility": "^1.0.3",
+    "agility": "1.0.3",
     "aos": "3.0.0-beta.6",
     "markdown-to-jsx": "7.1.3",
     "next": "11.0.1",
@@ -31,7 +32,7 @@
   "devDependencies": {
     "@tailwindcss/aspect-ratio": "0.2.1",
     "autoprefixer": "10.2.6",
-    "basetag": "^2.0.1",
+    "basetag": "2.0.1",
     "eslint": "7.29.0",
     "eslint-config-next": "11.0.1",
     "file-loader": "6.2.0",
