@@ -1,9 +1,9 @@
-import '../styles/globals.css';
+import '$/styles/globals.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import  Layout from '../components/layout';
+import  Layout from '$/components/layout';
 
 
 function MyApp({ Component, pageProps }) {

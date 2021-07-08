@@ -2,8 +2,8 @@
 import React from "react";
 import { renderHTML } from "@agility/nextjs";
 import { AgilityImage } from "@agility/nextjs";
-import {getPost} from"./../../utils/api/blog";
-import {getFullUrl} from"./../../utils/image/getFullUrl";
+import {getPost} from"$/utils/api/blog";
+import {getFullUrl} from"$/utils/image/getFullUrl";
 import ReactMarkdown from 'react-markdown'
 import Markdown from 'markdown-to-jsx';
 const gfm = require('remark-gfm')

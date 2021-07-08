@@ -1,11 +1,12 @@
 import { AgilityImage } from "@agility/nextjs";
+import { getFullUrl } from "$/utils/image";
 import Image from "next/image";
 
 
 const url = process.env.PUBLIC_REST_API_ENDPOINT;
 const About = (about) => {
   const description = about.description || "";
-  var image =  url + about.image.url;
+  var image =  getFullUrl(about.image.url);
  
   if(!description)
       return <div></div>;

@@ -2,8 +2,8 @@
 import React from "react";
 import Link from "next/link";
 import { AgilityImage } from "@agility/nextjs";
-import {getPosts} from"../utils/api/blog";
-import {getFullUrl} from"../utils/image/getFullUrl"
+import {getPosts} from"$/utils/api/blog";
+import {getFullUrl} from"$/utils/image/getFullUrl"
 import truncate from "truncate-html";
 
  export async function getStaticProps(context) {
