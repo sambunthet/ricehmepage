@@ -2,10 +2,8 @@ import { AgilityImage } from "@agility/nextjs";
 import Image from "next/image";
 
 
-const url = "https://cms.devcorp.me";
+const url = process.env.PUBLIC_REST_API_ENDPOINT;
 const About = (about) => {
-  
-
   const description = about.description || "";
   var image =  url + about.image.url;
  
