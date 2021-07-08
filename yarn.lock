@@ -410,6 +410,11 @@ acorn@^7.0.0, acorn@^7.4.0:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-7.4.1.tgz#feaed255973d2e77555b83dbc08851a6c63520fa"
   integrity sha512-nQyp0o1/mNdbTO1PO6kHkwSrmgZ0MT/jCCpNiwbUjGoRN4dlBhqJtoQuCnEOKzgTVwg0ZWiCoQy6SxMebQVh8A==
 
+agility@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/agility/-/agility-1.0.3.tgz#56de67dfb708cba76ea028542d6758ed738a4a2f"
+  integrity sha512-/EJbBzDLd2LGX8MoU/UemuzPy8lgJP9XImDH+sNGyotOSD2ZdNxIC3ITWIB7D1CDB+3T+S4h6WoHI7ig80M4xg==
+
 ajv-keywords@^3.5.2:
   version "3.5.2"
   resolved "https://registry.yarnpkg.com/ajv-keywords/-/ajv-keywords-3.5.2.tgz#31f29da5ab6e00d1c2d329acf7b5929614d5014d"
