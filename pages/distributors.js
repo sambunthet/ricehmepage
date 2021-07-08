@@ -24,7 +24,7 @@ const Distributors = ({distributors}) => {
               </div>
               <div className="border-b-2 border-primary-500 w-8"></div>
               <h1 className="font-display text-2xl font-bold my-6 text-secondary-500">
-              Find your nearest distributor!
+              Find your nearest place to buy!
               </h1>
                 <div className="max-w-screen-xl mx-auto">
                     <div className="sm:grid sm:gap-8 sm:grid-cols-2 lg:grid-cols-2">

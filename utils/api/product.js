@@ -1,4 +1,8 @@
+import {getImageLink} from "$/utils/image";
+
 const url = process.env.PUBLIC_REST_API_ENDPOINT;
+const locale = process.env.LOCALE;
+
 const defaultConfig = {
     offset: 0,
     limit: 20,
@@ -8,19 +12,34 @@ const defaultConfig = {
     productCategoriesPath: '/product-categories'
 }
 
+function getProductUrl(slug) {
+    const productUrl = `/product/${slug}`;
+    return productUrl;
+}
+
+function parseProduct(product)  {
+    const {slug, gallery} = product;
+    product.link = getProductUrl(slug);
+    product.image = getImageLink(gallery[0]);
+    product.gallery = gallery.map(e=>getImageLink(e));
+    return product;
+}
+
 export async function getProductType() {
-    const productType = await fetch(`${url}${defaultConfig.productTypePath}`);
+    const productType = await fetch(`${url}${defaultConfig.productTypePath}?_locale=${locale}`);
     return await productType.json();
 }
 
 export async function getProductCategories() {
-    const productCategories = await fetch(`${url}${defaultConfig.productCategoriesPath}`);
+    const productCategories = await fetch(`${url}${defaultConfig.productCategoriesPath}?_locale=${locale}`);
     return await productCategories.json();
 }
 
 export async function getProducts({productTypeId, productCategoryId, featured, limit=defaultConfig.limit, offset=defaultConfig.offset}={}) {
-  const products = await fetch(`${url}${defaultConfig.productPath}?_sort=published_at:DESC&_limit=${limit}&_start=${offset}${productTypeId ? `&type.id=${productTypeId}`: ''}${productCategoryId ? `&categories.id=${productCategoryId}`: ''}${featured ? `&is_featured=${featured}`: ''}`);
-  return await products.json();
+  const data = await fetch(`${url}${defaultConfig.productPath}?_locale=${locale}&_sort=published_at:DESC&_limit=${limit}&_start=${offset}${productTypeId ? `&type.id=${productTypeId}`: ''}${productCategoryId ? `&categories.id=${productCategoryId}`: ''}${featured ? `&is_featured=${featured}`: ''}`);
+  const parsedData = await data.json();
+  const products = parsedData.map(e=>parseProduct(e));
+  return products;
 }
 
 export async function getFeaturedProducts() {
@@ -28,8 +47,10 @@ export async function getFeaturedProducts() {
 }
 
 export async function getProduct(productId) {
-    const product = await fetch(`${url}${defaultConfig.productPath}/${productId}`);
-    return await product.json();
+    const data = await fetch(`${url}${defaultConfig.productPath}/${productId}?_locale=${locale}`);
+    const parsedData = await data.json();
+    const product = parseProduct(parsedData);
+    return product;
 }
 
 export async function getProductCount() {

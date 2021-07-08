@@ -1,5 +1,7 @@
 import React from "react";
+import Link from "next/link";
 import { AgilityImage } from "@agility/nextjs";
+
 const FeaturesBox = (props) => {
   return (
     <>
@@ -13,8 +15,8 @@ const FeaturesBox = (props) => {
                     width={320}
                     height={320}
                     className="h-48 w-48 sm:h-70 md:w-70 md:h-70 md:w-70 lg:h-80 lg:w-80 object-cover inline-block "
-                    src={feature.img}
-                    alt={key}
+                    src={feature.image}
+                    alt={feature.name}
                   />
                 </div>
                 <div className="mt-5 mt-sm-0 mb-4" data-aos="fade-left">
@@ -22,20 +24,24 @@ const FeaturesBox = (props) => {
                     <i className={feature.icon}></i>
                   </div>
                   <h5 className="text-center sm:text-left text-2xl font-bold pt-3">
-                    {feature.title}
+                    {feature.name}
                   </h5>
                   <h5 className="text-center sm:text-left text-xl font-bold mb-3 ">
-                    $5.94{" "}
-                    <span className="text-gray-500 line-through text-xs">
-                      $6.99
-                    </span>
+                    ${feature.salePrice > 0 ? feature.salePrice : feature.price}{" "}
+                    {feature.salePrice > 0 ? <span className="text-gray-500 line-through text-xs">
+                      ${feature.price}
+                    </span> : ""}
                   </h5>
                   <p className="text-center sm:text-left mb-3 f-15">
-                    {feature.desc}
+                    {feature.description}
                   </p>
-                  <p className="text-center sm:text-left text-yellow-500">
-                    Read More <span className="">&#8594;</span>
-                  </p>
+                  <Link href={feature.link}>
+                    <a>
+                      <p className="text-center sm:text-left text-yellow-500">
+                        Read More <span className="">&#8594;</span>
+                      </p>
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -44,8 +50,8 @@ const FeaturesBox = (props) => {
                 <div>
                   <AgilityImage
                     className="h-48 w-48 sm:h-70 md:w-70 md:h-70 md:w-70 lg:h-80 lg:w-80 object-cover inline-block "
-                    src={feature.img}
-                    alt={key}
+                    src={feature.image}
+                    alt={feature.name}
                     width={320}
                     height={320}
                   />
@@ -55,20 +61,24 @@ const FeaturesBox = (props) => {
                     <i className={feature.icon}></i>
                   </div>
                   <h5 className="text-center sm:text-left text-2xl font-bold pt-3">
-                    {feature.title}
+                    {feature.name}
                   </h5>
                   <h5 className="text-center sm:text-left text-xl font-bold mb-3 ">
-                    $5.94{" "}
-                    <span className="text-gray-500 line-through text-xs">
-                      $6.99
-                    </span>
+                    ${feature.salePrice > 0 ? feature.salePrice : feature.price}{" "}
+                    {feature.salePrice > 0 ? <span className="text-gray-500 line-through text-xs">
+                      ${feature.price}
+                    </span> : ""}
                   </h5>
                   <p className="text-center sm:text-left mb-3 f-15">
-                    {feature.desc}
+                    {feature.description}
                   </p>
-                  <p className="text-center sm:text-left text-yellow-500">
-                    Read More <span className="">&#8594;</span>
-                  </p>
+                  <Link href={feature.link}>
+                    <a>
+                      <p className="text-center sm:text-left text-yellow-500">
+                        Read More <span className="">&#8594;</span>
+                      </p>
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -82,26 +92,31 @@ const FeaturesBox = (props) => {
                     <i className={feature.icon}></i>
                   </div>
                   <h5 className="text-center sm:text-right  text-2xl font-bold mb-3 pt-3">
-                    {feature.title}
+                    {feature.name}
                   </h5>
                   <h5 className="text-center sm:text-right text-xl font-bold mb-3 ">
-                    $5.94{" "}
-                    <span className="text-gray-500 line-through text-xs">
-                      $6.99
-                    </span>
+                    ${feature.salePrice > 0 ? feature.salePrice : feature.price}{" "}
+                    {feature.salePrice > 0 ? <span className="text-gray-500 line-through text-xs">
+                      ${feature.price}
+                    </span> : ""}
                   </h5>
                   <p className="text-center sm:text-right mb-3 f-15">
-                    {feature.desc}
+                    {feature.description}
                   </p>
-                  <p className="text-center sm:text-right text-yellow-500">
-                    Read More <span className="">&#8594;</span>
-                  </p>
+                  <Link href={feature.link}>
+                    <a>
+                      <p className="text-center sm:text-right text-yellow-500">
+                        Read More <span className="">&#8594;</span>
+                      </p>
+                    </a>
+                  </Link>
+  
                 </div>
                 <div data-aos="fade-left" className="pr-32 mr-32">
                   <AgilityImage
                     className="h-48 w-48 sm:h-70 md:w-70 md:h-70 md:w-70 lg:h-80 lg:w-80 object-cover inline-block "
-                    src={feature.img}
-                    alt={key}
+                    src={feature.image}
+                    alt={feature.name}
                     width={320}
                     height={320}
                   />
@@ -113,8 +128,8 @@ const FeaturesBox = (props) => {
                 <div>
                   <AgilityImage
                     className="h-48 w-48 sm:h-70 md:w-70 md:h-70 md:w-70 lg:h-80 lg:w-80 object-cover inline-block "
-                    src={feature.img}
-                    alt={key}
+                    src={feature.image}
+                    alt={feature.name}
                     width={320}
                     height={320}
                   />
@@ -124,20 +139,25 @@ const FeaturesBox = (props) => {
                     <i className={feature.icon}></i>
                   </div>
                   <h5 className="text-center sm:text-left text-2xl font-bold pt-3">
-                    {feature.title}
+                    {feature.name}
                   </h5>
                   <h5 className="text-center sm:text-left text-xl font-bold mb-3 ">
-                    $5.94{" "}
-                    <span className="text-gray-500 line-through text-xs">
-                      $6.99
-                    </span>
+                    ${feature.salePrice > 0 ? feature.salePrice : feature.price}{" "}
+                    {feature.salePrice > 0 ? <span className="text-gray-500 line-through text-xs">
+                      ${feature.price}
+                    </span> : ""}
                   </h5>
                   <p className="text-center sm:text-left mb-3 f-15">
-                    {feature.desc}
+                    {feature.description}
                   </p>
-                  <p className="text-center sm:text-left text-yellow-500">
-                    Read More <span className="">&#8594;</span>
-                  </p>
+                  <Link href={`${feature.link}`}>
+                    <a>
+                      <p className="text-center sm:text-left text-yellow-500">
+                        Read More <span className="">&#8594;</span>
+                      </p>
+                    </a>
+                  </Link>
+
                 </div>
               </div>
             </div>
@@ -147,37 +167,11 @@ const FeaturesBox = (props) => {
     </>
   );
 };
-const Feature = () => {
-  const features = [
-    {
-      id: 1,
-      img: "http://rice.com.kh/products/67/Zhao_Qing.jpg",
-      title: "Zhoa Qing",
-      desc: "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-      link: "/",
-    },
-    {
-      id: 2,
-      img: "http://rice.com.kh/products/63/LF_Rice___U.jpg",
-      title: "Lai Fen",
-      desc: "Sed perspiciatis unde omnis natus error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo excepturi sint occaecati cupiditate architecto.",
-      link: "/",
-    },
-    {
-      id: 3,
-      img: "http://rice.com.kh/products/53/400g1_copy.jpg",
-      title: "Jiang Xi CamRice",
-      desc: "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-      link: "/",
-    },
-    {
-      id: 4,
-      img: "http://rice.com.kh/products/56/Camrice_YS.jpg",
-      title: "Fine Rice Vermicelli CamRice",
-      desc: "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-      link: "/",
-    },
-  ];
+
+const Feature = (props) => {
+  if (!props.features || props.features.length === 0)
+        return <div></div>;
+  const features = props.features;
   return (
     <div className="bg-white pt-10 font-body">
       <div className="mt-6 md:m-12 ">

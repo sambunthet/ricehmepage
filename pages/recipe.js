@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { AgilityImage } from "@agility/nextjs";
 import {getRecipes} from"$/utils/api/recipe";
-import {getFullUrl} from"$/utils/image/getFullUrl"
 import truncate from "truncate-html";
 
 
@@ -44,12 +43,12 @@ const Recipe = ({recipes}) => {
                 <div className="max-w-screen-xl mx-auto">
                     <div className="sm:grid sm:gap-8 sm:grid-cols-2 lg:grid-cols-2">
                     {recipes.map((recipe, index) => (
-                        <Link href= {`/recipe/${recipe.id}`} key={index}>
+                        <Link href= {`${recipe.link}`} key={index}>
                         <a>
                             <div className="flex-col group mb-8 md:mb-0">
                             <div className="relative h-64">
                                 <AgilityImage
-                                src={getFullUrl(recipe.image.url)}
+                                src={recipe.image}
                                 className="rounded-t-lg"
                                 layout="fill"
                                 />

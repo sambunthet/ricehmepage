@@ -3,12 +3,10 @@ import React from "react";
 import { renderHTML } from "@agility/nextjs";
 import { AgilityImage } from "@agility/nextjs";
 import {getRecipe} from"$/utils/api/recipe";
-import {getFullUrl} from"$/utils/image/getFullUrl";
 import ReactMarkdown from 'react-markdown'
 const gfm = require('remark-gfm')
 
 export const getStaticPaths = async (context) => {
-
   return {
       paths: [], //indicates that no page needs be created at build time
       fallback: 'blocking' //indicates the type of fallback
@@ -16,7 +14,6 @@ export const getStaticPaths = async (context) => {
 }
 
 export async function getStaticProps(context) {
-
   const id = context.params.id;
   const recipe = await  getRecipe(id);
   console.log("RecipeDetail:: ", recipe)
@@ -40,7 +37,7 @@ const RecipeDetail = ({recipe}) => {
           <div className="max-w-screen-xl mx-auto">
             <div className="h-64 md:h-96 relative">
               <AgilityImage
-                src={getFullUrl(recipe.image.url)}
+                src={recipe.image}
                 className="rounded-lg"
                 layout="fill"
               />

@@ -1,4 +1,4 @@
-import './../styles/globals.css';
+import '$/styles/globals.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 import AOS from "aos";
 import "aos/dist/aos.css";
