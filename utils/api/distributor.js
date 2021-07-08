@@ -1,4 +1,6 @@
 const url = process.env.PUBLIC_REST_API_ENDPOINT;
+const locale = process.env.LOCALE;
+
 const defaultConfig = {
     offset: 0,
     limit: 20,
@@ -7,12 +9,12 @@ const defaultConfig = {
 }
 
 export async function getDistributors({limit=defaultConfig.limit, offset=defaultConfig.offset}={}) {
-  const distributors = await fetch(`${url}${defaultConfig.distributorPath}?_sort=published_at:DESC&_limit=${limit}&_start=${offset}`);
+  const distributors = await fetch(`${url}${defaultConfig.distributorPath}?_sort=published_at:DESC&_limit=${limit}&_start=${offset}&_locale=${locale}`);
   return await distributors.json();
 }
 
 export async function getDistributor(distributorId) {
-  const distributor = await fetch(`${url}${defaultConfig.distributorPath}/${distributorId}`);
+  const distributor = await fetch(`${url}${defaultConfig.distributorPath}/${distributorId}&_locale=${locale}`);
   return await distributor.json();
 }
 
