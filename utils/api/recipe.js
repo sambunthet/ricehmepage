@@ -1,4 +1,4 @@
-const url = "https://cms.devcorp.me";
+const url = process.env.PUBLIC_REST_API_ENDPOINT;
 const defaultConfig = {
     offset: 0,
     limit: 200,

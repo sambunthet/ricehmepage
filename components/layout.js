@@ -1,5 +1,5 @@
-import Navbar from "./../components/navbar";
-import FooterRice from './../components/footer-rice';
+import Navbar from "$/components/navbar";
+import FooterRice from '$/components/footer-rice';
 
 
 const Layout= ({children}) => {
