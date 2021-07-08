@@ -5,8 +5,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
 body {
-  color: #333;
   font-family: "Nunito" !important;
+  background-color: white !important;
 }
 
 a {

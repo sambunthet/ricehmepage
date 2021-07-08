@@ -5,8 +5,9 @@ import { AgilityImage } from "@agility/nextjs";
 import {getPost} from"$/utils/api/blog";
 import {getFullUrl} from"$/utils/image/getFullUrl";
 import ReactMarkdown from 'react-markdown'
-import Markdown from 'markdown-to-jsx';
 const gfm = require('remark-gfm')
+
+
 
 
 
@@ -35,10 +36,16 @@ export async function getStaticProps(context) {
 
 const BlogDetail = ({post}) => {
 
-    const dateStr = new Date(post.published_at).toLocaleDateString();
+  console.log("-->> post detail --->> ", JSON.parse(post.oembed))
+   let embedHtml = JSON.parse(post.oembed)?.rawData.html;
+   if (embedHtml) {
+    embedHtml = embedHtml.replace('height="113"', 'height="350"').replace('width="200"', 'width="100%"')
+   }
 
+    const dateStr = new Date(post.published_at).toLocaleDateString();
+    
     return (
-        <div className="relative px-8 pt-4">
+        <div className="relative px-8 pt-4 pb-4">
           <div className="max-w-screen-xl mx-auto">
             <div className="h-64 md:h-96 relative">
               <AgilityImage
@@ -59,6 +66,19 @@ const BlogDetail = ({post}) => {
                 {post.title}
               </h1>
               <ReactMarkdown remarkPlugins={[gfm]} children={post.content} />
+
+              {
+                embedHtml ? <div>
+                <h1 className="font-display text-2xl font-bold my-6 text-secondary-500">
+                  Video
+                </h1>
+                <div
+                  className="prose max-w-full"
+                  dangerouslySetInnerHTML={renderHTML(embedHtml)}
+                />
+                </div> : null
+              }
+              
             </div>
           </div>
         </div>
