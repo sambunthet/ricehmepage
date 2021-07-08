@@ -290,7 +290,7 @@ const Navbar = props => {
     {
       text: "Products",
       icon: <MailIcon />,
-      link: '/'
+      link: '/products'
     },
     {
         text: 'Blogs',

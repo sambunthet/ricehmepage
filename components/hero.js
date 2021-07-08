@@ -14,34 +14,15 @@ const Header = () => {
         backgroundSize: "cover",
       }}
     >
-      <div className="align-items-center pt-5 pb-4">
-      <div className="p-5">
-            <p className="text-uppercase text-yellow-500 font-bold text-3xl mb-4">
-              Welcome to
-            </p>
-            <h1 className="mb-4 text-indigo-800 font-bold text-3xl">
-              INDOCHINA RICE MILL LIMITED{" "}
-              <span className="text-4xl font-bold text-blue-500">Cambodia</span>
-            </h1>
-            <p className="text-white mb-4 pb-2 hidden md:block">
-              Indochina Rice Mill has gained the confidence and trust of our
-              valuable worldwide customers in our top quality rice and rice
-              vermicelli products. Armed with a serious management team and our
-              stringent quality control, we are here to consistently provide the
-              most competitive price and the best quality rice and rice
-              vermicelli to our customers, and are ready to be your trustworthy
-              partner.
-            </p>
-            
-            <p className="text-white mb-4 pb-2 block md:hidden">
-              Indochina Rice Mill has gained the confidence and trust of our
-              valuable worldwide customers in our top quality rice and rice
-              vermicelli products. Armed with a serious management team and our
-              stringent quality control,...
-            </p>
-        
-            <a className="inline-flex items-center h-8 px-4 m-2 text-sm text-indigo-100 transition-colors duration-150 bg-yellow-500 rounded-lg focus:shadow-outline hover:bg-indigo-800" href="#">Find Out How <span className="ml-2 right-icon">&#8594;</span></a>
-          </div>
+        <div className="absolute w-5/6 lg:w-2/5 mt-40 ml-10 mb-10 sm:ml-24 rounded-xl bg-white shadow-lgtext-gray-800 flex items-center justify-center px-5 py-5 font-body ">
+        <p className="text-gray-600 text-center px-5 xl:p-10 text-sm sm:text-xl md:text-2xl ">
+          " Indochina Rice Mill has gained the confidence and trust of our
+          valuable worldwide customers in our top quality rice and rice
+          vermicelli products. Armed with a serious management team and our
+          stringent quality control, we are here to consistently provide the
+          most competitive price and the best quality rice and rice vermicelli
+          to our customers, and are ready to be your trustworthy partner. "
+        </p>
       </div>
     </div>
   );

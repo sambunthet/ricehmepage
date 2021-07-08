@@ -12,7 +12,7 @@ const About = (about) => {
   if(!description)
       return <div></div>;
   return (
-    <div className="sm:m-20 md:m-32 pt-5 sm:pt-0">
+    <div className="sm:mt-20 sm:m-20 md:m-32 pt-5 sm:pt-0">
       <div className="grid grid-cols-1 sm:grid-cols-2  sm:gap:2 justify-items-center text-center">
         <div className="pt-5">
           <AgilityImage
