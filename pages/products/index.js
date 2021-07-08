@@ -15,8 +15,6 @@ export async function getStaticProps(context) {
   }
 
 const Products = ({products}) => {
-    console.log("--> ", products);
-    //getFullUrl(product.image.url)
     return (
 
         <div className="relative w-full h-full bg-bproduct p-20">
@@ -24,18 +22,21 @@ const Products = ({products}) => {
                         {products.map((product) => (
                             <div className="bg-white shadow-lg h-auto w-72 text-center pt-4">
                                 <AgilityImage
-                                    src="http://rice.com.kh/products/65/151x124_Lai_fen_400g.jpg"
+                                    src={product.image}
                                     className="rounded-t-lg inline-block"
                                     width="227"
                                     height="227"
                                 />
                             <div className="p-4 text-left">
-                             <h1>Size :  0.8mm</h1>
+                             <h1>Name :  {product.name}</h1>
+                             <h1>Price :  {product.price}</h1>
+                             {/* <h1>Size :  0.8mm</h1>
                              <h1>Packing : 40pack X 400g</h1>
                              <h1 >Direction for Use : Soak in Boiling Water 8-10 Minute</h1>
                              <h1 >Conservation directions : Store in Dry Place</h1>
                              <h1 >Shelf life (in months) :  36 months</h1> 
-                             <h1 >Brand of Produce : CamRice</h1>
+                             <h1 >Brand of Produce : CamRice</h1> */}
+                             <h1 >description : {product.description}</h1>
                             </div>
                         </div>
                         ))}
