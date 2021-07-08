@@ -11,12 +11,13 @@ import { getAboutUs} from '$/utils/api/about-us';
 import { getBrand} from '$/utils/api/our-brand';
 
 
+
 export async function getStaticProps() {
   const [about, brand] = await Promise.all([getAboutUs(), getBrand()]);
   return {
     props: {
       about,
-      brand
+      brand,
     },
   }
 }
