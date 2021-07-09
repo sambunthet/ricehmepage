@@ -22,7 +22,6 @@ function Nav() {
 
   const handleScrollPos = () => {
     hanldeShow(window.scrollY > 100);
-    console.log('scroll event', window.scrollY > 100);
   };
 
   React.useEffect(() => {

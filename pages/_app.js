@@ -25,7 +25,6 @@ function MyApp({ Component, pageProps }) {
     //   window.removeEventListener("scroll", null);
     // };
 }, []);
-console.log(show);
 
 
 return (
