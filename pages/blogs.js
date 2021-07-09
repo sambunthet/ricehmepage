@@ -48,6 +48,7 @@ const Blogs = ({posts}) => {
             
             <div className="relative px-8 px-4 mb-8">
                 <Link href={`/blogs/${featuredPost.id}`}>
+                    <a>
                     <div className="cursor-pointer flex flex-col sm:flex-row max-w-screen-xl mx-auto pt-8 group">
                         <div className="sm:w-1/2 lg:w-2/3 sm:rounded-t-none sm:rounded-l-lg relative">
                             <div className="h-64 sm:h-96 relative">
@@ -72,6 +73,7 @@ const Blogs = ({posts}) => {
                             <ReactMarkdown remarkPlugins={[gfm]} children={description} />
                         </div>
                     </div>
+                    </a>
                 </Link>
             </div>
             

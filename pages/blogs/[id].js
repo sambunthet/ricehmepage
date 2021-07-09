@@ -63,7 +63,7 @@ const BlogDetail = ({post}) => {
               {
                 embedHtml ? <div>
                 <h1 className="font-display text-2xl font-bold my-6 text-secondary-500">
-                  Video
+                  
                 </h1>
                 <div
                   className="prose max-w-full"
