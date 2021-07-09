@@ -7,7 +7,7 @@ import { getFullUrl } from "$/utils/image";
 export async function getStaticProps(context) {
 
     const products = await  getProducts();
- 
+    // screen products
     return {
       props: {products},
       revalidate: 3600 * 1 * 24,
