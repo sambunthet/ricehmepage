@@ -4,10 +4,10 @@ export const getFullUrl = (path) => {
     return `${process.env.PUBLIC_REST_API_ENDPOINT}${path}`
 };
 
-export function getImageLink(image, {format="m"}={}) {
+export function getImageLink(image) {
     if(!image)
         return "";
-    const imageUrl = getFullUrl(image.formats.medium.url);
+    const imageUrl = getFullUrl(image.url);
     return imageUrl;
 }
 
