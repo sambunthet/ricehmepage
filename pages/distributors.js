@@ -18,7 +18,7 @@ const Distributors = ({distributors}) => {
     return <div></div>
   }
     return (
-        <div className="relative px-8 pt-4 pb-4">
+        <div className="relative px-8 pt-24 pb-4">
           <div className="max-w-screen-xl mx-auto">
            
             <div className="max-w-2xl mx-auto mt-4">

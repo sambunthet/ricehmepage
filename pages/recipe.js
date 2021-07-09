@@ -19,7 +19,7 @@ export async function getStaticProps(context) {
 
 const Recipe = ({recipes}) => {
     return (
-        <div className="px-8">
+        <div className="mt-32 px-8">
           <Recipes recipes={recipes}/>
         </div>
       );

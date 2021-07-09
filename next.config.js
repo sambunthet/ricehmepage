@@ -10,5 +10,8 @@ module.exports = {
   env: {
     LOCALE: global.locale,
     PUBLIC_REST_API_ENDPOINT: global.apiEndPoint
-  }
+  },
+  experimental: {
+    scrollRestoration: true,
+  },
 };

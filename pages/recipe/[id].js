@@ -31,7 +31,7 @@ const RecipeDetail = ({recipe}) => {
     const dateStr = new Date(recipe.published_at).toLocaleDateString();
     
     return (
-        <div className="relative px-8 pt-4 pb-4">
+        <div className="mt-32 relative px-8 pt-4 pb-4">
           <div className="max-w-screen-xl mx-auto">
             <div className="max-w-2xl mx-auto">
               <img src={recipe.image} className="rounded-lg img-fluid" />
