@@ -1,7 +1,6 @@
-
-
 import Link from "next/link";
 import truncate from "truncate-html";
+import { AgilityImage } from "@agility/nextjs";
 
 
 const Recipes = (props) => {
@@ -20,11 +19,46 @@ const Recipes = (props) => {
         return desc;  
     }  
 
+    return(
+        <div>
+            <div className="">
+            <div className="text-black text-4xl text-center pb-10 font-bold">Recipes</div>
+                <div className="flex flex-col sm:flex-row place-content-center text-center scrollbar-hide overflow-x-scroll hide-scroll-bar overscroll-x-contain gallery" data-slider-target="scrollContainer">
+                {recipes.map((recipe, index)=>
+                    <Link href={`${recipe.link}`} key={index}>
+                        <a>
+                            <div className="border-2 rounded-lg w-auto sm:w-72 p-4 m-4">                                <div className="relative h-48">
+                                    <AgilityImage
+                                        src={recipe.image}
+                                        className="rounded-t-lg inline-block"
+                                        width="200"
+                                        height="200"
+                                    />
+                                </div>
+                                <div className="bg-gray-10 py-8">
+                                <div className="uppercase text-primary-500 text-xs font-bold ">
+                                {getDescription(recipe.title, 50)}
+                                </div>
+                                <div className="mt-4  text-gray-600 italic font-semibold text-xs">
+                                {getDescription(recipe.description, 100)}
+                                </div>
+                            </div>
+                            </div>
+                        </a>
+                    </Link>
+                )}
+                </div>
+                </div>
+        </div>
+    );
+
+
     return (
         <div className="sm:m-20 md:m-32">
             <div className="text-black text-4xl  text-center pb-5 font-bold">Recipes</div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap:1 justify-items-center text-center">
-                {recipes.map((recipe, index)=>
+            <div className="flex flex-col place-content-center">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap:1 place-items-center text-center">
+                {k.map((recipe, index)=>
                     <Link href={`${recipe.link}`} key={index}>
                         <a>
                             <div className="border-2 rounded-lg">
@@ -42,7 +76,9 @@ const Recipes = (props) => {
                     </Link>
                 )}
             </div>
-        </div>
+            </div>
+            </div>
+     
     );
 }
 
