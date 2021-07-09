@@ -3,7 +3,59 @@ import Link from "next/link";
 import { AgilityImage } from "@agility/nextjs";
 import { getLocaletext } from "$/utils/localization";
 
+import { withStyles } from '@material-ui/core/styles';
+import Dialog from '@material-ui/core/Dialog';
+import MuiDialogTitle from '@material-ui/core/DialogTitle';
+import MuiDialogContent from '@material-ui/core/DialogContent';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
+import Typography from '@material-ui/core/Typography';
+
+const styles = (theme) => ({
+  root: {
+      margin: 0,
+      padding: theme.spacing(2),
+  },
+  closeButton: {
+      position: 'absolute',
+      right: theme.spacing(1),
+      top: theme.spacing(1),
+      color: theme.palette.grey[500],
+  },
+});
+
+const DialogTitle = withStyles(styles)((props) => {
+  const { children, classes, onClose, ...other } = props;
+  return (
+      <MuiDialogTitle disableTypography className={classes.root} {...other}>
+          <Typography variant="h6">{children}</Typography>
+          {onClose ? (
+              <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
+                  <CloseIcon />
+              </IconButton>
+          ) : null}
+      </MuiDialogTitle>
+  );
+});
+
+const DialogContent = withStyles((theme) => ({
+  root: {
+      padding: theme.spacing(2),
+  },
+}))(MuiDialogContent);
+
 const FeaturesBox = (props) => {
+  const [open, setOpen] = React.useState(false);
+  const [product, setProduct] = React.useState(undefined);
+
+  const handleClickOpen = (product) => {
+      setProduct(product);
+      setOpen(true);
+  };
+
+  const handleClose = () => {
+      setOpen(false);
+  };
   const readMore = getLocaletext("readMore");
   return (
     <>
@@ -38,13 +90,11 @@ const FeaturesBox = (props) => {
                   <p className="text-center sm:text-left mb-3 f-15">
                     {feature.description}
                   </p>
-                  <Link href={feature.link}>
-                    <a>
+                  <a onClick={() => handleClickOpen(feature)}>
                       <p className="text-center sm:text-left text-yellow-500">
                         {readMore} <span className="">&#8594;</span>
                       </p>
-                    </a>
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
@@ -76,13 +126,11 @@ const FeaturesBox = (props) => {
                   <p className="text-center sm:text-left mb-3 f-15">
                     {feature.description}
                   </p>
-                  <Link href={feature.link}>
-                    <a>
+                  <a onClick={() => handleClickOpen(feature)}>
                       <p className="text-center sm:text-left text-yellow-500">
                         {readMore} <span className="">&#8594;</span>
                       </p>
-                    </a>
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
@@ -107,13 +155,11 @@ const FeaturesBox = (props) => {
                   <p className="text-center sm:text-right mb-3 f-15">
                     {feature.description}
                   </p>
-                  <Link href={feature.link}>
-                    <a>
+                  <a onClick={() => handleClickOpen(feature)}>
                       <p className="text-center sm:text-right text-yellow-500">
                         {readMore} <span className="">&#8594;</span>
                       </p>
-                    </a>
-                  </Link>
+                  </a>
   
                 </div>
                 <div data-aos="fade-left" className="pr-32 mr-32">
@@ -156,20 +202,43 @@ const FeaturesBox = (props) => {
                   <p className="text-center sm:text-left mb-3 f-15">
                     {feature.description}
                   </p>
-                  <Link href={`${feature.link}`}>
-                    <a>
+                  <a onClick={() => handleClickOpen(feature)}>
                       <p className="text-center sm:text-left text-yellow-500">
                         {readMore} <span className="">&#8594;</span>
                       </p>
-                    </a>
-                  </Link>
-
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         )
       )}
+      {/* open dilog */}
+      <div>
+        <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open} >
+            <DialogTitle id="customized-dialog-title" onClose={handleClose}> </DialogTitle>
+            <DialogContent>
+                <div className="grid grid-cols-2 gap-0 sm:gap-4 sm:mb-10 sm:mx-10">
+                    <div className="relative h-56 sm:56 place-self-center">
+                        <AgilityImage
+                            src={product && product.image ? product.image : ''}
+                            className="rounded-t-lg inline-block"
+                            width="272"
+                            height="272"
+                        />
+                    </div>
+                    <div className="">
+                        <h5 className=" text-lg font-bold py-2 "> {product && product.name ? product.name  : ''} </h5>
+                        <h3 className=" text-sm py-1">{ product && product.type.slug ?  "Code : "  + product.type.slug : ''}</h3>
+                        <h3 className=" text-sm py-1">{ product && product.description ?  "Unit : "  + product.unit : ''}</h3>
+                        <h3 className=" text-xs sm:text-sm py-1">{ product && product.description ?  "Description : "  + product.description : ''}</h3>
+                        
+                    </div>
+                </div>
+            </DialogContent>
+        </Dialog>
+      </div>
+      {/* close dilog */}
     </>
   );
 };
