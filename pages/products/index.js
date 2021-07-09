@@ -10,6 +10,15 @@ import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
 
 
+
+export async function getStaticProps(context) {
+    const products = await getProducts();
+    return {
+        props: { products },
+        revalidate: 3600 * 1 * 24,
+    };
+}
+
 const styles = (theme) => ({
     root: {
         margin: 0,
@@ -44,15 +53,6 @@ const DialogContent = withStyles((theme) => ({
 }))(MuiDialogContent);
 
 
-
-export async function getStaticProps(context) {
-    const products = await getProducts();
-    return {
-        props: { products },
-        revalidate: 3600 * 1 * 24,
-    };
-}
-
 const Products = ({ products }) => {
 
     const array3 = [...products, ...products, ...products];
@@ -60,7 +60,6 @@ const Products = ({ products }) => {
     const [product, setProduct] = React.useState(undefined);
 
     const handleClickOpen = (product) => {
-        console.log("===> ", product);
         setProduct(product);
         setOpen(true);
     };
@@ -70,21 +69,23 @@ const Products = ({ products }) => {
     };
 
 
-    if(!products || products.length == 0)
-       return <div></div>;
+    if (!products || products.length == 0)
+        return <div></div>;
     return (
         <div class="min-h-screen flex items-center bg-bproduct">
             <div class="flex-1 max-w-6xl mx-auto p-10">
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-8">
                     {array3.map((product) => (
-                        <a  onClick={() => handleClickOpen(product)}>
-                            <div className="bg-white shadow h-auto text-center pt-4">
-                                <div className="relative h-56">
-                                    <AgilityImage
-                                        src={product.image}
-                                        className="rounded-t-lg inline-block"
-                                        layout="fill"
-                                    />
+                        <a onClick={() => handleClickOpen(product)}>
+                            <div className="bg-white shadow h-auto text-center">
+                                <div className="py-4">
+                                    <div className="relative h-56">
+                                        <AgilityImage
+                                            src={product.image}
+                                            className="rounded-t-lg inline-block"
+                                            layout="fill"
+                                        />
+                                    </div>
                                 </div>
                                 <div className="bg-gray-100 p-2 text-left">
                                     <div className="uppercase text-primary-500 text-xs font-bold tracking-widest leading-loose">
@@ -113,16 +114,16 @@ const Products = ({ products }) => {
                                 <AgilityImage
                                     src={product && product.image ? product.image : ''}
                                     className="rounded-t-lg inline-block"
-                                    width="272"
-                                    height="272"
+                                    width="250"
+                                    height="200"
                                 />
                             </div>
                             <div className="">
-                                <h5 className=" text-lg font-bold py-2 "> {product && product.name ? product.name  : ''} </h5>
-                                <h3 className=" text-sm py-1">{ product && product.type.slug ?  "Code : "  + product.type.slug : ''}</h3>
-                                <h3 className=" text-sm py-1">{ product && product.description ?  "Unit : "  + product.unit : ''}</h3>
-                                <h3 className=" text-xs sm:text-sm py-1">{ product && product.description ?  "Description : "  + product.description : ''}</h3>
-                                
+                                <h5 className=" text-lg font-bold py-2 "> {product && product.name ? product.name : ''} </h5>
+                                <h3 className=" text-sm py-1">{product && product.type.slug ? "Code : " + product.type.slug : ''}</h3>
+                                <h3 className=" text-sm py-1">{product && product.description ? "Unit : " + product.unit : ''}</h3>
+                                <h3 className=" text-xs sm:text-sm py-1">{product && product.description ? "Description : " + product.description : ''}</h3>
+
                             </div>
                         </div>
                     </DialogContent>
