@@ -15,7 +15,8 @@
 //       <div className="relative min-h-screen">
 //         {/* <!-- mobile menu bar --> */}
 //         <div
-//           className={`bg-primary text-gray-100 flex justify-between ${
+//           style={{backgroundColor: "#252424"}}
+//           className={`text-gray-100 flex justify-between ${
 //             active ? "pl-64" : ""
 //           }`}
 //         >
@@ -102,7 +103,7 @@
 
 //   return (
 //     <>
-//       <nav className="flex items-center flex-wrap bg-primary p-3 ">
+//       <nav className="flex items-center flex-wrap p-3" style={{backgroundColor: "#252424"}}>
 //         <Link href="/">
 //           <a className="inline-flex items-center p-2 mr-4 ">
 //             <img
@@ -304,7 +305,7 @@ const Navbar = props => {
   },
 
   {
-    text: 'Distributors',
+    text: 'Where to Buy',
     icon: <InboxIcon />,
     link: '/distributors'
   },
