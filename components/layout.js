@@ -8,7 +8,7 @@ const Layout= ({children}) => {
             <Navbar></Navbar>
 
             <div>
-                <div className="" style={{margin: "auto", position: "relative", minHeight: "100vh"}}>
+                <div style={{margin: "auto", position: "relative", minHeight: "100vh"}}>
                          {children}
                 </div>
             </div>

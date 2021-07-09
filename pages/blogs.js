@@ -30,7 +30,6 @@ const Blogs = ({posts}) => {
         reserveLastWord: true,
       });
 
-      console.log("description:: " + description);
 
     return (
 

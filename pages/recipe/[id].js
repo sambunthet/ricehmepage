@@ -16,7 +16,6 @@ export const getStaticPaths = async (context) => {
 export async function getStaticProps(context) {
   const id = context.params.id;
   const recipe = await  getRecipe(id);
-  console.log("RecipeDetail:: ", recipe)
   return {
     props: {recipe},
     revalidate: 3600 * 1 * 24, // a day in second
@@ -24,7 +23,6 @@ export async function getStaticProps(context) {
 }
 
 const RecipeDetail = ({recipe}) => {
-    // console.log("-->> post detail --->> ", JSON.parse(recipe.oembed))
    let embedHtml = JSON.parse(recipe.embed)?.rawData.html;
    if (embedHtml) {
     embedHtml = embedHtml.replace('height="113"', 'height="350"').replace('width="200"', 'width="100%"')
