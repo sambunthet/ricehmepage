@@ -6,7 +6,7 @@ const FeaturesBox = (props) => {
   return (
     <>
       {props.features.map((feature, key) =>
-        feature.id % 2 !== 0 ? (
+        key % 2 !== 0 ? (
           <div>
             <div className="m-6 md:mt-1 sm:m-10 md:m-12 hidden md:block">
               <div className="grid grid-cols-1 sm:grid-cols-2  sm:gap:2 justify-items-center text-center">

@@ -24,8 +24,8 @@ const Recipes = (props) => {
         <div className="sm:m-20 md:m-32">
             <div className="text-black text-4xl  text-center pb-5 font-bold">Recipes</div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap:1 justify-items-center text-center">
-                {recipes.map(recipe=>
-                    <Link href={`${recipe.link}`}>
+                {recipes.map((recipe, index)=>
+                    <Link href={`${recipe.link}`} key={index}>
                         <a>
                             <div className="border-2 rounded-lg">
                                 <img className="h-48 mt-4 w-48 sm:h-50 md:w-50 md:h-60 md:w-60 object-cover inline-block " src={recipe.image} />
