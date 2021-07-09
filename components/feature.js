@@ -17,6 +17,7 @@ const FeaturesBox = (props) => {
                     className="h-48 w-48 sm:h-70 md:w-70 md:h-70 md:w-70 lg:h-80 lg:w-80 object-cover inline-block "
                     src={feature.image}
                     alt={feature.name}
+                    key={key}
                   />
                 </div>
                 <div className="mt-5 mt-sm-0 mb-4" data-aos="fade-left">
@@ -52,6 +53,7 @@ const FeaturesBox = (props) => {
                     className="h-48 w-48 sm:h-70 md:w-70 md:h-70 md:w-70 lg:h-80 lg:w-80 object-cover inline-block "
                     src={feature.image}
                     alt={feature.name}
+                    key={key}
                     width={320}
                     height={320}
                   />
@@ -117,6 +119,7 @@ const FeaturesBox = (props) => {
                     className="h-48 w-48 sm:h-70 md:w-70 md:h-70 md:w-70 lg:h-80 lg:w-80 object-cover inline-block "
                     src={feature.image}
                     alt={feature.name}
+                    key={key}
                     width={320}
                     height={320}
                   />
@@ -130,6 +133,7 @@ const FeaturesBox = (props) => {
                     className="h-48 w-48 sm:h-70 md:w-70 md:h-70 md:w-70 lg:h-80 lg:w-80 object-cover inline-block "
                     src={feature.image}
                     alt={feature.name}
+                    key={key}
                     width={320}
                     height={320}
                   />

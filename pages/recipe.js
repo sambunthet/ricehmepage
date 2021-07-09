@@ -8,7 +8,6 @@ import truncate from "truncate-html";
 export async function getStaticProps(context) {
   const recipes = await  getRecipes();
 
-  console.log("recipes:: ", recipes)
   return {
     props: {recipes},
     revalidate: 3600 * 1 * 24, // a day in second

@@ -30,7 +30,6 @@ export async function getStaticProps(context) {
 
 const BlogDetail = ({post}) => {
 
-  console.log("-->> post detail --->> ", JSON.parse(post.oembed))
    let embedHtml = JSON.parse(post.oembed)?.rawData.html;
    if (embedHtml) {
     embedHtml = embedHtml.replace('height="113"', 'height="350"').replace('width="200"', 'width="100%"')
