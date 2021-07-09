@@ -1,165 +1,65 @@
 import Link from "next/link";
 import { AgilityImage } from "@agility/nextjs";
-import { getProducts} from '$/utils/api/product';
+import { getProducts } from "$/utils/api/product";
 import { getFullUrl } from "$/utils/image";
-
+import truncate from "truncate-html";
 
 export async function getStaticProps(context) {
-
-    const products = await  getProducts();
-    
-    // screen products
-
-    return {
-      props: {products},
-      revalidate: 3600 * 1 * 24,
-    }
-  }
-
-const Products = ({products}) => {
-    return (
-
-        <div className="relative w-full h-full bg-bproduct p-20">
-                    <div className="grid justify-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 xl:gap-14">
-                        {products.map((product) => (
-                            <div className="bg-white shadow-lg h-auto w-72 text-center pt-4">
-                                <AgilityImage
-                                    src={product.image}
-                                    className="rounded-t-lg inline-block"
-                                    width="227"
-                                    height="227"
-                                />
-                            <div className="p-4 text-left">
-                             <h1>Name :  {product.name}</h1>
-                             <h1>Price :  {product.price}</h1>
-                             {/* <h1>Size :  0.8mm</h1>
-                             <h1>Packing : 40pack X 400g</h1>
-                             <h1 >Direction for Use : Soak in Boiling Water 8-10 Minute</h1>
-                             <h1 >Conservation directions : Store in Dry Place</h1>
-                             <h1 >Shelf life (in months) :  36 months</h1> 
-                             <h1 >Brand of Produce : CamRice</h1> */}
-                             <h1 >description : {product.description}</h1>
-                            </div>
-                        </div>
-                        ))}
-                        
-
-                        {/* <div className="bg-white shadow-lg h-auto w-72 text-center pt-4">
-                                <AgilityImage
-                                    src="http://rice.com.kh/products/65/151x124_Lai_fen_400g.jpg"
-                                    className="rounded-t-lg inline-block"
-                                    width="227"
-                                    height="227"
-                                />
-                            <div className="p-4 text-left">
-                             <h1>Size :  0.8mm</h1>
-                             <h1>Packing : 40pack X 400g</h1>
-                             <h1 >Direction for Use : Soak in Boiling Water 8-10 Minute</h1>
-                             <h1 >Conservation directions : Store in Dry Place</h1>
-                             <h1 >Shelf life (in months) :  36 months</h1> 
-                             <h1 >Brand of Produce : CamRice</h1>
-                            </div>
-                        </div>
-
-
-                        <div className="bg-white shadow-lg h-auto w-72 text-center pt-4">
-                                <AgilityImage
-                                    src="http://rice.com.kh/products/64/151x124_Dong_Quan_copy.jpg"
-                                    className="rounded-t-lg inline-block"
-                                    width="227"
-                                    height="227"
-                                />
-                            <div className="p-4 text-left">
-                             <h1>Size :  0.8mm</h1>
-                             <h1>Packing : 40pack X 400g</h1>
-                             <h1 >Direction for Use : Soak in Boiling Water 8-10 Minute</h1>
-                             <h1 >Conservation directions : Store in Dry Place</h1>
-                             <h1 >Shelf life (in months) :  36 months</h1> 
-                             <h1 >Brand of Produce : CamRice</h1>
-                            </div>
-                        </div>
-
-
-                        <div className="bg-white shadow-lg h-auto w-72 text-center pt-4">
-                                <AgilityImage
-                                    src="http://rice.com.kh/products/63/151x124_LF_Rice___U.jpg"
-                                    className="rounded-t-lg inline-block"
-                                    width="227"
-                                    height="227"
-                                />
-                            <div className="p-4 text-left">
-                             <h1>Size :  0.8mm</h1>
-                             <h1>Packing : 40pack X 400g</h1>
-                             <h1 >Direction for Use : Soak in Boiling Water 8-10 Minute</h1>
-                             <h1 >Conservation directions : Store in Dry Place</h1>
-                             <h1 >Shelf life (in months) :  36 months</h1> 
-                             <h1 >Brand of Produce : CamRice</h1>
-                            </div>
-                        </div>
-
-                        <div className="bg-white shadow-lg h-auto w-72 text-center pt-4">
-                                <AgilityImage
-                                    src="http://rice.com.kh/products/67/151x124_Zhao_Qing.jpg"
-                                    className="rounded-t-lg inline-block"
-                                    width="227"
-                                    height="227"
-                                />
-                            <div className="p-4 text-left">
-                             <h1>Size :  0.8mm</h1>
-                             <h1>Packing : 40pack X 400g</h1>
-                             <h1 >Direction for Use : Soak in Boiling Water 8-10 Minute</h1>
-                             <h1 >Conservation directions : Store in Dry Place</h1>
-                             <h1 >Shelf life (in months) :  36 months</h1> 
-                             <h1 >Brand of Produce : CamRice</h1>
-                            </div>
-                        </div>
-
-                        <div className="bg-white shadow-lg h-auto w-72 text-center pt-4">
-                                <AgilityImage
-                                    src="http://rice.com.kh/products/62/151x124_Jiang_Xi_.jpg"
-                                    className="rounded-t-lg inline-block"
-                                    width="227"
-                                    height="227"
-                                />
-                            <div className="p-4 text-left">
-                             <h1>Size :  0.8mm</h1>
-                             <h1>Packing : 40pack X 400g</h1>
-                             <h1 >Direction for Use : Soak in Boiling Water 8-10 Minute</h1>
-                             <h1 >Conservation directions : Store in Dry Place</h1>
-                             <h1 >Shelf life (in months) :  36 months</h1> 
-                             <h1 >Brand of Produce : CamRice</h1>
-                            </div>
-                        </div>
-
-
-                        <div className="bg-white shadow-lg h-auto w-72 text-center pt-4">
-                                <AgilityImage
-                                    src="http://rice.com.kh/products/55/202x123_Gui_lin.jpg"
-                                    className="rounded-t-lg inline-block"
-                                    width="227"
-                                    height="227"
-                                />
-                            <div className="p-4 text-left">
-                             <h1>Size :  0.8mm</h1>
-                             <h1>Packing : 40pack X 400g</h1>
-                             <h1 >Direction for Use : Soak in Boiling Water 8-10 Minute</h1>
-                             <h1 >Conservation directions : Store in Dry Place</h1>
-                             <h1 >Shelf life (in months) :  36 months</h1> 
-                             <h1 >Brand of Produce : CamRice</h1>
-                            </div>
-                        </div> */}
-
-
-
-                    </div>
-                </div>
-          
-
-
-
-
-
-    );
+  const products = await getProducts();
+  return {
+    props: { products },
+    revalidate: 3600 * 1 * 24,
+  };
 }
+
+const Products = ({ products }) => {
+
+  const getDescription = (description) => {
+    const desc = truncate(description, {
+      length: 100,
+      decodeEntities: true,
+      stripTags: true,
+      reserveLastWord: true,
+    });
+
+    return desc;
+  };
+
+  console.log("==> ", products);
+  const array3 = [...products, ...products, ...products];
+  
+  return (
+    <div class="min-h-screen flex items-center bg-bproduct pt-10">
+    <div class="flex-1 max-w-6xl mx-auto p-10">
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-8">
+        {array3.map((product, index) => (
+            <Link href= {`${product.link}`} key={index}>
+                 <a>
+                <div className="bg-white shadow h-auto text-center pt-4">
+             <div className="relative h-56">
+            <AgilityImage
+              src={product.image}
+              className="rounded-t-lg inline-block"
+              layout="fill"
+            />
+            </div>
+            <div className="bg-gray-100 p-2 text-left">
+                        <div className="uppercase text-primary-500 text-xs font-bold tracking-widest leading-loose">
+                          {product.name}
+                        </div>
+                        <div className="border-b-2 border-primary-500 w-8"></div>
+                        <div className="mt-4 text-gray-600 italic font-boldtext-xs">
+                                ${product.price || ''}
+                                </div>
+                      </div>
+          </div>
+          </a>
+            </Link>
+        ))}
+        </div>
+    </div>
+  </div>
+  );
+};
 
 export default Products;
