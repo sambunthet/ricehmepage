@@ -25,7 +25,7 @@ const Products = ({ products }) => {
     return desc;
   };
 
-  console.log("==> ", products);
+  console.log("===> ", products);
   const array3 = [...products, ...products, ...products];
   
   return (
