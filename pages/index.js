@@ -20,6 +20,8 @@ export async function getStaticProps() {
     props: {
       about,
       brand,
+      products,
+      recipes
     },
   }
 }
@@ -32,14 +34,12 @@ function HomePage({about, brand, products, recipes}) {
   };
 
   return ( <div className="font-body">
-    {/* <Navbar /> */}
     <Hero />
     <About {...about}/>
     <Feature features={products}/>
     <Recipes recipes={recipes}/>
     <OurBrand {...brand}/>
     <ImageNoodle />
-    {/* <Footer /> */}
     </div>
   );
 }
