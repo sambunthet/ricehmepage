@@ -1,4 +1,5 @@
 import { AgilityImage } from "@agility/nextjs";
+import { getLocaletext } from "$/utils/localization";
 
 const FooterRice = () => {
   return (
@@ -16,9 +17,7 @@ const FooterRice = () => {
             />
           </div>
           <div className="pt-5">
-            Indochina Rice Mill has gained the confidence and trust of our
-            valuable worldwide customers in our top quality rice and rice
-            vermicelli products.
+            {getLocaletext("company")}
           </div>
           <div className="grid grid-cols-3 pt-5">
             <div>

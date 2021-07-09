@@ -1,4 +1,5 @@
 import React from "react";
+import { getLocaletext } from "$/utils/localization";
 import { Container, Row, Col } from "reactstrap";
 
 const Header = () => {
@@ -16,12 +17,7 @@ const Header = () => {
     >
         <div className="absolute w-5/6 lg:w-2/5 mt-40 ml-10 mb-10 sm:ml-24 rounded-xl bg-white shadow-lgtext-gray-800 flex items-center justify-center px-5 py-5 font-body ">
         <p className="text-gray-600 text-center px-5 xl:p-10 text-sm sm:text-xl md:text-2xl ">
-          " Indochina Rice Mill has gained the confidence and trust of our
-          valuable worldwide customers in our top quality rice and rice
-          vermicelli products. Armed with a serious management team and our
-          stringent quality control, we are here to consistently provide the
-          most competitive price and the best quality rice and rice vermicelli
-          to our customers, and are ready to be your trustworthy partner. "
+          " {getLocaletext('company')} "
         </p>
       </div>
     </div>
@@ -41,13 +37,7 @@ const Header = () => {
               <span className="text-primary font-weight-medium">Cambodia</span>
             </h1>
             <p className="text-white mb-4 pb-2">
-              Indochina Rice Mill has gained the confidence and trust of our
-              valuable worldwide customers in our top quality rice and rice
-              vermicelli products. Armed with a serious management team and our
-              stringent quality control, we are here to consistently provide the
-              most competitive price and the best quality rice and rice
-              vermicelli to our customers, and are ready to be your trustworthy
-              partner.
+              " {getLocaletext('company')} "
             </p>
             <a href="#" className="btn btn-warning">
               Find Out How <span className="ml-2 right-icon">&#8594;</span>

@@ -22,7 +22,7 @@ const Recipes = (props) => {
 
     return (
         <div className="sm:m-20 md:m-32">
-            <div className="text-black text-4xl  text-center pb-5 font-bold">Recipes</div>
+            <Link href="/recipe"><a><div className="text-black text-4xl  text-center pb-5 font-bold">Recipes</div></a></Link>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap:1 justify-items-center text-center">
                 {recipes.map((recipe, index)=>
                     <Link href={`${recipe.link}`} key={index}>
