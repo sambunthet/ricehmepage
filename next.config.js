@@ -1,4 +1,4 @@
-global.locale = 'en'; // en | km | zh
+global.locale = 'zh'; // en | km | zh
 global.apiEndPoint = process.env.PUBLIC_REST_API_ENDPOINT;
 
 module.exports = {
