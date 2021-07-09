@@ -31,23 +31,23 @@ const Distributors = ({distributors}) => {
                     {distributors.map((distributor, index) => (
                         <Link href= {distributor.website} key={index}>
                         <a target="_blank">
-                            <div className="flex-col group mb-8 md:mb-0">
-                            <div className="relative h-64">
-                                <AgilityImage
-                                src={getFullUrl(distributor.logo.url)}
-                                className="rounded-t-lg"
-                                layout="fill"
-                                />
-                            </div>
-                            <div className="bg-gray-100 p-8 border-2 border-t-0 rounded-b-lg">
-                                <div className="uppercase text-primary-500 text-xs font-bold tracking-widest leading-loose">
-                                {distributor.title}
+                            <div className="flex-col group mb-8 md:mb-0 p-8 border-2  rounded-lg">
+                                <div className="relative h-48">
+                                    <AgilityImage
+                                    src={getFullUrl(distributor.logo.url)}
+                                    className="rounded-t-lg"
+                                    layout="fill"
+                                    />
                                 </div>
-                                <div className="border-b-2 border-primary-500 w-8"></div>
-                                <div className="mt-4  text-gray-600 italic font-semibold text-xs">
-                                {(distributor.description)}
+                                <div className="bg-gray-10 p-4">
+                                    <div className="uppercase text-primary-500 text-xs font-bold tracking-widest leading-loose">
+                                    {distributor.title} 
+                                    </div>
+                                    <div className="border-b-2 border-primary-500 w-8"></div>
+                                    <div className="mt-4  text-gray-600 italic font-semibold text-xs">
+                                    {(distributor.description)}
+                                    </div>
                                 </div>
-                            </div>
                             </div>
                         </a>
                         </Link>

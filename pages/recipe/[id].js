@@ -33,20 +33,17 @@ const RecipeDetail = ({recipe}) => {
     return (
         <div className="relative px-8 pt-4 pb-4">
           <div className="max-w-screen-xl mx-auto">
-            <div className="h-64 md:h-96 relative">
-              <AgilityImage
-                src={recipe.image}
-                className="rounded-lg"
-                layout="fill"
-              />
+            <div className="max-w-2xl mx-auto">
+              <img src={recipe.image} className="rounded-lg img-fluid" />
             </div>
+            
             <div className="max-w-2xl mx-auto mt-4">
               
               <div className="border-b-2 border-primary-500 w-8"></div>
               <div className="mt-4 uppercase text-gray-600 italic font-semibold text-xs">
                 {dateStr}
               </div>
-              <h1 className="font-display text-4xl font-bold my-6 text-secondary-500">
+              <h1 className="font-display text-2xl font-bold my-6 text-secondary-500">
                 {recipe.title}
               </h1>
               <ReactMarkdown remarkPlugins={[gfm]} children={recipe.description} />
