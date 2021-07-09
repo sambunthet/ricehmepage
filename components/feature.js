@@ -1,8 +1,10 @@
 import React from "react";
 import Link from "next/link";
 import { AgilityImage } from "@agility/nextjs";
+import { getLocaletext } from "$/utils/localization";
 
 const FeaturesBox = (props) => {
+  const readMore = getLocaletext("readMore");
   return (
     <>
       {props.features.map((feature, key) =>
@@ -39,7 +41,7 @@ const FeaturesBox = (props) => {
                   <Link href={feature.link}>
                     <a>
                       <p className="text-center sm:text-left text-yellow-500">
-                        Read More <span className="">&#8594;</span>
+                        {readMore} <span className="">&#8594;</span>
                       </p>
                     </a>
                   </Link>
@@ -77,7 +79,7 @@ const FeaturesBox = (props) => {
                   <Link href={feature.link}>
                     <a>
                       <p className="text-center sm:text-left text-yellow-500">
-                        Read More <span className="">&#8594;</span>
+                        {readMore} <span className="">&#8594;</span>
                       </p>
                     </a>
                   </Link>
@@ -108,7 +110,7 @@ const FeaturesBox = (props) => {
                   <Link href={feature.link}>
                     <a>
                       <p className="text-center sm:text-right text-yellow-500">
-                        Read More <span className="">&#8594;</span>
+                        {readMore} <span className="">&#8594;</span>
                       </p>
                     </a>
                   </Link>
@@ -157,7 +159,7 @@ const FeaturesBox = (props) => {
                   <Link href={`${feature.link}`}>
                     <a>
                       <p className="text-center sm:text-left text-yellow-500">
-                        Read More <span className="">&#8594;</span>
+                        {readMore} <span className="">&#8594;</span>
                       </p>
                     </a>
                   </Link>
@@ -187,13 +189,7 @@ const Feature = (props) => {
         <div className="justify-items-center text-center">
           <div className="grid grid-cols-6">
             <p className="text-center text-sm md:text-sm lg:text-2xl p-5 tracking-wide col-start-2 col-span-4">
-              Indochina Rice Mill has gained the confidence and trust of our
-              valuable worldwide customers in our top quality rice and rice
-              vermicelli products. Armed with a serious management team and our
-              stringent quality control, we are here to consistently provide the
-              most competitive price and the best quality rice and rice
-              vermicelli to our customers, and are ready to be your trustworthy
-              partner.
+              {getLocaletext("company")}
             </p>
           </div>
         </div>
