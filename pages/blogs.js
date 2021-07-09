@@ -61,7 +61,7 @@ const Blogs = ({posts}) => {
                         </div>
                         <div className="sm:w-1/2 lg:w-1/3 bg-gray-10 p-8 border-2 border-t-0 rounded-b-lg sm:rounded-bl-none sm:rounded-r-lg sm:border-t-2 sm:border-l-0 relative">
                             <div className="font-display uppercase text-primary-500 text-xs font-bold tracking-widest leading-loose after:content">
-                                {featuredPost.category.name}
+                                {featuredPost.category ? featuredPost.category.name : ''}
                             </div>
                             <div className="border-b-2 border-primary-500 w-8"></div>
                             <div className="mt-4 uppercase text-gray-600 italic font-semibold text-xs">
@@ -93,7 +93,7 @@ const Blogs = ({posts}) => {
                             </div>
                             <div className="bg-gray-10 p-8  border-t-0 ">
                                 <div className="uppercase text-primary-500 text-xs font-bold tracking-widest leading-loose">
-                                {post.category.name}
+                                {post.category ? post.category.name : ''}
                                 </div>
                                 <div className="border-b-2 border-primary-500 w-8"></div>
                                 <div className="mt-4 uppercase text-gray-600 italic font-semibold text-xs">
