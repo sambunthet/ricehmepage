@@ -1,7 +1,8 @@
 import {appendUrl} from "$/utils/image";
+import { getCurrentLocale } from "../localization";
 
 const url = process.env.PUBLIC_REST_API_ENDPOINT;
-const locale = process.env.LOCALE;
+const locale = getCurrentLocale();
 
 const defaultConfig = {
     offset: 0,

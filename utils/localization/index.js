@@ -52,5 +52,5 @@ const traslation = {
         "about": `អំពី​ពួក​យើង`
     }
 }
-
-export const getLocaletext = (target, locale = process.env.LOCALE) => traslation[locale] ? traslation[locale][target] || '' : traslation['en'][target];
+export const getCurrentLocale = () => process.env.LOCALE;
+export const getLocaletext = (target, locale = getCurrentLocale()) => traslation[locale] ? traslation[locale][target] || '' : traslation['en'][target];
