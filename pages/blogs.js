@@ -36,7 +36,7 @@ const Blogs = ({posts}) => {
 
     return (
 
-        <div className="px-8">
+        <div className="mt-32 px-8">
 
             <div className="relative px-4  mb-12 pt-4">
                 <div className="max-w-screen-xl mx-auto">

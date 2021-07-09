@@ -1,10 +1,11 @@
 import Navbar from "$/components/navbar";
 import Nav from "$/components/nav";
-
 import FooterRice from '$/components/footer-rice';
 
 
 const Layout= ({children}) => {
+    
+
     return ( 
         <div>
             {/* <Navbar></Navbar> */}

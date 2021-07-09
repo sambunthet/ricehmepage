@@ -38,7 +38,7 @@ const BlogDetail = ({post}) => {
     const dateStr = new Date(post.published_at).toLocaleDateString();
     
     return (
-        <div className="relative px-8 pt-4 pb-4">
+        <div className="mt-32 relative px-8 pt-4 pb-4">
           <div className="max-w-screen-xl mx-auto">
             <div className="h-64 md:h-96 relative">
               <AgilityImage

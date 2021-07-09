@@ -1,10 +1,39 @@
-.navbar {
-  height: 80px;
+.nav{
+  top: 0;
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+  padding: 20px;
+  /* height: 30px; */
+
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
-  margin-left: 25px;
+
+  transition-timing-function: ease-in;
+  transition: all 0.5s;
+}
+
+.nav__white {
+  background-color: #C71C2D;
+  opacity: 0.9;
+}
+
+.nav__menu {
+  justify-content: center;
+  width: 60px;
+  height: 30px;
   cursor: pointer;
+  align-items: center;
+}
+
+.nav__lang {
+  font-weight: bold;
+  cursor: pointer;
+  right: 40px;
+  color: white;
+  margin-right: 18px;
+  background-color: #C71C2D;
 }
 
 .menu-bars {
@@ -42,7 +71,7 @@
   position: fixed;
   z-index: 1;
   margin-left: 0px;
-  background-color: #C71C2D;
+  background-color: #252424;
   color: white;
 }
 
@@ -53,7 +82,7 @@
   align-items: left;
   padding: 8px 0px 8px 16px;
   list-style: none;
-  height: 60px;
+  height: 50px;
   cursor: pointer;
 }
 

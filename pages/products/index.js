@@ -73,7 +73,7 @@ const Products = ({ products }) => {
     if(!products || products.length == 0)
        return <div></div>;
     return (
-        <div class="min-h-screen flex items-center bg-bproduct">
+        <div class=" mt-28 min-h-screen flex items-center bg-bproduct">
             <div class="flex-1 max-w-6xl mx-auto p-10">
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-8">
                     {array3.map((product) => (
