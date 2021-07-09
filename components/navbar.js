@@ -305,7 +305,7 @@ const Navbar = props => {
   },
 
   {
-    text: 'Distributors',
+    text: 'Where to Buy',
     icon: <InboxIcon />,
     link: '/distributors'
   },
