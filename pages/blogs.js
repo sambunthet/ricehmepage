@@ -20,6 +20,9 @@ const gfm = require('remark-gfm')
 
 
 const Blogs = ({posts}) => {
+    if (posts.length == 0) {
+        return <div></div>
+    }
      const featuredPost = posts[0];
      const postDate = (date) => new Date(date).toLocaleDateString();
 

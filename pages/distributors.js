@@ -14,6 +14,9 @@ export async function getStaticProps(context) {
 }
 
 const Distributors = ({distributors}) => {
+  if (distributors.length === 0) {
+    return <div></div>
+  }
     return (
         <div className="relative px-8 pt-4 pb-4">
           <div className="max-w-screen-xl mx-auto">
