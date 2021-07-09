@@ -60,7 +60,6 @@ const Products = ({ products }) => {
     const [product, setProduct] = React.useState(undefined);
 
     const handleClickOpen = (product) => {
-        console.log("===> ", product);
         setProduct(product);
         setOpen(true);
     };
@@ -77,7 +76,7 @@ const Products = ({ products }) => {
             <div class="flex-1 max-w-6xl mx-auto p-10">
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-8">
                     {array3.map((product) => (
-                        <a  onClick={() => handleClickOpen(product)}>
+                        <a onClick={() => handleClickOpen(product)}>
                             <div className="bg-white shadow h-auto text-center pt-4">
                                 <div className="relative h-56">
                                     <AgilityImage
