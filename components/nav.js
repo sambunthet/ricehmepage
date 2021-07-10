@@ -15,7 +15,7 @@ const language = [
 
 function Nav() {
   const [sidebar, setSidebar] = useState(false);
-  const [selected, setSelected] = useState(language[0]);
+  const [selected, setSelected] = useState(language[2]);
   const [show, hanldeShow] = useState(false);
   const showSidebar = () => setSidebar(!sidebar);
 
