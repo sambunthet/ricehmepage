@@ -27,7 +27,7 @@ const Recipes = (props) => {
                 {recipes.map((recipe, index)=>
                     <Link href={`${recipe.link}`} key={index}>
                         <a>
-                            <div className="border-2 rounded-lg w-auto sm:w-72 p-4 m-16">                                <div className="relative h-48">
+                            <div className="border-2 rounded-lg w-auto sm:w-72 p-4 m-5">                                <div className="relative h-48">
                                     <AgilityImage
                                         src={recipe.image}
                                         className="rounded-t-lg inline-block"
