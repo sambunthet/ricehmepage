@@ -6,6 +6,7 @@ import { SidebarData } from "./SidebarData";
 import { IconContext } from "react-icons";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
+import { useRouter } from 'next/router';
 
 const language = [
   { id: 1, name: "Khmer", unavailable: false },
@@ -13,11 +14,16 @@ const language = [
   { id: 3, name: " 中文 ", unavailable: false },
 ];
 
+Nav.getInitialProps = async (ctx) => {
+  console.log(router);
+}
+
 function Nav() {
   const [sidebar, setSidebar] = useState(false);
   const [selected, setSelected] = useState(language[2]);
   const [show, hanldeShow] = useState(false);
   const showSidebar = () => setSidebar(!sidebar);
+  const router = useRouter();
 
   const handleScrollPos = () => {
     hanldeShow(window.scrollY > 100);
@@ -34,10 +40,12 @@ function Nav() {
     };
   }, []);
 
+  // console.log(router);
+
   return (
     <>
-      <IconContext.Provider value={{ color: "#C71C2D" }}>
-        <div className={`nav ${show && "nav__white"}`}>
+      <IconContext.Provider value={{}}>
+        <div className={`nav ${(show || router.pathname !== '/') && "nav__white"}`}>
           <div className='flex'>
             <Link href='#' className='menu-bars'>
               <FaIcons.FaBars
