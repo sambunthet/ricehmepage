@@ -1,6 +1,6 @@
 const nextTranslate = require('next-translate')
 
-global.locale = 'zh'; // en | km | zh
+global.locale = 'en'; // en | km | zh
 global.apiEndPoint = process.env.PUBLIC_REST_API_ENDPOINT;
 global.websiteTitle = process.env.WEBSITE_TITLE;
 global.websiteDescription = process.env.WEBSITE_DESCRIPTION;
