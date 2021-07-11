@@ -74,8 +74,8 @@ const Products = ({ products }) => {
     };
 
     return (
-        <div class="min-h-screen flex items-center mt-32">
-            <div class="flex-1 max-w-6xl mx-auto pb-10">
+        <div className="min-h-screen flex items-center mt-32">
+            <div className="flex-1 max-w-6xl mx-auto pb-10">
 
                 <div className="max-w-screen-xl mx-auto mb-12">
                 <h2 className="font-display text-secondary-500 text-4xl mt-1 text-center font-black group-hover:text-primary-500 transition duration-300">
