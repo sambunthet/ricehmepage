@@ -131,7 +131,6 @@ const ProductDetail = ({ product }) => {
                                 </div>
                             </div>
                         </li>
-<<<<<<< HEAD
                         <li className="">
                             <div>
                                 <h2 className="text-4xl font-bold text-black tracking-normal">{product.name}</h2>
@@ -188,10 +187,6 @@ const ProductDetail = ({ product }) => {
                                         </div> : <div></div>
                                 }
 
-=======
-                        <li className="bg-white rounded-lg shadow-xl">
-                            <div className="h-24">
->>>>>>> d2f79a809993caa686508bf119bdff0c59a65158
 
                             </div>
                         </li>
