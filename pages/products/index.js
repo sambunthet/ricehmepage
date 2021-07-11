@@ -1,6 +1,7 @@
 import { AgilityImage } from "@agility/nextjs";
 import { getProducts } from "$/utils/api/product";
 import React from 'react';
+import Link from "next/link";
 import { withStyles } from '@material-ui/core/styles';
 import Dialog from '@material-ui/core/Dialog';
 import MuiDialogTitle from '@material-ui/core/DialogTitle';
@@ -83,8 +84,9 @@ const Products = ({ products }) => {
 
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-8">
                     {array3.map((product) => (
-                        <a onClick={() => handleClickOpen(product)}>
-                            <div className="bg-white shadow h-auto text-center">
+                           <Link href={`/products/${product.id}`}>
+                        <a>
+                            <div className="bg-white h-auto text-center">
                                 <div className="py-4">
                                     <div className="relative h-56">
                                         <AgilityImage
@@ -105,6 +107,7 @@ const Products = ({ products }) => {
                                 </div>
                             </div>
                         </a>
+                        </Link>
 
                     ))}
                 </div>
