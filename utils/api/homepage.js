@@ -13,7 +13,7 @@ function parseData(home) {
   return home;
 }
 
-export async function getHome() {
+export async function getHome(locale) {
   const data = await fetch(`${url}${defaultConfig.homePath}?_locale=${locale}`);
   const object = await data.json();
   const home = parseData(object);

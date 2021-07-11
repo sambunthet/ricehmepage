@@ -1,10 +1,11 @@
 import { AgilityImage } from "@agility/nextjs";
-import { getLocaletext } from "$/utils/localization";
+import useTranslation from 'next-translate/useTranslation';
 
 const FooterRice = () => {
+  const { t } = useTranslation('common');
   return (
-    <div class="grid grid-cols-6 py-10" style={{backgroundColor: "#252424"}}>
-      <div class="col-start-2 col-span-4 sm:col-start-1 sm:col-end-7  md:col-start-1 md:col-end-7  xl:col-start-2 xl:col-span-4">
+    <div className="grid grid-cols-6 py-10" style={{backgroundColor: "#252424"}}>
+      <div className="col-start-2 col-span-4 sm:col-start-1 sm:col-end-7  md:col-start-1 md:col-end-7  xl:col-start-2 xl:col-span-4">
       <div className="grid gap-10 sm:gap-0 grid-cols-1 sm:grid-cols-4  text-white justify-items-center">
       <div>
         <div className="text-center">
@@ -17,7 +18,7 @@ const FooterRice = () => {
             />
           </div>
           <div className="pt-5">
-            {getLocaletext("company")}
+            {t("company")}
           </div>
           <div className="grid grid-cols-3 pt-5">
             <div>

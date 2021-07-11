@@ -8,10 +8,13 @@ import truncate from "truncate-html";
 import ReactMarkdown from 'react-markdown'
 const gfm = require('remark-gfm')
 
- export async function getStaticProps(context) {
+ export async function getStaticProps({locale}) {
 
-   const posts = await  getPosts();
-
+   const posts = await  getPosts({locale});
+   if(posts.length === 0)
+    return {
+        notFound: true,
+      }
    return {
      props: {posts},
      revalidate: 3600 * 1 * 24, // a day in second
@@ -20,9 +23,6 @@ const gfm = require('remark-gfm')
 
 
 const Blogs = ({posts}) => {
-    if (posts.length == 0) {
-        return <div></div>
-    }
      const featuredPost = posts[0];
      const postDate = (date) => new Date(date).toLocaleDateString();
 

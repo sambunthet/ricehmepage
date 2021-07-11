@@ -5,8 +5,13 @@ import {getDistributors} from"$/utils/api/distributor";
 import {getFullUrl} from"$/utils/image/getFullUrl"
 
 
-export async function getStaticProps(context) {
-  const distributors = await  getDistributors();
+export async function getStaticProps({locale}) {
+  const distributors = await  getDistributors({locale});
+  if (distributors.length === 0) {
+    return {
+      notFound: true,
+    }
+  }
   return {
     props: {distributors},
     revalidate: 3600 * 1 * 24, // a day in second
@@ -14,9 +19,6 @@ export async function getStaticProps(context) {
 }
 
 const Distributors = ({distributors}) => {
-  if (distributors.length === 0) {
-    return <div></div>
-  }
     return (
         <div className="relative px-8 pt-24 pb-4">
           <div className="max-w-screen-xl mx-auto">

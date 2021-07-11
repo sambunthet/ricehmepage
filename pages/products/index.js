@@ -12,8 +12,12 @@ import Typography from '@material-ui/core/Typography';
 
 
 
-export async function getStaticProps(context) {
-    const products = await getProducts();
+export async function getStaticProps({locale}) {
+    const products = await getProducts({locale});
+    if(!products || products.length === 0)
+        return {
+            notFound: true,
+        }
     return {
         props: { products },
         revalidate: 3600 * 1 * 24,
@@ -69,12 +73,9 @@ const Products = ({ products }) => {
         setOpen(false);
     };
 
-
-    if (!products || products.length == 0)
-        return <div></div>;
     return (
-        <div class="min-h-screen flex items-center mt-32">
-            <div class="flex-1 max-w-6xl mx-auto pb-10">
+        <div className="min-h-screen flex items-center mt-32">
+            <div className="flex-1 max-w-6xl mx-auto pb-10">
 
                 <div className="max-w-screen-xl mx-auto mb-12">
                 <h2 className="font-display text-secondary-500 text-4xl mt-1 text-center font-black group-hover:text-primary-500 transition duration-300">

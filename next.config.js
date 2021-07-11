@@ -1,10 +1,12 @@
-global.locale = 'en'; // en | km | zh
+const nextTranslate = require('next-translate')
+
+global.locale = 'km'; // en | km | zh
 global.apiEndPoint = process.env.PUBLIC_REST_API_ENDPOINT;
 global.websiteTitle = process.env.WEBSITE_TITLE;
 global.websiteDescription = process.env.WEBSITE_DESCRIPTION;
 global.websiteKeywords = process.env.WEBSITE_KEYWORDS;
 
-module.exports = {
+module.exports = nextTranslate({
   reactStrictMode: true,
   webpack5: true,
   images: {
@@ -20,4 +22,4 @@ module.exports = {
   experimental: {
     scrollRestoration: true,
   },
-};
+});

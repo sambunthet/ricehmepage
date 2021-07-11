@@ -15,7 +15,9 @@ export const getStaticPaths = async (context) => {
 
 export async function getStaticProps(context) {
   const id = context.params.id;
-  const recipe = await  getRecipe(id);
+  const recipe = await  getRecipe(id, {locale: context.locale});
+  if(!recipe)
+    return {notFound: true};
   return {
     props: {recipe},
     revalidate: 3600 * 1 * 24, // a day in second
