@@ -11,7 +11,6 @@ export const getStaticPaths = async (context) => {
   
 export async function getStaticProps(context) {
     const id = context.params.id;
-    console.log("===> id ", id);
     const product = await  getProduct(id);
     if(!product)
         return {notFound: true}
@@ -23,9 +22,6 @@ export async function getStaticProps(context) {
 
 
 const ProductDetail = ({product}) => {
-
-    console.log("===> ", product);
-
     if(!product)
       return <div></div>;
 
