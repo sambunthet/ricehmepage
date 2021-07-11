@@ -64,33 +64,7 @@ const ProductDetail = ({ product }) => {
                                             </div>
                                         )) : <div></div>
                                 }
-
-                                {
-
-                                    product.description ?
-                                        <div className="ml-5">
-                                            <ui className="list-disc">
-                                                <li>
-                                                    <h4 className="font-bold">{"Direction for Use "} :   <span className="font-normal">{"Soak in Boiling Water 8-10 Minute"}</span></h4>
-                                                </li>
-                                            </ui>
-                                        </div> : <div></div>
-
-                                }
-
-                                {
-
-                                    product.description ?
-                                        <div className="ml-5">
-                                            <ui className="list-disc">
-                                                <li>
-                                                    <h4 className="font-bold">{"Conservation directions "} :   <span className="font-normal">{"Store in Dry Place"}</span></h4>
-                                                </li>
-                                            </ui>
-                                        </div> : <div></div>
-                                }
-
-
+                                
                             </div>
                         </li>
                         <li className="">
@@ -101,7 +75,6 @@ const ProductDetail = ({ product }) => {
                     {/* des */}
 
                     <div className="mt-5">
-
                         {
                             product.description
                                 ? <div>
@@ -111,86 +84,6 @@ const ProductDetail = ({ product }) => {
                                 : <div></div>
                         }
                     </div>
-
-                </div>
-            </div>
-        </div>
-    );
-
-    return (
-        <div>
-            <div className="min-h-screen flex mt-32 bg-white">
-                <div className="flex-1 max-w-5xl mx-auto p-10">
-                    <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                        <li className="">
-                            <div className="py-4 text-center">
-                                <div className="relative inline-block p-4">
-                                    <img
-                                        src={product.image}
-                                    />
-                                </div>
-                            </div>
-                        </li>
-                        <li className="">
-                            <div>
-                                <h2 className="text-4xl font-bold text-black tracking-normal">{product.name}</h2>
-
-                                <div className=" text-2xl font-bold text-black leading-4 py-4">$ {product.price}</div>
-                                {
-
-                                    product.variation ?
-                                        product.variation.map((v) => (
-                                            <div className="ml-5">
-                                                <ui className="list-disc">
-                                                    <li>
-                                                        <h4 className="font-bold">{v.name} :   <span className="font-normal">{v.value}</span></h4>
-                                                    </li>
-                                                </ui>
-                                            </div>
-                                        )) : <div></div>
-
-                                }
-
-                                {
-
-                                    product.description ?
-                                        <div className="ml-5">
-                                            <ui className="list-disc">
-                                                <li>
-                                                    <h4 className="font-bold">{"Direction for Use "} :   <span className="font-normal">{"Soak in Boiling Water 8-10 Minute"}</span></h4>
-                                                </li>
-                                            </ui>
-                                        </div> : <div></div>
-                                }
-
-                                {
-
-                                    product.description ?
-                                        <div className="ml-5">
-                                            <ui className="list-disc">
-                                                <li>
-                                                    <h4 className="font-bold">{"Conservation directions "} :   <span className="font-normal">{"Store in Dry Place"}</span></h4>
-                                                </li>
-                                            </ui>
-                                        </div> : <div></div>
-                                }
-
-                                {
-
-                                    product.description ?
-                                        <div className="ml-5">
-                                            <ui className="list-disc">
-                                                <li>
-                                                    <h4 className="font-bold">{"Description"} :   <span className="font-normal">{product.description}</span></h4>
-                                                </li>
-                                            </ui>
-                                        </div> : <div></div>
-                                }
-
-
-                            </div>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>
