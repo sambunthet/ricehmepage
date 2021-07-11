@@ -256,7 +256,7 @@ const Feature = (props) => {
           </h1>
         </div>
         <div className="justify-items-center text-center">
-          <div className="grid grid-cols-6">
+          <div className="grid grid-cols-1">
             <p className="text-center text-sm md:text-sm lg:text-2xl p-5 tracking-wide col-start-2 col-span-4">
               {getLocaletext("company")}
             </p>

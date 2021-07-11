@@ -22,12 +22,12 @@ const Recipes = (props) => {
     return(
         <div>
             <div>
-            <div className="text-black text-4xl text-center pb-5 font-bold">Recipes</div>
+            <Link href="/recipe"><a><div className="text-black text-4xl text-center pb-5 font-bold">Recipes</div></a></Link>
                 <div className="flex flex-col sm:flex-row place-content-center text-center scrollbar-hide overflow-x-scroll hide-scroll-bar overscroll-x-contain gallery" data-slider-target="scrollContainer">
                 {recipes.map((recipe, index)=>
                     <Link href={`${recipe.link}`} key={index}>
                         <a>
-                            <div className="border-2 rounded-lg w-auto sm:w-72 p-4 m-16">                                <div className="relative h-48">
+                            <div className="border-2 rounded-lg w-auto sm:w-72 p-4 m-5">                                <div className="relative h-48">
                                     <AgilityImage
                                         src={recipe.image}
                                         className="rounded-t-lg inline-block"

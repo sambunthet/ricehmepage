@@ -25,6 +25,7 @@
   height: 30px;
   cursor: pointer;
   align-items: center;
+  color: white;
 }
 
 .nav__lang {

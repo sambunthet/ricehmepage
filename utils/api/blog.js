@@ -1,5 +1,5 @@
 import {appendUrl} from "$/utils/image";
-import { getCurrentLocale } from "../localization";
+import { getCurrentLocale } from "$/utils/localization";
 
 const url = process.env.PUBLIC_REST_API_ENDPOINT;
 const locale = getCurrentLocale();
