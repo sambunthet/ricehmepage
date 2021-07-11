@@ -22,7 +22,6 @@ export async function getStaticProps(context) {
 }
 
 
-<<<<<<< HEAD
 const ProductDetail = ({ product }) => {
 
     console.log("===> ", product);
@@ -129,26 +128,6 @@ const ProductDetail = ({ product }) => {
                                     <img
                                         src={product.image}
                                     />
-=======
-const ProductDetail = ({product}) => {
-    if(!product)
-      return <div></div>;
-
-    return (
-        <div>
-            <div className="min-h-screen flex mt-32">
-                <div className="flex-1 max-w-4xl mx-auto p-10">
-                    <ul className="grid grid-cols-2 gap-4">
-                        <li className="bg-white rounded-lg shadow-xl">
-                        <div className="py-4">
-                                    <div className="relative h-56">
-                                        <AgilityImage
-                                            src={product.image}
-                                            className="rounded-t-lg inline-block"
-                                            layout="fill"
-                                        />
-                                    </div>
->>>>>>> d2f79a809993caa686508bf119bdff0c59a65158
                                 </div>
                             </div>
                         </li>
