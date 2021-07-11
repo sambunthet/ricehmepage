@@ -42,31 +42,6 @@ const Header = () => {
       </div>
     </>
   );
-
-  return (
-    <div>
-      <div className="relative">
-        <img src="https://wallpaperaccess.com/full/1463517.jpg" />
-        <div className="absolute text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-xl  w-3/4 md:w-2/5 mx-auto -mt-1  rounded-lg rounded-t-non">
-          <div className="pr-lg-5">
-            <p className="text-uppercase text-warning font-weight-medium f-56 mb-4">
-              Welcome to
-            </p>
-            <h1 className="mb-4 font-weight-medium line-height-1_4">
-              INDOCHINA RICE MILL LIMITED{" "}
-              <span className="text-primary font-weight-medium">Cambodia</span>
-            </h1>
-            <p className="text-white mb-4 pb-2">
-              " {getLocaletext('company')} "
-            </p>
-            <a href="#" className="btn btn-warning">
-              Find Out How <span className="ml-2 right-icon">&#8594;</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
 };
 
 export default Header;
