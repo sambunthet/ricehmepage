@@ -254,7 +254,7 @@ const Feature = (props) =>
       <div className="mt-6 md:m-12 ">
         <div>
           <h1 className="text-4xl text-center font-bold">
-            Rice <span className="text-yellow-500">Vermicelli</span>
+            Rice<span className="text-yellow-500">Vermicelli</span>
           </h1>
         </div>
         <div className="justify-items-center text-center">
