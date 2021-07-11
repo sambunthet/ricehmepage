@@ -60,7 +60,6 @@ const DialogContent = withStyles((theme) => ({
 
 const Products = ({ products }) => {
 
-    const array3 = [...products, ...products, ...products];
     const [open, setOpen] = React.useState(false);
     const [product, setProduct] = React.useState(undefined);
 
@@ -74,7 +73,7 @@ const Products = ({ products }) => {
     };
 
     return (
-        <div className="min-h-screen flex items-center mt-32">
+        <div className="min-h-screen flex mt-32">
             <div className="flex-1 max-w-6xl mx-auto pb-10">
 
                 <div className="max-w-screen-xl mx-auto mb-12">
@@ -84,7 +83,7 @@ const Products = ({ products }) => {
                 </div>
 
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-8">
-                    {array3.map((product) => (
+                    {products.map((product) => (
                            <Link href={`/products/${product.id}`}>
                         <a>
                             <div className="bg-white h-auto text-center">
