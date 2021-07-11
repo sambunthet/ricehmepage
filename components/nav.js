@@ -46,7 +46,7 @@ function Nav() {
       <IconContext.Provider value={{}}>
         <div className={`nav ${(show || pathname !== '/') && "nav__white"}`}>
           <div className='flex'>
-            <Link href='#' className='menu-bars'>
+            <a className='menu-bars'>
               <FaIcons.FaBars
                 onClick={showSidebar}
                 className='nav__menu mt-1 sm:mt-4 md:mt-4'
@@ -60,7 +60,7 @@ function Nav() {
               >
                 <MenuIcon />
               </IconButton> */}
-            </Link>
+            </a>
             <Link href='/'>
               <a className='inline-flex items-center'>
                 <img
