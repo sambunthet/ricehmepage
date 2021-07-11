@@ -118,8 +118,8 @@ function Nav() {
                             <Link
                               href={asPath}
                               locale={lang.locale}>
-                              <span
-                                  onClick={()=>cookieCutter.set("NEXT_LOCALE", lang.locale)}
+                                <span
+                                  onClick={()=>console.log('============ lang', lang.locale) && cookieCutter.set("NEXT_LOCALE", lang.locale)}
                                   className={`${
                                     selected ? "font-medium" : "font-normal"
                                   } block truncate`}
