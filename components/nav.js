@@ -7,23 +7,22 @@ import { IconContext } from "react-icons";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
 import { useRouter } from 'next/router';
+import useTranslation from 'next-translate/useTranslation';
+import cookieCutter from 'cookie-cutter'
 
 const language = [
-  { id: 1, name: "Khmer", unavailable: false },
-  { id: 2, name: "English", unavailable: false },
-  { id: 3, name: " 中文 ", unavailable: false },
+  { id: 1, name: "Khmer", locale: "km", unavailable: false },
+  { id: 2, name: "English", locale: "en", unavailable: false },
+  { id: 3, name: " 中文 ", locale: "zh", unavailable: false },
 ];
 
-Nav.getInitialProps = async (ctx) => {
-  console.log(router);
-}
-
 function Nav() {
+  const {pathname, locale, asPath} = useRouter();
+  const {t} = useTranslation("common");
   const [sidebar, setSidebar] = useState(false);
-  const [selected, setSelected] = useState(language[2]);
+  const [selected, setSelected] = useState(language.find(e=>e.locale===locale));
   const [show, hanldeShow] = useState(false);
   const showSidebar = () => setSidebar(!sidebar);
-  const router = useRouter();
 
   const handleScrollPos = () => {
     hanldeShow(window.scrollY > 100);
@@ -45,7 +44,7 @@ function Nav() {
   return (
     <>
       <IconContext.Provider value={{}}>
-        <div className={`nav ${(show || router.pathname !== '/') && "nav__white"}`}>
+        <div className={`nav ${(show || pathname !== '/') && "nav__white"}`}>
           <div className='flex'>
             <Link href='#' className='menu-bars'>
               <FaIcons.FaBars
@@ -105,24 +104,30 @@ function Nav() {
                   leaveTo='opacity-0'
                 >
                   <Listbox.Options className='absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5'>
-                    {language.map((person, personIdx) => (
+                    {language.map((lang, langIdx) => (
                       <Listbox.Option
-                        key={personIdx}
+                        key={langIdx}
                         className={({ active }) =>
                           `${active ? "text-gray-900" : "text-gray-900"}
                             cursor-default select-none relative py-2 pl-10 pr-4`
                         }
-                        value={person}
+                        value={lang}
                       >
                         {({ selected, active }) => (
                           <>
-                            <span
-                              className={`${
-                                selected ? "font-medium" : "font-normal"
-                              } block truncate`}
-                            >
-                              {person.name}
-                            </span>
+                            <Link
+                              href={asPath}
+                              locale={lang.locale}>
+                              <span
+                                  onClick={()=>cookieCutter.set("NEXT_LOCALE", lang.locale)}
+                                  className={`${
+                                    selected ? "font-medium" : "font-normal"
+                                  } block truncate`}
+                                >
+                                {lang.name}
+                              </span>
+                            </Link>
+ 
                             {selected ? (
                               <span
                                 className={`${
@@ -159,7 +164,7 @@ function Nav() {
                 <li key={index} className={item.cName}>
                   <Link href={item.path}>
                     {/* {item.icon} */}
-                    <span>{item.title}</span>
+                    <span>{t(item.title)}</span>
                   </Link>
                 </li>
               );
@@ -199,7 +204,7 @@ function Nav() {
                 >
                   <Link href={item.path}>
                     {/* {item.icon} */}
-                    <span className='ml-4'>{item.title}</span>
+                    <span className='ml-4'>{t(item.title)}</span>
                   </Link>
                 </li>
               );

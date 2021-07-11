@@ -1,5 +1,3 @@
-// our-domain/
-import Footer from '$/components/Footer';
 import ImageNoodle from '$/components/image-noodle';
 import Recipes from '$/components/recipes';
 import About from '$/components/aboutUs';
@@ -14,8 +12,8 @@ import { getBrand } from '$/utils/api/our-brand';
 
 
 
-export async function getStaticProps() {
-  const [about, brand, products, recipes] = await Promise.all([getAboutUs(), getBrand(), getFeaturedProducts(), getFeaturedRecipe()]);
+export async function getStaticProps({ locale }) {
+  const [about, brand, products, recipes] = await Promise.all([getAboutUs(locale), getBrand(locale), getFeaturedProducts(locale), getFeaturedRecipe(locale)]);
   return {
     props: {
       about,

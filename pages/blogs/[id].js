@@ -15,13 +15,11 @@ export const getStaticPaths = async (context) => {
   }
 }
 
-export async function getStaticProps(context) {
-
-  const id = context.params.id;
-  const post = await  getPost(id);
-
-
-
+export async function getStaticProps({params, locale}) {
+  const id = params.id;
+  const post = await  getPost(id, locale);
+  if(!post)
+    return {notFound: true};
   return {
     props: {post},
     revalidate: 3600 * 1 * 24, // a day in second

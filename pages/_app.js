@@ -5,10 +5,20 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import  Layout from '$/components/layout';
 import React, { useState, useEffect } from "react";
+import { getHome } from '$/utils/api/homepage';
 
-function MyApp({ Component, pageProps }) {
+export async function getServerSideProps({locale}) {
+  const [home] = await Promise.all([getHome(locale)]);
+  return {
+    props: {
+      home
+    },
+  }
+}
+
+function MyApp({ Component, pageProps}) {
   const [show, hanldeShow] = useState(false);
-  
+  const home = pageProps.home;
   useEffect(() => {
     AOS.init({
       delay: 200,
@@ -28,7 +38,7 @@ function MyApp({ Component, pageProps }) {
 
 
 return (
-  <Layout>
+  <Layout home={home}>
     <Component {...pageProps} />
   </Layout>
   )

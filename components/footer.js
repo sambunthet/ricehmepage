@@ -1,5 +1,5 @@
 import { AgilityImage } from "@agility/nextjs";
-import { getLocaletext } from "$/utils/localization";
+import useTranslation from 'next-translate/useTranslation';
 
 const Footer = () => {
   return (
@@ -15,7 +15,7 @@ const Footer = () => {
             />
           </div>
           <div>
-            {getLocaletext("company")}
+            {t("company")}
           </div>
           <div className="grid grid-cols-3 pt-5">
             <div>

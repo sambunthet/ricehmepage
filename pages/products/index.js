@@ -11,8 +11,12 @@ import Typography from '@material-ui/core/Typography';
 
 
 
-export async function getStaticProps(context) {
-    const products = await getProducts();
+export async function getStaticProps({locale}) {
+    const products = await getProducts({locale});
+    if(!products || products.length === 0)
+        return {
+            notFound: true,
+        }
     return {
         props: { products },
         revalidate: 3600 * 1 * 24,
@@ -68,9 +72,6 @@ const Products = ({ products }) => {
         setOpen(false);
     };
 
-
-    if (!products || products.length == 0)
-        return <div></div>;
     return (
         <div class="pt-20 flex items-center">
             <div class="flex-1 max-w-6xl mx-auto p-10">

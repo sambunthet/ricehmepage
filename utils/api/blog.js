@@ -22,13 +22,15 @@ export async function getBlogCategories() {
     return await blogCategories.json();
 }
 
-export async function getPosts({blogCategoryId, limit=defaultConfig.limit, offset=defaultConfig.offset}={}) {
+export async function getPosts({blogCategoryId, limit=defaultConfig.limit, offset=defaultConfig.offset, locale}={}) {
   const posts = await fetch(`${url}${defaultConfig.postPath}?_locale=${locale}&_sort=published_at:DESC&_limit=${limit}&_start=${offset}${blogCategoryId ? `&category.id=${blogCategoryId}`: ''}`);
   return await posts.json();
 }
 
-export async function getPost(postId) {
+export async function getPost(postId, locale) {
     const data = await fetch(`${url}${defaultConfig.postPath}/${postId}?_locale=${locale}`);
+    if(data.status !== 200)
+      return undefined;
     const parsedData = await data.json();
     const post = parseData(parsedData);
     return post;

@@ -7,7 +7,7 @@ const defaultConfig = {
     aboutPath: '/about-us'
 }
 
-export async function getAboutUs() {
+export async function getAboutUs(locale) {
   const about = await fetch(`${url}${defaultConfig.aboutPath}?_locale=${locale}`);
   return await about.json();
 }

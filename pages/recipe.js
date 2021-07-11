@@ -7,8 +7,8 @@ import Recipes from '$/components/recipes';
 
 
 
-export async function getStaticProps(context) {
-  const recipes = await  getRecipes();
+export async function getStaticProps({locale}) {
+  const recipes = await  getRecipes({locale});
 
   return {
     props: {recipes},

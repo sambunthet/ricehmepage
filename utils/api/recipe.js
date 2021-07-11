@@ -24,19 +24,21 @@ function parseRecipe(recipe)  {
   return recipe;
 }
 
-export async function getRecipes({limit=defaultConfig.limit, offset=defaultConfig.offset}={}) {
+export async function getRecipes({limit=defaultConfig.limit, offset=defaultConfig.offset, locale}={}) {
   const data = await fetch(`${url}${defaultConfig.recipePath}?_locale=${locale}&_sort=published_at:DESC&_limit=${limit}&_start=${offset}`);
   const parsedData = await data.json();
   const recipes = parsedData.map(e=>parseRecipe(e));
   return recipes;
 }
 
-export async function getFeaturedRecipe() {
-  return await getRecipes({limit:3});
+export async function getFeaturedRecipe(locale) {
+  return await getRecipes({limit:3, locale: locale});
 }
 
-export async function getRecipe(recipeId) {
+export async function getRecipe(recipeId, {locale}={}) {
   const data = await fetch(`${url}${defaultConfig.recipePath}/${recipeId}?_locale=${locale}`);
+  if(data.status !== 200)
+    return undefined;
   const parsedData = await data.json();
   const recipe = parseRecipe(parsedData);
   return recipe;

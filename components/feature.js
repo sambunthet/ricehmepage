@@ -1,8 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import { AgilityImage } from "@agility/nextjs";
-import { getLocaletext } from "$/utils/localization";
-
 import { withStyles } from '@material-ui/core/styles';
 import Dialog from '@material-ui/core/Dialog';
 import MuiDialogTitle from '@material-ui/core/DialogTitle';
@@ -10,6 +8,7 @@ import MuiDialogContent from '@material-ui/core/DialogContent';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
+import useTranslation from 'next-translate/useTranslation';
 
 const styles = (theme) => ({
   root: {
@@ -45,6 +44,7 @@ const DialogContent = withStyles((theme) => ({
 }))(MuiDialogContent);
 
 const FeaturesBox = (props) => {
+  const { t } = useTranslation('common');
   const [open, setOpen] = React.useState(false);
   const [product, setProduct] = React.useState(undefined);
 
@@ -56,7 +56,7 @@ const FeaturesBox = (props) => {
   const handleClose = () => {
       setOpen(false);
   };
-  const readMore = getLocaletext("readMore");
+  const readMore = t("readMore");
   return (
     <>
       {props.features.map((feature, key) =>
@@ -243,9 +243,11 @@ const FeaturesBox = (props) => {
   );
 };
 
-const Feature = (props) => {
+const Feature = (props) => 
+{
   if (!props.features || props.features.length === 0)
         return <div></div>;
+  const { t } = useTranslation('common');
   const features = props.features;
   return (
     <div className="bg-white pt-10 font-body">
@@ -258,7 +260,7 @@ const Feature = (props) => {
         <div className="justify-items-center text-center">
           <div className="grid grid-cols-1">
             <p className="text-center text-sm md:text-sm lg:text-2xl p-5 tracking-wide col-start-2 col-span-4">
-              {getLocaletext("company")}
+              {t("company")}
             </p>
           </div>
         </div>
