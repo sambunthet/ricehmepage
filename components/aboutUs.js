@@ -23,7 +23,7 @@ const About = (about) => {
         <h1 className="text-4xl pb-5 text-center font-bold pt-5 sm:pt-0">
           About<span className="text-yellow-500">Us</span>
         </h1>
-          <p className="text-center text-sm md:text-sm lg:text-2xl md:text-left p-5  tracking-wide font-semibold">
+          <p className="font-sspro text-center text-sm md:text-sm lg:text-2xl md:text-left p-5 tracking-wide">
             {description}
           </p>
         </div>

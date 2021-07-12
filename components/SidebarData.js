@@ -13,13 +13,13 @@ export const SidebarData = [
   {
     title: 'products',
     path: '/products',
-    icon: <FaIcons.FaCartPlus />,
+    icon: <FaIcons.FaProductHunt />,
     cName: 'nav-text'
   },
   {
     title: 'blog',
     path: '/blogs',
-    icon: <IoIcons.IoIosPaper />,
+    icon: <FaIcons.FaBlogger />,
     cName: 'nav-text'
   },
   {
@@ -31,13 +31,13 @@ export const SidebarData = [
   {
     title: 'distributor',
     path: '/distributors',
-    icon: <IoIcons.IoMdPeople />,
+    icon: <FaIcons.FaCartPlus />,
     cName: 'nav-text'
   },
   {
     title: 'about',
     path: '/',
-    icon: <IoIcons.IoMdHelpCircle />,
+    icon: <IoIcons.IoMdPeople />,
     cName: 'nav-text'
   }
 ];

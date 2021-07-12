@@ -13,7 +13,8 @@ module.exports = {
     },
     fontFamily: {
       'display': ['Oswald'],
-      'body': ['SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif']
+      'body': ['SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif'],
+      'sspro': ['Source Sans Pro, sans-serif'],
     },
 
   },

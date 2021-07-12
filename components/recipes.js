@@ -22,17 +22,16 @@ const Recipes = (props) => {
     return(
         <div>
             <div>
-            <Link href="/recipe"><a><div className="text-black text-4xl text-center pb-5 font-bold">Recipes</div></a></Link>
+            <div className="text-black text-4xl text-center pb-5 font-bold">Recipes</div>
                 <div className="flex flex-col sm:flex-row place-content-center text-center scrollbar-hide overflow-x-scroll hide-scroll-bar overscroll-x-contain gallery" data-slider-target="scrollContainer">
                 {recipes.map((recipe, index)=>
                     <Link href={`${recipe.link}`} key={index}>
                         <a>
-                            <div className="border-2 rounded-lg w-auto sm:w-72 p-4 m-5">                                <div className="relative h-48">
+                            <div className=" rounded-lg w-auto sm:w-72 p-4 m-5">                                <div className="relative h-48">
                                     <AgilityImage
                                         src={recipe.image}
-                                        className="rounded-t-lg inline-block"
-                                        width="200"
-                                        height="200"
+                                        className="rounded-lg inline-block"
+                                        layout="fill"
                                     />
                                 </div>
                                 <div className="bg-gray-10 py-8">
@@ -40,7 +39,11 @@ const Recipes = (props) => {
                                 {getDescription(recipe.title, 50)}
                                 </div>
                                 <div className="mt-4  text-gray-600 italic font-semibold text-xs">
+                                <div class="max-w-full">
+                                <p class="text-base font-medium tracking-wide text-gray-600 mt-1">
                                 {getDescription(recipe.description, 100)}
+                                </p>
+                              </div>
                                 </div>
                             </div>
                             </div>
