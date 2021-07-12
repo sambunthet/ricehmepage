@@ -3,7 +3,6 @@ import React from "react";
 import Link from "next/link";
 import { AgilityImage } from "@agility/nextjs";
 import {getPosts} from"$/utils/api/blog";
-import {getFullUrl} from"$/utils/image/getFullUrl"
 import truncate from "truncate-html";
 import ReactMarkdown from 'react-markdown'
 const gfm = require('remark-gfm')
@@ -53,7 +52,7 @@ const Blogs = ({posts}) => {
                         <div className="sm:w-1/2 lg:w-2/3 sm:rounded-t-none sm:rounded-l-lg relative">
                             <div className="h-64 sm:h-96 relative">
                                 <AgilityImage
-                                src={getFullUrl(featuredPost.gallery[0].url)}
+                                src={featuredPost.gallery[0].url}
                                 className=" rounded-t-lg sm:rounded-l-lg sm:rounded-t-none"
                                 layout="fill"
                                 />
@@ -86,7 +85,7 @@ const Blogs = ({posts}) => {
                             <div className="flex-col group mb-8 md:mb-0 border-2 rounded-lg">
                             <div className="relative h-64">
                                 <AgilityImage
-                                src={getFullUrl(post.gallery[0].url)}
+                                src={post.gallery[0].url}
                                 className="rounded-t-lg"
                                 layout="fill"
                                 />

@@ -1,5 +1,4 @@
 import { getCurrentLocale } from "$/utils/localization";
-import { appendUrl } from "$/utils/image";
 
 const url = process.env.PUBLIC_REST_API_ENDPOINT;
 const locale = getCurrentLocale();
@@ -9,7 +8,7 @@ const defaultConfig = {
 }
 
 function parseData(home) {
-  home = JSON.parse(appendUrl(JSON.stringify(home)));
+  home = JSON.parse(JSON.stringify(home));
   return home;
 }
 

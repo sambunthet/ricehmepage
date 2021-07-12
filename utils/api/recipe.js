@@ -1,4 +1,3 @@
-import {getImageLink, appendUrl} from "$/utils/image";
 import { getCurrentLocale } from "$/utils/localization";
 
 const url = process.env.PUBLIC_REST_API_ENDPOINT;
@@ -19,8 +18,7 @@ function getRecipeUrl(id) {
 function parseRecipe(recipe)  {
   const {id, image, description} = recipe;
   recipe.link = getRecipeUrl(id);
-  recipe.image = appendUrl(getImageLink(image));
-  recipe.description = appendUrl(description);
+  recipe.image = image.url;
   return recipe;
 }
 

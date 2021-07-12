@@ -3,7 +3,6 @@ import React from "react";
 import { renderHTML } from "@agility/nextjs";
 import { AgilityImage } from "@agility/nextjs";
 import {getPost} from "$/utils/api/blog";
-import {getFullUrl} from "$/utils/image/getFullUrl";
 import ReactMarkdown from "react-markdown"
 const gfm = require('remark-gfm')
 
@@ -40,7 +39,7 @@ const BlogDetail = ({post}) => {
           <div className="max-w-screen-xl mx-auto">
             <div className="h-64 md:h-96 relative">
               <AgilityImage
-                src={getFullUrl(post.gallery[0].url)}
+                src={post.gallery[0].url}
                 className="object-center rounded-lg"
                 layout="fill"
               />

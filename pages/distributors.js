@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { AgilityImage } from "@agility/nextjs";
 import {getDistributors} from"$/utils/api/distributor";
-import {getFullUrl} from"$/utils/image/getFullUrl"
 
 
 export async function getStaticProps({locale}) {
@@ -39,7 +38,7 @@ const Distributors = ({distributors}) => {
                             <div className="flex-col group mb-8 md:mb-0 p-8 border-2  rounded-lg">
                                 <div className="relative h-48">
                                     <AgilityImage
-                                    src={getFullUrl(distributor.logo.url)}
+                                    src={distributor.logo.url}
                                     className="rounded-t-lg"
                                     layout="fill"
                                     />

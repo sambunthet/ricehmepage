@@ -1,11 +1,10 @@
 import { AgilityImage } from "@agility/nextjs";
-import { getFullUrl } from "$/utils/image";
 import Image from "next/image";
 
 
 const About = (about) => {
   const description = about.description || "";
-  var image =  getFullUrl(about.image.url);
+  var image =  about.image.url;
  
   if(!description)
       return <div></div>;
