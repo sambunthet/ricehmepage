@@ -12,5 +12,5 @@ export function getImageLink(image) {
 }
 
 export function appendUrl(text) {
-    return text.replace(/\/uploads\//g,`${url}/uploads/`);
+    return text.replace(/"\/uploads\//g,`"${url}/uploads/`);
 }
