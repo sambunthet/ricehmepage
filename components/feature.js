@@ -89,11 +89,13 @@ const FeaturesBox = (props) => {
                   <p className="text-center sm:text-left mb-3 f-15">
                     {feature.description}
                   </p>
-                  <a onClick={() => handleClickOpen(feature)}>
+                  <Link href={`/products/${feature.id}`}>
+                    <a>
                       <p className="text-center sm:text-left text-yellow-500">
                         {readMore} <span className="">&#8594;</span>
                       </p>
-                  </a>
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -125,11 +127,13 @@ const FeaturesBox = (props) => {
                   <p className="text-center sm:text-left mb-3 f-15">
                     {feature.description}
                   </p>
-                  <a onClick={() => handleClickOpen(feature)}>
+                  <Link href={`/products/${feature.id}`}>
+                    <a>
                       <p className="text-center sm:text-left text-yellow-500">
                         {readMore} <span className="">&#8594;</span>
                       </p>
-                  </a>
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -154,11 +158,13 @@ const FeaturesBox = (props) => {
                   <p className="text-center sm:text-right mb-3 f-15">
                     {feature.description}
                   </p>
-                  <a onClick={() => handleClickOpen(feature)}>
+                  <Link href={`/products/${feature.id}`}>
+                    <a>
                       <p className="text-center sm:text-right text-yellow-500">
                         {readMore} <span className="">&#8594;</span>
                       </p>
-                  </a>
+                    </a>
+                  </Link>
   
                 </div>
                 <div data-aos="fade-left" className="pr-32 mr-32">
@@ -201,11 +207,13 @@ const FeaturesBox = (props) => {
                   <p className="text-center sm:text-left mb-3 f-15">
                     {feature.description}
                   </p>
-                  <a onClick={() => handleClickOpen(feature)}>
+                  <Link href={`/products/${feature.id}`}>
+                    <a>
                       <p className="text-center sm:text-left text-yellow-500">
                         {readMore} <span className="">&#8594;</span>
                       </p>
-                  </a>
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>

@@ -4,6 +4,7 @@ import { AgilityImage } from "@agility/nextjs";
 import {getRecipes} from"$/utils/api/recipe";
 import truncate from "truncate-html";
 import Recipes from '$/components/recipes';
+import useTranslation from 'next-translate/useTranslation';
 const _ = require("lodash");
 
 
@@ -20,7 +21,7 @@ export async function getStaticProps({locale}) {
 
 
 const Recipe = ({recipes}) => {
-
+  const { t } = useTranslation('common');
   if (!recipes || recipes.length === 0)
         return <div></div>;
 
@@ -41,7 +42,7 @@ const Recipe = ({recipes}) => {
   const chunk =  recipes.length > 2 ? _.chunk(recipes, 2) : _.chunk(recipes, 1);
   const list0 = chunk[0];
   const list1 = chunk[1] || [];
-
+  const readMore = t("readMore");
     return (
     <div className="mt-32 p-0 md:px-60">
 
@@ -73,8 +74,10 @@ const Recipe = ({recipes}) => {
                                 </p>
                               </div>
 
-                              <a className="text-base mt-4 font-medium tracking-wide underline text-gray-800">
-                              Continue Reading
+                              <a className="text-base mt-4 font-medium tracking-wide text-gray-800">
+                                <p className="text-center sm:text-left text-yellow-500">
+                                  {readMore} <span className="">&#8594;</span>
+                                </p>
                               </a>
                             
                           </div>
@@ -110,8 +113,10 @@ const Recipe = ({recipes}) => {
                                 </p>
                               </div>
 
-                              <a className="text-base mt-4 font-medium tracking-wide underline text-gray-800">
-                              Continue Reading
+                              <a className="text-base mt-4 font-medium tracking-wide text-gray-800">
+                                <p className="text-center sm:text-left text-yellow-500">
+                                  {readMore} <span className="">&#8594;</span>
+                                </p>
                               </a>
                             
                           </div>

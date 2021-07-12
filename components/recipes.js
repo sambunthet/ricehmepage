@@ -22,7 +22,7 @@ const Recipes = (props) => {
     return(
         <div>
             <div>
-            <div className="text-black text-4xl text-center pb-5 font-bold">Recipes</div>
+            <div className="text-black text-4xl text-center pb-5 font-bold"><Link href={"/recipe"}><a>Recipes</a></Link></div>
                 <div className="flex flex-col sm:flex-row place-content-center text-center scrollbar-hide overflow-x-scroll hide-scroll-bar overscroll-x-contain gallery" data-slider-target="scrollContainer">
                 {recipes.map((recipe, index)=>
                     <Link href={`${recipe.link}`} key={index}>
