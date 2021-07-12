@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto:wght@100;300&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Nunito" !important;
+  /* font-family: "Nunito" !important; */
   background-color: white !important;
 }
 
