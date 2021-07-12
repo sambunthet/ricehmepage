@@ -11,19 +11,19 @@ import useTranslation from 'next-translate/useTranslation';
 import cookieCutter from 'cookie-cutter'
 
 const language = [
-  { id: 1, name: "Khmer", locale: "km", unavailable: false },
-  { id: 2, name: "English", locale: "en", unavailable: false },
-  { id: 3, name: " 中文 ", locale: "zh", unavailable: false },
+  { id: 1, name: "Khmer", locale: "km"},
+  { id: 2, name: "English", locale: "en"},
+  { id: 3, name: " 中文 ", locale: "zh"},
 ];
 
 function Nav() {
-  const {pathname, locale, asPath} = useRouter();
+  const {pathname, locale, asPath, query} = useRouter();
   const {t} = useTranslation("common");
   const [sidebar, setSidebar] = useState(false);
   const [selected, setSelected] = useState(language.find(e=>e.locale===locale));
   const [show, hanldeShow] = useState(false);
   const showSidebar = () => setSidebar(!sidebar);
-
+  const changeLocalePath = Object.keys(query).length > 0 ? pathname.split("/[")[0] : asPath;
   const handleScrollPos = () => {
     hanldeShow(window.scrollY > 100);
   };
@@ -116,7 +116,7 @@ function Nav() {
                         {({ selected, active }) => (
                           <>
                             <Link
-                              href={asPath}
+                              href={locale === lang.locale ? asPath : changeLocalePath}
                               locale={lang.locale}>
                                 <span
                                   onClick={()=>console.log('============ lang', lang.locale) && cookieCutter.set("NEXT_LOCALE", lang.locale)}
