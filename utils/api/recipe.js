@@ -19,7 +19,7 @@ function getRecipeUrl(id) {
 function parseRecipe(recipe)  {
   const {id, image, description} = recipe;
   recipe.link = getRecipeUrl(id);
-  recipe.image = getImageLink(image);
+  recipe.image = appendUrl(getImageLink(image));
   recipe.description = appendUrl(description);
   return recipe;
 }

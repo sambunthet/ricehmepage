@@ -1,4 +1,4 @@
-import {getImageLink} from "$/utils/image";
+import {getImageLink, appendUrl} from "$/utils/image";
 import { getCurrentLocale } from "$/utils/localization";
 
 const url = process.env.PUBLIC_REST_API_ENDPOINT;
@@ -23,6 +23,7 @@ function parseProduct(product)  {
     product.link = getProductUrl(id);
     product.image = getImageLink(gallery[0]);
     product.gallery = gallery.map(e=>getImageLink(e));
+    product = JSON.parse(appendUrl(JSON.stringify(product)));
     return product;
 }
 

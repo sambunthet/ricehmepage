@@ -7,7 +7,7 @@ export const getFullUrl = (path) => {
 export function getImageLink(image) {
     if(!image)
         return "";
-    const imageUrl = getFullUrl(image.url);
+    const imageUrl = image.url;
     return imageUrl;
 }
 
