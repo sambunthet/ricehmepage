@@ -36,7 +36,7 @@ const ProductDetail = ({ product }) => {
 
           {/* detail */}
 
-          <ul className="grid grid-cols-1 gap-14 sm:grid-cols-2">
+          <ul className="grid grid-cols-1 gap-0 sm:gap-14 sm:grid-cols-2 sm:px-20">
             <li className="">
               <div>
                 <h2 className="text-4xl font-bold text-black tracking-normal">
@@ -53,12 +53,7 @@ const ProductDetail = ({ product }) => {
                   <div className="ml-5">
                     <ui className="list-disc">
                       <li>
-                        <h4 className="font-bold max-w-xs">
-                          <div className="flex flex-row text-left">
-                          <div className="flex-1"> {v.name} : {" "}</div>
-                          <div className="flex-1 "><span className="font-normal">{v.value}</span></div>
-                          </div>
-                        </h4>
+                      <h4 className="font-bold">{v.name} :   <span className="font-normal">{v.value}</span></h4>  
                       </li>
                     </ui>
                   </div>
@@ -71,7 +66,7 @@ const ProductDetail = ({ product }) => {
 
           {/* des */}
 
-          <div className="mt-5">
+          <div className="mt-5 sm:px-20">
             {product.description ? (
               <div>
                 <div className="py-4">
