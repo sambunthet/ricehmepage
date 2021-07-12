@@ -33,7 +33,7 @@ const Header = () => {
         }}
       >
         <div className="absolute w-5/6 lg:w-2/5 mt-40 ml-10 mb-10 sm:ml-24 rounded-xl bg-white shadow-lgtext-gray-800 flex items-center justify-center px-5 py-5 font-body ">
-          <p className="text-gray-600 text-center px-5 xl:p-10 text-sm sm:text-xl md:text-2xl ">
+          <p className="font-sspro text-gray-600 text-center px-5 xl:p-10 text-sm sm:text-xl md:text-2xl">
           &quot; {t("company")} &quot;
           </p>
         </div>
