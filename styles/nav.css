@@ -1,6 +1,6 @@
 .nav {
   top: 0;
-  z-index: 1;
+  z-index: 60;
   position: fixed;
   width: 100%;
   padding: 20px;
@@ -52,7 +52,7 @@
   top: 0;
   left: -100%;
   transition: 350ms;
-  z-index: 1;
+  z-index: 60;
 }
 
 .navbar-hrefggle {
@@ -70,7 +70,7 @@
   transition: 350ms;
   display: block;
   position: fixed;
-  z-index: 1;
+  z-index: 60;
   margin-left: 0px;
   background-color: #c71c2d;
   opacity: 0.9;
