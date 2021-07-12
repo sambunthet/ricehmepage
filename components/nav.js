@@ -23,7 +23,8 @@ function Nav() {
   const [selected, setSelected] = useState(language.find(e=>e.locale===locale));
   const [show, hanldeShow] = useState(false);
   const showSidebar = () => setSidebar(!sidebar);
-  const changeLocalePath = Object.keys(query).length > 0 ? pathname.split("/[")[0] : asPath;
+  const isDynamicPath = Object.keys(query).length > 0;
+  const changeLocalePath = isDynamicPath ? pathname.split("/[")[0] : asPath;
   const handleScrollPos = () => {
     hanldeShow(window.scrollY > 100);
   };
@@ -116,6 +117,7 @@ function Nav() {
                         {({ selected, active }) => (
                           <>
                             <Link
+                              scroll={isDynamicPath && locale !== lang.locale}
                               href={locale === lang.locale ? asPath : changeLocalePath}
                               locale={lang.locale}>
                                 <span
