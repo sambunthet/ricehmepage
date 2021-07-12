@@ -1,4 +1,4 @@
-.nav{
+.nav {
   top: 0;
   z-index: 1;
   position: fixed;
@@ -15,7 +15,7 @@
 }
 
 .nav__white {
-  background-color: #C71C2D;
+  background-color: #c71c2d;
   opacity: 0.9;
 }
 
@@ -34,11 +34,11 @@
   right: 40px;
   color: white;
   margin-right: 18px;
-  background-color: #C71C2D;
+  background-color: #c71c2d;
 }
 
 .menu-bars {
-  margin-left: 2rem;
+  margin-left: 0rem;
   font-size: 2rem;
   background: none;
 }
@@ -72,7 +72,8 @@
   position: fixed;
   z-index: 1;
   margin-left: 0px;
-  background-color: #252424;
+  background-color: #c71c2d;
+  opacity: 0.9;
   color: white;
 }
 

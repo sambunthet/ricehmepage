@@ -155,16 +155,17 @@ function Nav() {
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
           <ul className='nav-menu-items' onClick={showSidebar}>
             <li className='navbar-hrefggle'>
-              <Link href='/' className='menu-bars'>
+              <span className='menu-bars'>
                 <AiIcons.AiOutlineClose width={30} height={50} />
-              </Link>
+              </span>
             </li>
             {SidebarData.map((item, index) => {
               return (
                 <li key={index} className={item.cName}>
                   <Link href={item.path}>
-                    {/* {item.icon} */}
-                    <span>{t(item.title)}</span>
+                    <span>{item.icon}
+                      <a>{" " + t(item.title)}</a>
+                    </span>
                   </Link>
                 </li>
               );
