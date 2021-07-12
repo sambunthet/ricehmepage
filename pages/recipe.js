@@ -67,8 +67,6 @@ const Recipe = ({recipes}) => {
                               <p class="text-xs	 mt-2">
                                 {date(recipe.published_at)}
                               </p>
-
-
                               <div class="max-w-full">
                                 <p class="text-base font-medium tracking-wide text-gray-600 mt-1">
                                 {getDescription(recipe.description, index % 2 === 0 ? 150 : 100)}
