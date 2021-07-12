@@ -1,4 +1,3 @@
-const url = process.env.PUBLIC_REST_API_ENDPOINT;
 const OurBrand = (brands) => {
     if (!brands)
         return <div></div>;
