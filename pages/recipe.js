@@ -46,34 +46,34 @@ const Recipe = ({recipes}) => {
     <div className="mt-32 p-0 md:px-60">
 
 <div className="text-black text-4xl text-center pb-5 font-bold">Recipes</div>
-    <div class= { list1.length > 0 ? "grid grid-cols-1 md:grid-cols-2 gap-2" : "grid grid-cols-1 md:grid-cols-1 gap-2"}>
+    <div className= { list1.length > 0 ? "grid grid-cols-1 md:grid-cols-2 gap-2" : "grid grid-cols-1 md:grid-cols-1 gap-2"}>
       <div>
           
 
           {list0.map((recipe, index)=>
                     <Link href={`${recipe.link}`} key={index}>
                         <a>
-                          <div class="p-2 bg-white">
+                          <div className="p-2 bg-white">
                           <img
-                                class="rounded-lg w-full"
+                                className="rounded-lg w-full"
                                 src={recipe.image}
                               />
 
 
-                              <h1 class="mt-4 font-bold  text-xl capitalize">
+                              <h1 className="mt-4 font-bold  text-xl capitalize">
                               {recipe.title}
                               </h1>
 
-                              <p class="text-xs	 mt-2">
+                              <p className="text-xs	 mt-2">
                                 {date(recipe.published_at)}
                               </p>
-                              <div class="max-w-full">
-                                <p class="text-base font-medium tracking-wide text-gray-600 mt-1">
+                              <div className="max-w-full">
+                                <p className="text-base font-medium tracking-wide text-gray-600 mt-1">
                                 {getDescription(recipe.description, index % 2 === 0 ? 150 : 100)}
                                 </p>
                               </div>
 
-                              <a class="text-base mt-4 font-medium tracking-wide underline text-gray-800">
+                              <a className="text-base mt-4 font-medium tracking-wide underline text-gray-800">
                               Continue Reading
                               </a>
                             
@@ -84,33 +84,33 @@ const Recipe = ({recipes}) => {
 
       </div>
       <div>
-      <div class="bg-white">
+      <div className="bg-white">
       {list1.map((recipe, index)=>
                     <Link href={`${recipe.link}`} key={index}>
                         <a>
-                          <div class="p-2 bg-white">
+                          <div className="p-2 bg-white">
                           <img
-                                class="rounded-lg w-full"
+                                className="rounded-lg w-full"
                                 src={recipe.image}
                               />
 
 
-                              <h1 class="mt-4 font-bold text-xl capitalize">
+                              <h1 className="mt-4 font-bold text-xl capitalize">
                               {recipe.title}
                               </h1>
 
-                              <p class="text-xs	 mt-2">
+                              <p className="text-xs	 mt-2">
                                 {date(recipe.published_at)}
                               </p>
 
 
-                              <div class="max-w-full">
-                                <p class="text-base font-medium tracking-wide text-gray-600 mt-1">
+                              <div className="max-w-full">
+                                <p className="text-base font-medium tracking-wide text-gray-600 mt-1">
                                 {getDescription(recipe.description, index % 2 === 0 ? 100 : 150)}
                                 </p>
                               </div>
 
-                              <a class="text-base mt-4 font-medium tracking-wide underline text-gray-800">
+                              <a className="text-base mt-4 font-medium tracking-wide underline text-gray-800">
                               Continue Reading
                               </a>
                             
