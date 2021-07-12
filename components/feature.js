@@ -61,7 +61,7 @@ const FeaturesBox = (props) => {
     <>
       {props.features.map((feature, key) =>
         key % 2 !== 0 ? (
-          <div>
+          <div key={key}>
             <div className="m-6 md:mt-1 sm:m-10 md:m-12 hidden md:block">
               <div className="grid grid-cols-1 sm:grid-cols-2  sm:gap:2 justify-items-center text-center">
                 <div data-aos="fade-right" className="pl-32 ml-32">
@@ -71,7 +71,6 @@ const FeaturesBox = (props) => {
                     className="h-48 w-48 sm:h-70 md:w-70 md:h-70 md:w-70 lg:h-80 lg:w-80 object-cover inline-block "
                     src={feature.image}
                     alt={feature.name}
-                    key={key}
                   />
                 </div>
                 <div className="mt-5 mt-sm-0 mb-4" data-aos="fade-left">
@@ -136,7 +135,7 @@ const FeaturesBox = (props) => {
             </div>
           </div>
         ) : (
-          <div>
+          <div key={key}>
             <div className="m-6 md:mt-1 sm:m-10 md:m-12 hidden md:block">
               <div className="grid grid-cols-1 sm:grid-cols-2  sm:gap:2 justify-items-center text-center">
                 <div className="mt-5 sm:mt-0 mb-4" data-aos="fade-right">
