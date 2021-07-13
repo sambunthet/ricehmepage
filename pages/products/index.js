@@ -3,7 +3,6 @@ import { AgilityImage } from "@agility/nextjs";
 import React from "react";
 import Link from "next/link";
 
-
 export async function getStaticProps({ locale }) {
   const products = await getProducts({ locale });
   if (!products || products.length === 0)
@@ -16,51 +15,52 @@ export async function getStaticProps({ locale }) {
   };
 }
 
-
 const Products = ({ products }) => {
-  products = [...products,...products,...products];
+  products = [...products,...products];
   return (
     <div>
-      <div className="min-h-screen flex mt-28 ">
+      <div className="min-h-screen flex max-w-6xl mx-auto mt-28 ">
+        
         {/* ui web */}
-        <div className="flex-1 max-w-6xl mx-auto p-10 hidden md:block">
+        <div className="flex-1 p-10 w-full hidden md:block ">
           {products.map((product, key) =>
             key % 2 === 0 ? (
-              <ul className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-4">
                 <Link href={`/products/${product.id}`}>
                   <a>
-                    <li className="">
+                    <div className="">
                       <div className="py-4 text-center">
-                    
                         <AgilityImage
-                    width={320}
-                    height={320}
-                    className="h-48 w-48 sm:h-70 md:w-70 md:h-70 md:w-70 lg:h-80 lg:w-80 object-cover inline-block "
-                    src={product.image}
-                    alt={product.name}
-                  />
-                      
+                          width={320}
+                          height={320}
+                          className="h-48 w-48 sm:h-70 md:w-70 md:h-70 md:w-70 lg:h-80 lg:w-80 object-cover inline-block "
+                          src={product.image}
+                          alt={product.name}
+                        />
                       </div>
-                    </li>
+                    </div>
                   </a>
                 </Link>
-                <li className="">
+                <div className="">
                   <div className="py-20">
                     <h2 className="text-4xl font-bold text-black tracking-normal">
                       {product.name}
                     </h2>
-                    <h3 className="text-2xl font-bold text-black leading-4 py-4">
+                    <h3 className="text-2xl font-bold text-black leading-6 py-4 ">
+                    ${product.salePrice > 0 ? product.salePrice : product.price}{" "}
+                    {product.salePrice > 0 ? <span className="text-gray-500 line-through text-xs ml-0 pb-4">
                       ${product.price}
-                    </h3>
+                    </span> : ""}
+                  </h3>
                     {product.variation ? (
                       product.variation.map((v) => (
-                        <div className="ml-5">
+                        <div className="">
                           <ui className="list-disc">
                             <li>
-                              <h4 className="font-bold">
+                              <dev className="font-bold text-sm tracking-tight leading-5">
                                 {v.name} :{" "}
                                 <span className="font-normal">{v.value}</span>
-                              </h4>
+                              </dev>
                             </li>
                           </ui>
                         </div>
@@ -69,27 +69,30 @@ const Products = ({ products }) => {
                       <div></div>
                     )}
                   </div>
-                </li>
-              </ul>
+                </div>
+              </div>
             ) : (
-              <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <li className="">
-                  <div className="py-20 pl-24">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <div className="">
+                  <div className="py-20 ml-32">
                     <h2 className="text-4xl font-bold text-black tracking-normal">
                       {product.name}
                     </h2>
-                    <h3 className="text-2xl font-bold text-black leading-4 py-4">
+                    <h3 className="text-2xl font-bold text-black leading-6 py-4 ">
+                    ${product.salePrice > 0 ? product.salePrice : product.price}{" "}
+                    {product.salePrice > 0 ? <span className="text-gray-500 line-through text-xs ml-0 pb-4">
                       ${product.price}
-                    </h3>
+                    </span> : ""}
+                  </h3>
                     {product.variation ? (
                       product.variation.map((v) => (
-                        <div className="ml-5">
+                        <div className="">
                           <ui className="list-disc">
                             <li>
-                              <h4 className="font-bold">
+                              <dev className="font-bold text-sm tracking-tight leading-5">
                                 {v.name} :{" "}
                                 <span className="font-normal">{v.value}</span>
-                              </h4>
+                              </dev>
                             </li>
                           </ui>
                         </div>
@@ -98,81 +101,81 @@ const Products = ({ products }) => {
                       <div></div>
                     )}
                   </div>
-                </li>
-                <li className="">
-                <Link href={`/products/${product.id}`}>
-                  <a>
-                  <div className="text-center">
-                    
-                  <AgilityImage
-                    width={320}
-                    height={320}
-                    className="h-48 w-48 sm:h-70 md:w-70 md:h-70 md:w-70 lg:h-80 lg:w-80 object-cover inline-block "
-                    src={product.image}
-                    alt={product.name}
-                  />
-                  </div>
-                  </a>
+                </div>
+                <div className="">
+                  <Link href={`/products/${product.id}`}>
+                    <a>
+                      <div className="text-center">
+                        <AgilityImage
+                          width={320}
+                          height={320}
+                          className="h-48 w-48 sm:h-70 md:w-70 md:h-70 md:w-70 lg:h-80 lg:w-80 object-cover inline-block "
+                          src={product.image}
+                          alt={product.name}
+                        />
+                      </div>
+                    </a>
                   </Link>
-                </li>
-              </ul>
+                </div>
+              </div>
             )
           )}
         </div>
 
         {/* ui mobile */}
-        <div className="flex-1 max-w-6xl mx-auto p-10 block md:hidden">
+        <div className="flex-1 p-10 block md:hidden">
           {products.map((product, key) => (
-            <ul className="grid grid-cols-1 gap-4">
-              <li className="">
-              <Link href={`/products/${product.id}`}>
+            <div className="grid grid-cols-1 gap-4">
+              <div className="">
+                <Link href={`/products/${product.id}`}>
                   <a>
-                <div className="py-4 text-center">
-                 
-                <AgilityImage
-                    width={320}
-                    height={320}
-                    className="h-48 w-48 sm:h-70 md:w-70 md:h-70 md:w-70 lg:h-80 lg:w-80 object-cover inline-block "
-                    src={product.image}
-                    alt={product.name}
-                  />
-                </div>
-                </a>
+                    <div className="py-4 text-center">
+                      <AgilityImage
+                        width={320}
+                        height={320}
+                        className="h-48 w-48 sm:h-70 md:w-70 md:h-70 md:w-70 lg:h-80 lg:w-80 object-cover inline-block "
+                        src={product.image}
+                        alt={product.name}
+                      />
+                    </div>
+                  </a>
                 </Link>
-              </li>
-              <li className="">
-                <div className="py-2">
+              </div>
+              <div className="">
+                <div className="py-1 text-center">
                   <h2 className="text-2xl font-bold text-black tracking-normal">
                     {product.name}
                   </h2>
-                  <h3 className="text-lg font-bold text-black leading-4 py-4">
-                    ${product.price}
+                  <h3 className="text-2xl font-bold text-black leading-6 py-4 ">
+                    ${product.salePrice > 0 ? product.salePrice : product.price}{" "}
+                    {product.salePrice > 0 ? <span className="text-gray-500 line-through text-xs ml-0 pb-4">
+                      ${product.price}
+                    </span> : ""}
                   </h3>
                   {product.variation ? (
-                    product.variation.map((v) => (
-                      <div className="ml-5">
-                        <ui className="list-disc">
-                          <li>
-                            <h4 className="font-bold text-sm">
-                              {v.name} :{" "}
-                              <span className="font-normal">{v.value}</span>
-                            </h4>
-                          </li>
-                        </ui>
-                      </div>
-                    ))
-                  ) : (
-                    <div></div>
+                      product.variation.map((v) => (
+                        <div className="">
+                         <ui className="list-outside  text-left">
+                            <li>
+                              <dev className="text-left font-bold text-sm tracking-tight leading-5">
+                                {v.name} :{" "}
+                                <span className="font-normal">{v.value}</span>
+                              </dev>
+                            </li>
+                          </ui> 
+                        </div>
+                      ))
+                    ) : (
+                      <div></div>
                   )}
                 </div>
-              </li>
-            </ul>
+              </div>
+            </div>
           ))}
         </div>
       </div>
     </div>
   );
-
 };
 
 export default Products;
