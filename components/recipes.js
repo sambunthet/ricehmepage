@@ -49,7 +49,7 @@ const Recipes = (props) => {
                       {getDescription(recipe.title, 50)}
                     </div>
                     <div className="mt-4  text-gray-600 italic font-semibold text-xs">
-                      <div classNme="max-w-full">
+                      <div className="max-w-full">
                         <p className="text-base font-medium font-sspro tracking-wide text-grey-600 mt-1">
                           {getDescription(recipe.description, 100)}
                         </p>
