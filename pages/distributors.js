@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { AgilityImage } from "@agility/nextjs";
 import {getDistributors} from"$/utils/api/distributor";
+import useTranslation from 'next-translate/useTranslation';
 
 
 export async function getStaticProps({locale}) {
@@ -18,24 +19,25 @@ export async function getStaticProps({locale}) {
 }
 
 const Distributors = ({distributors}) => {
+  const { t } = useTranslation('common');
     return (
         <div className="relative px-8 pt-24 pb-4">
           <div className="max-w-screen-xl mx-auto">
            
             <div className="max-w-2xl mx-auto mt-4">
               <div className="uppercase text-primary-500 text-md font-bold tracking-widest leading-loose">
-              Where to buy
+              {t("distributor")}
               </div>
               <div className="border-b-2 border-primary-500 w-8"></div>
               <h1 className="font-display text-2xl font-bold my-6 text-secondary-500">
-              Find your nearest place to buy!
+              {t("findtobuy")}
               </h1>
                 <div className="max-w-screen-xl mx-auto">
                     <div className="sm:grid sm:gap-8 sm:grid-cols-2 lg:grid-cols-2">
                     {distributors.map((distributor, index) => (
                         <Link href= {distributor.website} key={index}>
                         <a target="_blank">
-                            <div className="flex-col group mb-8 md:mb-0 p-8 border-2  rounded-lg">
+                            <div className="flex-col group mb-8 md:mb-0 p-8">
                                 <div className="relative h-48">
                                     <AgilityImage
                                     src={distributor.logo.url}

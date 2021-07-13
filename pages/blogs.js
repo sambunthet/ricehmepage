@@ -5,7 +5,9 @@ import { AgilityImage } from "@agility/nextjs";
 import {getPosts} from"$/utils/api/blog";
 import truncate from "truncate-html";
 import ReactMarkdown from 'react-markdown'
-const gfm = require('remark-gfm')
+const gfm = require('remark-gfm');
+import useTranslation from 'next-translate/useTranslation';
+
 
  export async function getStaticProps({locale}) {
 
@@ -32,20 +34,21 @@ const Blogs = ({posts}) => {
         reserveLastWord: true,
       });
 
-
+    const { t } = useTranslation('common');
+    
     return (
 
         <div className="mt-32 px-8">
 
             <div className="relative px-4  mb-12 pt-4">
                 <div className="max-w-screen-xl mx-auto">
-                <h2 className="font-display  text-secondary-500 text-4xl  mt-1 text-center font-black text-2xl group-hover:text-primary-500 transition duration-300">
-                            Blog Posts
+                <h2 className="font-display  text-secondary-500 text-4xl mt-1 text-center font-black group-hover:text-primary-500 transition duration-300">
+                            {t("blogposts")}
                 </h2>
                 </div>
             </div>
             
-            <div className="relative px-8 px-4 mb-8">
+            <div className="relative px-8 mb-8">
                 <Link href={`/blogs/${featuredPost.id}`}>
                     <a>
                     <div className="cursor-pointer flex flex-col sm:flex-row max-w-screen-xl mx-auto pt-8 group">
@@ -76,7 +79,7 @@ const Blogs = ({posts}) => {
                 </Link>
             </div>
             
-            <div className="relative px-4 px-8  mb-12">
+            <div className="relative px-4 mb-12">
                 <div className="max-w-screen-xl mx-auto">
                     <div className="sm:grid sm:gap-8 sm:grid-cols-2 lg:grid-cols-3">
                     {posts.map((post, index) => (

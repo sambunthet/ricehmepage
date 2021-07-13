@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <>
       <div className="relative h-455 md:h-screen flex items-start justify-left overflow-hidden z-0">
-        <video autoPlay loop muted className="absolute z-10 object-cover w-auto w-full h-full " poster={"/assets/image/homemade-ramen-bowls-5.jpg"}>
+        <video autoPlay loop muted className="absolute z-10 object-cover w-auto h-full " poster={"/assets/image/homemade-ramen-bowls-5.jpg"}>
           <source src="/assets/video/Video-Compressed.mp4" type="video/mp4" />Your browser does not support the video tag.
         </video>
         <div className="relative z-10 min-w-full min-h-full bg-black bg-opacity-50 backdrop-filter backdrop-blur">
