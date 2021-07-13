@@ -1,6 +1,7 @@
 import Link from "next/link";
 import truncate from "truncate-html";
 import { AgilityImage } from "@agility/nextjs";
+import useTranslation from 'next-translate/useTranslation';
 
 const Recipes = (props) => {
   if (!props.recipes || props.recipes.length === 0) return <div></div>;
@@ -16,13 +17,15 @@ const Recipes = (props) => {
 
     return desc;
   };
+    
+  const { t } = useTranslation('common');
 
   return (
     <div>
       <div>
         <div className="text-black text-4xl text-center pb-5 font-bold">
           <Link href={"/recipe"}>
-            <a>Recipes</a>
+            <a>{t("recipes")}</a>
           </Link>
         </div>
         <div

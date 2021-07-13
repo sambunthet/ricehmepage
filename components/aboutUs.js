@@ -1,5 +1,5 @@
 import { AgilityImage } from "@agility/nextjs";
-import Image from "next/image";
+import useTranslation from 'next-translate/useTranslation';
 
 
 const About = (about) => {
@@ -7,8 +7,9 @@ const About = (about) => {
   var image =  about.image.url;
  
   if(!description)
-    return <div></div>;
+      return <div></div>;
   
+  const { t } = useTranslation('common');
   return (
     <div className="m-8 grid grid-cols-2 gap-4">
       {/* <Link href={`/products/${product.id}`}> */}
@@ -28,7 +29,7 @@ const About = (about) => {
       <div data-aos="fade-left">
         <div className="py-20">
           <h1 className="text-4xl pb-5 text-center font-bold pt-5 sm:pt-0">
-            About<span className="text-yellow-500">Us</span>
+            {t("abt")}<span className="text-yellow-500">{t("us")}</span>
           </h1>
           <p className="font-sspro text-center text-sm md:text-sm lg:text-2xl md:text-left p-5 tracking-wide">
             {description}
@@ -51,7 +52,7 @@ const About = (about) => {
         </div>
         <div>
         <h1 className="text-4xl pb-5 text-center font-bold pt-5 sm:pt-0">
-          About<span className="text-yellow-500">Us</span>
+        {t("abt")}<span className="text-yellow-500">{t("us")}</span>
         </h1>
           <p className="font-sspro text-center text-sm md:text-sm lg:text-2xl md:text-left p-5 tracking-wide">
             {description}
