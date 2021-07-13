@@ -9,5 +9,7 @@ const defaultConfig = {
 
 export async function getAboutUs(locale) {
   const about = await fetch(`${url}${defaultConfig.aboutPath}?_locale=${locale}`);
+  if(!about.ok)
+    return [];
   return await about.json();
 }
