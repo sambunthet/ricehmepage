@@ -99,15 +99,15 @@ function Nav() {
                 >
                   <Listbox.Options className="absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5">
                     {language.map((lang, langIdx) => (
-                      <Link
-                      scroll={isDynamicPath && locale !== lang.locale}
-                      href={
-                        locale === lang.locale
-                          ? asPath
-                          : changeLocalePath
-                      }
-                      locale={lang.locale}
-                    >
+                    //   <Link
+                    //   scroll={isDynamicPath && locale !== lang.locale}
+                    //   href={
+                    //     locale === lang.locale
+                    //       ? asPath
+                    //       : changeLocalePath
+                    //   }
+                    //   locale={lang.locale}
+                    // >
                       <Listbox.Option
                         key={langIdx}
                         className={({ active }) =>
@@ -122,7 +122,7 @@ function Nav() {
                       >
                         {({ selected, active }) => (
                           <>
-                            {/* <a
+                            <Link
                               scroll={isDynamicPath && locale !== lang.locale}
                               href={
                                 locale === lang.locale
@@ -130,7 +130,7 @@ function Nav() {
                                   : changeLocalePath
                               }
                               locale={lang.locale}
-                            > */}
+                            >
                               <span
                                 onClick={() =>
                                   console.log(
@@ -145,7 +145,7 @@ function Nav() {
                               >
                                 {lang.name}
                               </span>
-                            {/* </a> */}
+                            </Link>
 
                             {selected ? (
                               <span
@@ -161,7 +161,7 @@ function Nav() {
                           </>
                         )}
                         </Listbox.Option>
-                        </Link>
+                        // </Link>
                     ))}
                   </Listbox.Options>
                 </Transition>
