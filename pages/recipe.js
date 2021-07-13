@@ -42,6 +42,7 @@ const Recipe = ({recipes}) => {
   const list0 = chunk[0];
   const list1 = chunk[1] || [];
   const readMore = t("readMore");
+  const recipeLable = t("recipes");
     return (
     <div className="mt-32 p-0 md:px-60">
 
