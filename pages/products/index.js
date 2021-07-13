@@ -25,7 +25,7 @@ const Products = ({ products }) => {
         <div className="flex-1 p-10 w-full hidden md:block ">
           {products.map((product, key) =>
             key % 2 === 0 ? (
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-4" key={key}>
                 <Link href={`/products/${product.id}`}>
                   <a>
                     <div className="">
@@ -53,8 +53,8 @@ const Products = ({ products }) => {
                     </span> : ""}
                   </h3>
                     {product.variation ? (
-                      product.variation.map((v) => (
-                        <div className="">
+                      product.variation.map((v,key) => (
+                        <div key={key}>
                           <ui className="list-disc">
                             <li>
                               <dev className="font-bold text-sm tracking-tight leading-5">
@@ -85,8 +85,8 @@ const Products = ({ products }) => {
                     </span> : ""}
                   </h3>
                     {product.variation ? (
-                      product.variation.map((v) => (
-                        <div className="">
+                      product.variation.map((v, key) => (
+                        <div key={key}>
                           <ui className="list-disc">
                             <li>
                               <dev className="font-bold text-sm tracking-tight leading-5">
@@ -125,7 +125,7 @@ const Products = ({ products }) => {
         {/* ui mobile */}
         <div className="flex-1 p-10 block md:hidden">
           {products.map((product, key) => (
-            <div className="grid grid-cols-1 gap-4">
+            <div className="grid grid-cols-1 gap-4" key={key}>
               <div className="">
                 <Link href={`/products/${product.id}`}>
                   <a>
@@ -153,8 +153,8 @@ const Products = ({ products }) => {
                     </span> : ""}
                   </h3>
                   {product.variation ? (
-                      product.variation.map((v) => (
-                        <div className="">
+                      product.variation.map((v, key) => (
+                        <div key={key}>
                          <ui className="list-outside  text-left">
                             <li>
                               <dev className="text-left font-bold text-sm tracking-tight leading-5">
