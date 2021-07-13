@@ -1,7 +1,7 @@
 import Link from "next/link";
 import truncate from "truncate-html";
 import { AgilityImage } from "@agility/nextjs";
-
+import useTranslation from 'next-translate/useTranslation';
 
 const Recipes = (props) => {
     if (!props.recipes || props.recipes.length === 0)
@@ -19,10 +19,12 @@ const Recipes = (props) => {
         return desc;  
     }  
 
+    const { t } = useTranslation('common');
+
     return(
         <div>
             <div>
-            <div className="text-black text-4xl text-center pb-5 font-bold"><Link href={"/recipe"}><a>Recipes</a></Link></div>
+            <div className="text-black text-4xl text-center pb-5 font-bold"><Link href={"/recipe"}><a>{t("recipes")}</a></Link></div>
                 <div className="flex flex-col sm:flex-row place-content-center text-center scrollbar-hide overflow-x-scroll hide-scroll-bar overscroll-x-contain gallery" data-slider-target="scrollContainer">
                 {recipes.map((recipe, index)=>
                     <Link href={`${recipe.link}`} key={index}>

@@ -34,19 +34,19 @@ const FooterRice = () => {
         </div>
       </div>
       <div className="text-center sm:text-left">
-        <h1 className="font-bold pb-3">CALL US</h1>
+        <h1 className="font-bold pb-3">{t("callus")}</h1>
         <h3 className="text-sm">(+855) 12-530-777</h3>
         <h3 className="text-sm">(+855) 88-33333-77</h3>
         <h3 className="text-sm">(+855) 11-988-777</h3>
       </div>
       <div className="text-center sm:text-left">
-        <h1 className="font-bold pb-3">EMAIL</h1>
+        <h1 className="font-bold pb-3">{t("email")}</h1>
         <h3 className="text-sm">info@rice.com.kh</h3>
         <h3 className="text-sm">yunhong@rice.com.kh</h3>
       </div>
 
       <div className="text-center sm:text-left">
-        <h1 className="font-bold pb-3">ADDRESS</h1>
+        <h1 className="font-bold pb-3">{t("address")}</h1>
         <h3 className="text-sm">#F29-30, Borey Grand Chroy Changvar, National Road No.6, Sangkat Chroy Changvar, Khan Chroy Changvar, Phnom Penh, Cambodia</h3>
         <h3 className="text-sm">Factory Address: National Road No. 5, Phsar Trach Village, Longvek Commune, Kompong Tralach District, Kompong Chhnang Province, Kingdom of Cambodia.</h3>
       </div>
