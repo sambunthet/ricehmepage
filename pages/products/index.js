@@ -1,4 +1,5 @@
 import { getProducts } from "$/utils/api/product";
+import { AgilityImage } from "@agility/nextjs";
 import React from "react";
 import Link from "next/link";
 
@@ -30,9 +31,15 @@ const Products = ({ products }) => {
                   <a>
                     <li className="">
                       <div className="py-4 text-center">
-                        <div className="relative inline-block">
-                          <img src={product.image} width="400" height="400" />
-                        </div>
+                    
+                        <AgilityImage
+                    width={320}
+                    height={320}
+                    className="h-48 w-48 sm:h-70 md:w-70 md:h-70 md:w-70 lg:h-80 lg:w-80 object-cover inline-block "
+                    src={product.image}
+                    alt={product.name}
+                  />
+                      
                       </div>
                     </li>
                   </a>
@@ -96,9 +103,14 @@ const Products = ({ products }) => {
                 <Link href={`/products/${product.id}`}>
                   <a>
                   <div className="text-center">
-                    <div className="relative inline-block p-4">
-                      <img src={product.image} width="400" height="400" />
-                    </div>
+                    
+                  <AgilityImage
+                    width={320}
+                    height={320}
+                    className="h-48 w-48 sm:h-70 md:w-70 md:h-70 md:w-70 lg:h-80 lg:w-80 object-cover inline-block "
+                    src={product.image}
+                    alt={product.name}
+                  />
                   </div>
                   </a>
                   </Link>
@@ -116,9 +128,14 @@ const Products = ({ products }) => {
               <Link href={`/products/${product.id}`}>
                   <a>
                 <div className="py-4 text-center">
-                  <div className="relative inline-block">
-                    <img src={product.image} width="400" height="400" />
-                  </div>
+                 
+                <AgilityImage
+                    width={320}
+                    height={320}
+                    className="h-48 w-48 sm:h-70 md:w-70 md:h-70 md:w-70 lg:h-80 lg:w-80 object-cover inline-block "
+                    src={product.image}
+                    alt={product.name}
+                  />
                 </div>
                 </a>
                 </Link>
