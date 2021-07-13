@@ -3,7 +3,6 @@ import Link from "next/link";
 import { AgilityImage } from "@agility/nextjs";
 import {getRecipes} from"$/utils/api/recipe";
 import truncate from "truncate-html";
-import Recipes from '$/components/recipes';
 import useTranslation from 'next-translate/useTranslation';
 const _ = require("lodash");
 
@@ -43,10 +42,11 @@ const Recipe = ({recipes}) => {
   const list0 = chunk[0];
   const list1 = chunk[1] || [];
   const readMore = t("readMore");
+  const recipeLable = t("recipes");
     return (
     <div className="mt-32 p-0 md:px-60">
 
-<div className="text-black text-4xl text-center pb-5 font-bold">Recipes</div>
+<div className="text-black text-4xl text-center pb-5 font-bold">{recipeLable}</div>
     <div className= { list1.length > 0 ? "grid grid-cols-1 md:grid-cols-2 gap-2" : "grid grid-cols-1 md:grid-cols-1 gap-2"}>
       <div>
           

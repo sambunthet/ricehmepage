@@ -1,7 +1,21 @@
 import { AgilityImage } from "@agility/nextjs";
 import useTranslation from 'next-translate/useTranslation';
 
-const FooterRice = () => {
+const FooterRice = ({home}) => {
+  const addresses = home.Address;
+  const emails = home.Email;
+  const contactNumbers = home.ContactNumber;
+  const headlineText = home.HeadlineText;
+  const companyLogo = home.Logo.url;
+
+  const socialMedia = home.SocialMedia;
+
+  const fb = socialMedia.Facebook;
+  const twitter = socialMedia.Twitter;
+  const instagram = socialMedia.Instagram;
+  const tiktok = socialMedia.Tiktok;
+  const youtube = socialMedia.Youtube;
+
   const { t } = useTranslation('common');
   return (
     <div className="grid grid-cols-6 py-10" style={{backgroundColor: "#252424"}}>
@@ -11,7 +25,7 @@ const FooterRice = () => {
         <div className="text-center">
           <div>
             <AgilityImage
-              src="http://rice.com.kh/imgs/2/logo_03.png"
+              src={companyLogo}
               className="inline-block pb-5"
               width={80}
               height={80}
@@ -20,35 +34,66 @@ const FooterRice = () => {
           <div className="pt-5">
             {t("company")}
           </div>
-          <div className="grid grid-cols-3 pt-5">
-            <div>
-              <i className="fab fa-facebook-square fa-3x"></i>
-            </div>
-            <div>
-              <i className="fab fa-instagram fa-3x"></i>
-            </div>
-            <div>
-              <i className="fab fa-google fa-3x"></i>
-            </div>
+          <div className="grid grid-cols-4 pt-5">
+              {
+                fb ?
+                  <a href={fb} target="_blank">
+                      <i className="fab fa-facebook fa-2x"></i>
+                  </a> : null
+              }
+
+              {
+                  instagram ?
+                    <a  href={instagram} target="_blank">
+                      <i className="fab fa-instagram fa-2x"></i>
+                    </a> : null
+              }
+
+
+              {
+                  twitter ?
+                      <a  href={twitter} target="_blank">
+                          <i className="fab fa-twitter fa-2x"></i>
+                      </a> : null
+              }
+
+              {
+                  youtube ?
+                      <a  href={youtube} target="_blank">
+                          <i className="fab fa-youtube fa-2x"></i>
+                      </a> : null
+              }
+
+              {
+                  tiktok ?
+                      <a  href={tiktok} target="_blank">
+                          <i className="fab fa-tiktok fa-2x"></i>
+                      </a> : null
+              }
+
           </div>
         </div>
       </div>
       <div className="text-center sm:text-left">
         <h1 className="font-bold pb-3">{t("callus")}</h1>
-        <h3 className="text-sm">(+855) 12-530-777</h3>
-        <h3 className="text-sm">(+855) 88-33333-77</h3>
-        <h3 className="text-sm">(+855) 11-988-777</h3>
+          {contactNumbers.map((contactNumbers, index)=>
+              <h3 className="text-sm" key={index}>{contactNumbers.PhoneNumber}</h3>
+          )}
       </div>
       <div className="text-center sm:text-left">
         <h1 className="font-bold pb-3">{t("email")}</h1>
-        <h3 className="text-sm">info@rice.com.kh</h3>
-        <h3 className="text-sm">yunhong@rice.com.kh</h3>
+
+          {emails.map((email, index)=>
+              <h3 className="text-sm" key={index}>{email.Email}</h3>
+          )}
       </div>
 
       <div className="text-center sm:text-left">
         <h1 className="font-bold pb-3">{t("address")}</h1>
-        <h3 className="text-sm">#F29-30, Borey Grand Chroy Changvar, National Road No.6, Sangkat Chroy Changvar, Khan Chroy Changvar, Phnom Penh, Cambodia</h3>
-        <h3 className="text-sm">Factory Address: National Road No. 5, Phsar Trach Village, Longvek Commune, Kompong Tralach District, Kompong Chhnang Province, Kingdom of Cambodia.</h3>
+
+          {addresses.map((address, index)=>
+              <h3 className="text-sm pb-2" key={index}>{address.Address}</h3>
+          )}
       </div>
 
     </div>

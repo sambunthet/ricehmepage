@@ -18,8 +18,11 @@ export async function getServerSideProps({locale}) {
 
 function MyApp({ Component, pageProps}) {
   const [show, hanldeShow] = useState(false);
-  const home = pageProps.home;
-  useEffect(() => {
+  let home = {};
+  useEffect(async (locale) => {
+    console.log("lll")
+    home = await Promise.all([getHome("en")]);
+    console.log("abc:: ", home)
     AOS.init({
       delay: 200,
       duration: 1200,
@@ -34,13 +37,20 @@ function MyApp({ Component, pageProps}) {
     // return () => {
     //   window.removeEventListener("scroll", null);
     // };
-}, []);
+  }, []);
+
+  console.log("home __app", home);
 
 
 return (
-  <Layout home={home}>
-    <Component {...pageProps} />
-  </Layout>
+
+    <div>{
+      home ? <Layout home={home}>
+        <Component {...pageProps} />
+      </Layout> : <div>d</div>
+    }</div>
+
+
   )
 }
 

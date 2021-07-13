@@ -2,22 +2,28 @@ import Link from "next/link";
 import truncate from "truncate-html";
 import { AgilityImage } from "@agility/nextjs";
 import useTranslation from 'next-translate/useTranslation';
+import useTranslation from "next-translate/useTranslation";
+
 
 const Recipes = (props) => {
-  if (!props.recipes || props.recipes.length === 0) return <div></div>;
-  const { recipes } = props;
+    if (!props.recipes || props.recipes.length === 0)
+        return <div></div>;
+    const {recipes} = props;
+    const { t } = useTranslation('common');
+    const readMore = t("readMore");
+    const recipeLable = t("recipes");
 
-  const getDescription = (description, length) => {
-    const desc = truncate(description, {
-      length: length,
-      decodeEntities: true,
-      stripTags: true,
-      reserveLastWord: true,
-    });
+    const getDescription = (description, length) => {
+        const desc = truncate(description, {
+            length: length,
+            decodeEntities: true,
+            stripTags: true,
+            reserveLastWord: true,
+          });
 
     return desc;
   };
-    
+
   const { t } = useTranslation('common');
 
   return (
@@ -99,3 +105,5 @@ const Recipes = (props) => {
 };
 
 export default Recipes;
+
+
