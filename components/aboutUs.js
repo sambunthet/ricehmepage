@@ -4,11 +4,10 @@ import useTranslation from 'next-translate/useTranslation';
 
 const About = (about) => {
   const description = about.description || "";
-  var image =  about.image.url;
  
   if(!description)
       return <div></div>;
-  
+  var image =  about.image.url;
   const { t } = useTranslation('common');
   return (
     <div className="m-8 grid grid-cols-2 gap-4">
