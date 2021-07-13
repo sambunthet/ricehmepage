@@ -74,7 +74,7 @@ const Products = ({ products }) => {
             ) : (
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div className="">
-                  <div className="py-20 ml-32">
+                  <div className="py-20 md:ml-24 lg:ml-32 xl:ml-32">
                     <h2 className="text-4xl font-bold text-black tracking-normal">
                       {product.name}
                     </h2>
