@@ -54,15 +54,6 @@ function Nav() {
                 onClick={showSidebar}
                 className="nav__menu mt-1 sm:mt-4 md:mt-4"
               />
-              {/* <IconButton
-                color='inherit'
-                aria-label='open drawer'
-                onClick={showSidebar}
-                edge='start'
-                className='nav__menu mt-1 sm:mt-4 md:mt-4'
-              >
-                <MenuIcon />
-              </IconButton> */}
             </a>
             <Link href="/">
               <a className="inline-flex items-center">
@@ -108,6 +99,15 @@ function Nav() {
                 >
                   <Listbox.Options className="absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5">
                     {language.map((lang, langIdx) => (
+                      <Link
+                      scroll={isDynamicPath && locale !== lang.locale}
+                      href={
+                        locale === lang.locale
+                          ? asPath
+                          : changeLocalePath
+                      }
+                      locale={lang.locale}
+                    >
                       <Listbox.Option
                         key={langIdx}
                         className={({ active }) =>
@@ -122,7 +122,7 @@ function Nav() {
                       >
                         {({ selected, active }) => (
                           <>
-                            <Link
+                            {/* <a
                               scroll={isDynamicPath && locale !== lang.locale}
                               href={
                                 locale === lang.locale
@@ -130,7 +130,7 @@ function Nav() {
                                   : changeLocalePath
                               }
                               locale={lang.locale}
-                            >
+                            > */}
                               <span
                                 onClick={() =>
                                   console.log(
@@ -145,7 +145,7 @@ function Nav() {
                               >
                                 {lang.name}
                               </span>
-                            </Link>
+                            {/* </a> */}
 
                             {selected ? (
                               <span
@@ -160,7 +160,8 @@ function Nav() {
                             ) : null}
                           </>
                         )}
-                      </Listbox.Option>
+                        </Listbox.Option>
+                        </Link>
                     ))}
                   </Listbox.Options>
                 </Transition>

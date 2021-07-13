@@ -16,7 +16,8 @@ export async function getStaticProps({ locale }) {
 }
 
 const Products = ({ products }) => {
-  products = [...products,...products];
+  products = [...products, ...products];
+  
   return (
     <div>
       <div className="min-h-screen flex max-w-6xl mx-auto mt-28 ">
@@ -46,7 +47,7 @@ const Products = ({ products }) => {
                     <h2 className="text-4xl font-bold text-black tracking-normal">
                       {product.name}
                     </h2>
-                    <h3 className="text-2xl font-bold text-black leading-6 py-4 ">
+                    <h3 className="text-2xl font-sspro font-bold text-black leading-6 py-4 ">
                     ${product.salePrice > 0 ? product.salePrice : product.price}{" "}
                     {product.salePrice > 0 ? <span className="text-gray-500 line-through text-xs ml-0 pb-4">
                       ${product.price}
@@ -56,11 +57,10 @@ const Products = ({ products }) => {
                       product.variation.map((v) => (
                         <div className="">
                           <ui className="list-disc">
-                            <li>
-                              <dev className="font-bold text-sm tracking-tight leading-5">
-                                {v.name} :{" "}
-                                <span className="font-normal">{v.value}</span>
-                              </dev>
+                          <li>
+                              <a className="font-bold text-sm tracking-tight leading-5">
+                                {v.name} : <a className="font-normal text-base font-sspro">{v.value}</a>
+                              </a>
                             </li>
                           </ui>
                         </div>
@@ -78,7 +78,7 @@ const Products = ({ products }) => {
                     <h2 className="text-4xl font-bold text-black tracking-normal">
                       {product.name}
                     </h2>
-                    <h3 className="text-2xl font-bold text-black leading-6 py-4 ">
+                    <h3 className="text-2xl font-sspro font-bold text-black leading-6 py-4 ">
                     ${product.salePrice > 0 ? product.salePrice : product.price}{" "}
                     {product.salePrice > 0 ? <span className="text-gray-500 line-through text-xs ml-0 pb-4">
                       ${product.price}
@@ -89,10 +89,9 @@ const Products = ({ products }) => {
                         <div className="">
                           <ui className="list-disc">
                             <li>
-                              <dev className="font-bold text-sm tracking-tight leading-5">
-                                {v.name} :{" "}
-                                <span className="font-normal">{v.value}</span>
-                              </dev>
+                              <a className="font-bold text-sm tracking-tight leading-5">
+                                {v.name} : <a className="font-normal text-base font-sspro">{v.value}</a>
+                              </a>
                             </li>
                           </ui>
                         </div>
@@ -146,7 +145,7 @@ const Products = ({ products }) => {
                   <h2 className="text-2xl font-bold text-black tracking-normal">
                     {product.name}
                   </h2>
-                  <h3 className="text-2xl font-bold text-black leading-6 py-4 ">
+                  <h3 className="text-2xl font-sspro font-bold text-black leading-6 py-4 ">
                     ${product.salePrice > 0 ? product.salePrice : product.price}{" "}
                     {product.salePrice > 0 ? <span className="text-gray-500 line-through text-xs ml-0 pb-4">
                       ${product.price}
@@ -157,10 +156,9 @@ const Products = ({ products }) => {
                         <div className="">
                          <ui className="list-outside  text-left">
                             <li>
-                              <dev className="text-left font-bold text-sm tracking-tight leading-5">
-                                {v.name} :{" "}
-                                <span className="font-normal">{v.value}</span>
-                              </dev>
+                              <a className="text-left font-bold text-sm tracking-tight leading-5">
+                                {v.name} : <span className="font-normal">{v.value}</span>
+                              </a>
                             </li>
                           </ui> 
                         </div>

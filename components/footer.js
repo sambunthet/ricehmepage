@@ -33,7 +33,7 @@ const Footer = () => {
       <div className="col-span-3">
         <div className="grid grid-cols-3 sm:grid-cols-3 sm:grid text-center">
           <div className="text-center">
-            <h1 className="font-bold">ACOUNT</h1>
+            <h1 className="font-bold">ACCOUNT</h1>
             <h3 className="text-sm">Overview</h3>
             <h3 className="text-sm">Order History</h3>
             <h3 className="text-sm">Manage</h3>
