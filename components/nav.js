@@ -1,4 +1,4 @@
-import React, { useState, Fragment, useEffect } from "react";
+import React, { useState, Fragment, useEffect, useRef } from "react";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import Link from "next/link";
@@ -30,6 +30,22 @@ function Nav() {
   const handleScrollPos = () => {
     hanldeShow(window.scrollY > 100);
   };
+  const boxRef = useRef(null);
+
+  function handleClickOutside(event) {
+    if (boxRef.current && !boxRef.current.contains(event.target)) {
+      setSidebar(false);
+    } else {
+      setSidebar(true);    
+    }
+  }
+
+  React.useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [boxRef]);
 
   React.useEffect(() => {
     window.scrollTo(0, show);
@@ -170,7 +186,7 @@ function Nav() {
           </div>
         </div>
 
-        <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
+        <nav ref={boxRef} className={sidebar ? "nav-menu active" : "nav-menu"}>
           <ul className="nav-menu-items" onClick={showSidebar}>
             <li className="navbar-hrefggle">
               <span className="menu-bars">
@@ -185,6 +201,7 @@ function Nav() {
                     <span className="ml-4">
                       {item.icon}
                       <a className="ml-3 mt-1 un">{t(item.title)}</a>
+                      {/* <a className="ml-3 mt-1 un">{boxOutsideClick ? "outSide" : "inSide"}</a> */}
                     </span>
                   </Link>
                 </li>
