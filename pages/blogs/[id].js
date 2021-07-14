@@ -55,7 +55,7 @@ const BlogDetail = ({post}) => {
               <h1 className="font-display text-4xl font-bold my-6 text-secondary-500">
                 {post.title}
               </h1>
-              <ReactMarkdown remarkPlugins={[gfm]} props={post.content} />
+              <ReactMarkdown remarkPlugins={[gfm]} children={post.content} />
 
               {
                 embedHtml ? <div>

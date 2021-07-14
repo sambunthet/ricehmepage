@@ -35,19 +35,14 @@ const FeaturesBox = (props) => {
                     <h2 className="text-4xl font-bold text-black tracking-normal">
                       {product.name}
                     </h2>
-                    <h3 className="text-2xl font-sspro font-bold text-black leading-6 py-4 ">
-                      $
-                      {product.salePrice > 0
-                        ? product.salePrice
-                        : product.price}{" "}
-                      {product.salePrice > 0 ? (
-                        <span className="text-gray-500 line-through text-xs ml-0 pb-4">
-                          ${product.price}
-                        </span>
-                      ) : (
-                        ""
-                      )}
-                    </h3>
+                    {
+                      product.price ? <h3 className="text-2xl font-sspro font-bold text-black leading-6 py-4 ">
+                      ${product.salePrice > 0 ? product.salePrice : product.price}{" "}
+                      {product.salePrice > 0 ? <span className="text-gray-500 line-through text-xs ml-0 pb-4">
+                        ${product.price}
+                      </span> : ""}
+                    </h3> : <div className="pb-4"></div>
+                    }
                     {product.variation ? (
                       product.variation.map((v ,k) => (
                         <div key={k} className="">
@@ -73,19 +68,14 @@ const FeaturesBox = (props) => {
                     <h2 className="text-4xl font-bold text-black tracking-normal">
                       {product.name}
                     </h2>
-                    <h3 className="text-2xl font-sspro font-bold text-black leading-6 py-4 ">
-                      $
-                      {product.salePrice > 0
-                        ? product.salePrice
-                        : product.price}{" "}
-                      {product.salePrice > 0 ? (
-                        <span className="text-gray-500 line-through text-xs ml-0 pb-4">
-                          ${product.price}
-                        </span>
-                      ) : (
-                        ""
-                      )}
-                    </h3>
+                    {
+                      product.price ? <h3 className="text-2xl font-sspro font-bold text-black leading-6 py-4 ">
+                      ${product.salePrice > 0 ? product.salePrice : product.price}{" "}
+                      {product.salePrice > 0 ? <span className="text-gray-500 line-through text-xs ml-0 pb-4">
+                        ${product.price}
+                      </span> : ""}
+                    </h3> : <div className="pb-4"></div>
+                    }
                     {product.variation ? (
                       product.variation.map((v, k) => (
                         <div key={k} className="">
@@ -147,16 +137,14 @@ const FeaturesBox = (props) => {
                   <h2 className="text-2xl font-bold text-black tracking-normal">
                     {product.name}
                   </h2>
-                  <h3 className="text-2xl font-bold text-black leading-6 py-4 ">
-                    ${product.salePrice > 0 ? product.salePrice : product.price}{" "}
-                    {product.salePrice > 0 ? (
-                      <span className="text-gray-500 line-through text-xs ml-0 pb-4">
+                  {
+                      product.price ? <h3 className="text-2xl font-sspro font-bold text-black leading-6 py-4 ">
+                      ${product.salePrice > 0 ? product.salePrice : product.price}{" "}
+                      {product.salePrice > 0 ? <span className="text-gray-500 line-through text-xs ml-0 pb-4">
                         ${product.price}
-                      </span>
-                    ) : (
-                      ""
-                    )}
-                  </h3>
+                      </span> : ""}
+                    </h3> : <div className="pb-4"></div>
+                    }
                   {product.variation ? (
                     product.variation.map((v, k) => (
                       <div key={k} className="">

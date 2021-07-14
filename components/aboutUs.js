@@ -1,18 +1,22 @@
 import { AgilityImage } from "@agility/nextjs";
 import useTranslation from 'next-translate/useTranslation';
-const gfm = require("remark-gfm");
 import ReactMarkdown from "react-markdown";
+import React from "react";
+const gfm = require('remark-gfm');
 
 
 const About = (about) => {
   const { t } = useTranslation('common');
   const description = about.description || "";
- 
+
+  console.log("description:: ", description);
+
   if(!description)
       return <div></div>;
   var image =  about.image.url;
   return (
-    <div className="m-8 gap-4 grid grid-cols-1 sm:grid-cols-2 sm:gap-2 justify-items-center text-center">
+
+    <div className="m-8 gap-4 grid grid-cols-1 sm:grid-cols-2 sm:gap-2">
       {/* <Link href={`/products/${product.id}`}> */}
       <a>
         <div className="">
@@ -33,9 +37,7 @@ const About = (about) => {
             {t("abt")}
             <span className="text-yellow-500">{t("us")}</span>
           </h1>
-          <p className="text-base font-medium text-black text-center  md:text-left p-5 tracking-wide">
-            {description}
-          </p>
+          <ReactMarkdown remarkPlugins={[gfm]} children={description} />
         </div>
       </div>
     </div>

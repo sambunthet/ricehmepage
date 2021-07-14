@@ -15,6 +15,7 @@ module.exports = {
       'display': ['Oswald'],
       'body': ['SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif'],
       'sspro': ['Source Sans Pro, sans-serif'],
+      'khmer-chenla': ['Chenla, sans-serif'],
     },
 
   },

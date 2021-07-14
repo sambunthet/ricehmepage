@@ -118,7 +118,7 @@ function Nav({ home }) {
                   leaveFrom="opacity-100"
                   leaveTo="opacity-0"
                 >
-                  <Listbox.Options className="absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5">
+                  <Listbox.Options className="absolute  w-32 py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5">
                     {language.map((lang, langIdx) => (
                       <Link
                         scroll={isDynamicPath && locale !== lang.locale}
@@ -135,7 +135,7 @@ function Nav({ home }) {
                                 ? "text-gray-900 cursor-pointer hover:text-red-600"
                                 : "text-gray-900 cursor-pointer hover:text-red-600"
                             }
-                            cursor-default select-none relative py-2 pl-10 pr-4`
+                            cursor-default select-none relative py-2 pr-4`
                           }
                           value={lang}
                         >
@@ -160,7 +160,7 @@ function Nav({ home }) {
                                   }
                                   className={`${
                                     selected ? "font-medium" : "font-normal"
-                                  } block truncate bg-red-500`}
+                                  } block truncate`}
                                 >
                                   {lang.name}
                                 </span>
@@ -170,7 +170,7 @@ function Nav({ home }) {
                                 <span
                                   className={`${
                                     active ? "text-amber-600" : "text-amber-600"
-                                  } absolute inset-y-0 left-0 flex items-center pl-3`}
+                                  } absolute inset-y-0 left-0 flex items-center pl-20`}
                                 >
                                   <CheckIcon
                                     className="w-5 h-5"
