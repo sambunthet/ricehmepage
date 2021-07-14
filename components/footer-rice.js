@@ -34,7 +34,7 @@ const FooterRice = ({home}) => {
           <div className="pt-5 font-sspro sm:p-5 md:p-0">
             {headLineText}
           </div>
-          <div className="grid grid-cols-4 pt-5">
+          <div className="grid text-center grid-cols-5 pt-5">
               {
                 fb ?
                   <a href={fb} target="_blank">

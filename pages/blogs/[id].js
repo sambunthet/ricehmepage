@@ -40,7 +40,7 @@ const BlogDetail = ({post}) => {
             <div className="h-64 md:h-96 relative">
               <AgilityImage
                 src={post.gallery[0].url}
-                className="object-center rounded-lg"
+                className="object-cover object-center  rounded-lg"
                 layout="fill"
               />
             </div>

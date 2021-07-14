@@ -52,12 +52,12 @@ const Blogs = ({posts}) => {
             <div className="relative pr-2 pl-2 mb-8">
                 <Link href={`/blogs/${featuredPost.id}`}>
                     <a>
-                    <div className="cursor-pointer flex flex-col sm:flex-row max-w-screen-xl mx-auto pt-8 group">
+                    <div className="cursor-pointer flex flex-col sm:flex-row max-w-screen-xl mx-auto group">
                         <div className="sm:w-1/2 lg:w-2/3 sm:rounded-t-none sm:rounded-l-lg relative">
                             <div className="h-64 sm:h-96 relative">
                                 <AgilityImage
                                 src={featuredPost.gallery[0].url}
-                                className=" rounded-t-lg sm:rounded-l-lg sm:rounded-t-none"
+                                className="object-cover object-center  rounded-lg"
                                 layout="fill"
                                 />
                             </div>
@@ -90,7 +90,7 @@ const Blogs = ({posts}) => {
                             <div className="relative h-64">
                                 <AgilityImage
                                 src={post.gallery[0].url}
-                                className="rounded-t-lg"
+                                className="rounded-lg"
                                 layout="fill"
                                 />
                             </div>
