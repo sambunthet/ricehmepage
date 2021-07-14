@@ -36,8 +36,8 @@ const Header = () => {
           <NavbarBrand href="/">
             <div>
               <AgilityImage
-                src={"http://rice.com.kh/imgs/2/logo_03.png"}
-                alt=""
+                src={"/logo/company-logo.png"}
+                alt="company-logo"
                 width={50}
                 height={50}
                 className="img-fluid d-block mx-auto"

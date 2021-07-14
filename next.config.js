@@ -9,9 +9,6 @@ global.websiteKeywords = process.env.WEBSITE_KEYWORDS;
 module.exports = nextTranslate({
   reactStrictMode: true,
   webpack5: true,
-  images: {
-    domains: ["assets.vercel.com", "rice.com.kh", 'cdn.shopify.com', "cms.devcorp.me"],
-  },
   env: {
     LOCALE: global.locale,
     PUBLIC_REST_API_ENDPOINT: global.apiEndPoint,

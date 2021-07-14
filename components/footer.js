@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="text-center">
           <div>
             <AgilityImage
-              src="http://rice.com.kh/imgs/2/logo_03.png"
+              src="/logo/company-logo.png"
               className="inline-block pb-5"
               width={80}
               height={80}
