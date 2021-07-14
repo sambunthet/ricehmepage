@@ -17,11 +17,8 @@ const language = [
   { id: 3, name: " 中文 ", locale: "zh" },
 ];
 
-function Nav({home}) {
-
+function Nav({ home }) {
   console.log("home nav :: ", home);
-
-
 
   const { pathname, locale, asPath, query } = useRouter();
   const companyLogo = home.Logo.url;
@@ -44,7 +41,7 @@ function Nav({home}) {
     if (boxRef.current && !boxRef.current.contains(event.target)) {
       setSidebar(false);
     } else {
-      setSidebar(true);    
+      setSidebar(true);
     }
   }
 
@@ -123,69 +120,68 @@ function Nav({home}) {
                 >
                   <Listbox.Options className="absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5">
                     {language.map((lang, langIdx) => (
-                    //   <Link
-                    //   scroll={isDynamicPath && locale !== lang.locale}
-                    //   href={
-                    //     locale === lang.locale
-                    //       ? asPath
-                    //       : changeLocalePath
-                    //   }
-                    //   locale={lang.locale}
-                    // >
-                      <Listbox.Option
-                        key={langIdx}
-                        className={({ active }) =>
-                          `${
-                            active
-                              ? "text-gray-900 cursor-pointer hover:text-red-600"
-                              : "text-gray-900 cursor-pointer hover:text-red-600"
-                          }
-                            cursor-default select-none relative py-2 pl-10 pr-4`
+                      <Link
+                        scroll={isDynamicPath && locale !== lang.locale}
+                        href={
+                          locale === lang.locale ? asPath : changeLocalePath
                         }
-                        value={lang}
+                        locale={lang.locale}
                       >
-                        {({ selected, active }) => (
-                          <>
-                            <Link
-                              scroll={isDynamicPath && locale !== lang.locale}
-                              href={
-                                locale === lang.locale
-                                  ? asPath
-                                  : changeLocalePath
-                              }
-                              locale={lang.locale}
-                            >
-                              <span
-                                onClick={() =>
-                                  console.log(
-                                    "============ lang",
-                                    lang.locale
-                                  ) &&
-                                  cookieCutter.set("NEXT_LOCALE", lang.locale)
+                        <Listbox.Option
+                          key={langIdx}
+                          className={({ active }) =>
+                            `${
+                              active
+                                ? "text-gray-900 cursor-pointer hover:text-red-600"
+                                : "text-gray-900 cursor-pointer hover:text-red-600"
+                            }
+                            cursor-default select-none relative py-2 pl-10 pr-4`
+                          }
+                          value={lang}
+                        >
+                          {({ selected, active }) => (
+                            <>
+                              <Link
+                                scroll={isDynamicPath && locale !== lang.locale}
+                                href={
+                                  locale === lang.locale
+                                    ? asPath
+                                    : changeLocalePath
                                 }
-                                className={`${
-                                  selected ? "font-medium" : "font-normal"
-                                } block truncate`}
+                                locale={lang.locale}
                               >
-                                {lang.name}
-                              </span>
-                            </Link>
+                                <span
+                                  onClick={() =>
+                                    console.log(
+                                      "============ lang",
+                                      lang.locale
+                                    ) &&
+                                    cookieCutter.set("NEXT_LOCALE", lang.locale)
+                                  }
+                                  className={`${
+                                    selected ? "font-medium" : "font-normal"
+                                  } block truncate bg-red-500`}
+                                >
+                                  {lang.name}
+                                </span>
+                              </Link>
 
-                            {selected ? (
-                              <span
-                                className={`${
-                                  active ? "text-amber-600" : "text-amber-600"
-                                } absolute inset-y-0 left-0 flex items-center pl-3`}>
-                                <CheckIcon
-                                  className="w-5 h-5"
-                                  aria-hidden="true"
-                                />
-                              </span>
-                            ) : null}
-                          </>
-                        )}
+                              {selected ? (
+                                <span
+                                  className={`${
+                                    active ? "text-amber-600" : "text-amber-600"
+                                  } absolute inset-y-0 left-0 flex items-center pl-3`}
+                                >
+                                  <CheckIcon
+                                    className="w-5 h-5"
+                                    aria-hidden="true"
+                                  />
+                                </span>
+                              ) : null}
+                            </>
+                          )}
                         </Listbox.Option>
-                        // </Link>
+                      </Link>
                     ))}
                   </Listbox.Options>
                 </Transition>
@@ -209,7 +205,6 @@ function Nav({home}) {
                     <span className="ml-4">
                       {item.icon}
                       <a className="ml-3 mt-1 un">{t(item.title)}</a>
-                      {/* <a className="ml-3 mt-1 un">{boxOutsideClick ? "outSide" : "inSide"}</a> */}
                     </span>
                   </Link>
                 </li>

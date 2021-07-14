@@ -18,7 +18,7 @@ const FeaturesBox = (props) => {
                 <Link href={`/products/${product.id}`}>
                   <a data-aos="fade-right">
                     <div className="">
-                      <div className="py-4 text-center">
+                      <div className="py-4 mt-6 text-center">
                         <AgilityImage
                           width={320}
                           height={320}
@@ -106,7 +106,7 @@ const FeaturesBox = (props) => {
                 <div data-aos="fade-left">
                   <Link href={`/products/${product.id}`}>
                     <a>
-                      <div className="text-center">
+                      <div className="text-center mt-8">
                         <AgilityImage
                           width={320}
                           height={320}

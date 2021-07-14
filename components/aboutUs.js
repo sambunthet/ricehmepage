@@ -1,5 +1,7 @@
 import { AgilityImage } from "@agility/nextjs";
 import useTranslation from 'next-translate/useTranslation';
+const gfm = require("remark-gfm");
+import ReactMarkdown from "react-markdown";
 
 
 const About = (about) => {
@@ -28,9 +30,10 @@ const About = (about) => {
       <div>
         <div className="sm:py-20">
           <h1 className="text-4xl pb-5 text-center font-bold pt-2 sm:pt-0">
-            {t("abt")}<span className="text-yellow-500">{t("us")}</span>
+            {t("abt")}
+            <span className="text-yellow-500">{t("us")}</span>
           </h1>
-          <p className="text-base font-medium text-black	tracking-wide text-center  md:text-left p-5 tracking-wide">
+          <p className="text-base font-medium text-black text-center  md:text-left p-5 tracking-wide">
             {description}
           </p>
         </div>
