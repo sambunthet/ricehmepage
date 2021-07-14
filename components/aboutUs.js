@@ -3,12 +3,12 @@ import useTranslation from 'next-translate/useTranslation';
 
 
 const About = (about) => {
+  const { t } = useTranslation('common');
   const description = about.description || "";
  
   if(!description)
       return <div></div>;
   var image =  about.image.url;
-  const { t } = useTranslation('common');
   return (
     <div className="m-8 gap-4 grid grid-cols-1 sm:grid-cols-2 sm:gap-2 justify-items-center text-center">
       {/* <Link href={`/products/${product.id}`}> */}

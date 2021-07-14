@@ -14,6 +14,8 @@ function parseData(home) {
 
 export async function getHome(locale) {
   const data = await fetch(`${url}${defaultConfig.homePath}?_locale=${locale}`);
+  if(!data.ok)
+    return null;
   const object = await data.json();
   const home = parseData(object);
   return home;

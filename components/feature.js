@@ -183,9 +183,9 @@ const FeaturesBox = (props) => {
 };
 
 const Feature = (props) => {
+  const { t } = useTranslation("common");
   const headLineText = props.home.HeadlineText;
   if (!props.features || props.features.length === 0) return <div></div>;
-  const { t } = useTranslation("common");
   const features = props.features;
   return (
     <div className="bg-white pt-0 font-body">

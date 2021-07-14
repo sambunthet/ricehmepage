@@ -2,6 +2,7 @@
 import React from "react";
 import { renderHTML } from "@agility/nextjs";
 import {getRecipe} from"$/utils/api/recipe";
+import Image from "next/image";
 import ReactMarkdown from 'react-markdown'
 const gfm = require('remark-gfm')
 
@@ -35,7 +36,7 @@ const RecipeDetail = ({recipe}) => {
         <div className="mt-32 relative px-8 pt-4 pb-4">
           <div className="max-w-screen-xl mx-auto">
             <div className="max-w-2xl mx-auto">
-              <img src={recipe.image} className="rounded-lg img-fluid" />
+              <Image alt={recipe.title} src={recipe.image} className="rounded-lg img-fluid" />
             </div>
             
             <div className="max-w-2xl mx-auto mt-4">

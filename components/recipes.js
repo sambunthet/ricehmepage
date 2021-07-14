@@ -5,6 +5,7 @@ import useTranslation from "next-translate/useTranslation";
 
 
 const Recipes = (props) => {
+    const { t } = useTranslation('common');
     if (!props.recipes || props.recipes.length === 0)
         return <div></div>;
     const {recipes} = props;
@@ -19,9 +20,6 @@ const Recipes = (props) => {
 
     return desc;
   };
-
-  const { t } = useTranslation('common');
-
   return (
     <div>
       <div>

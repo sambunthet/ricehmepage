@@ -1,12 +1,12 @@
-
 import { AgilityImage } from "@agility/nextjs";
+import Image from "next/image";
 
 const ImageNoodle = () => {
 
     return (
         <div>
             <div className="relative">
-                <img
+                <Image
                     src="https://cdn.shopify.com/s/files/1/0506/3252/3965/files/a-sha-home-number-1_1900x.jpg?v=1616047343"
                 />
                 {/* <div className="absolute text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-xl  w-3/4 md:w-2/5 mx-auto -mt-1  rounded-lg rounded-t-non">

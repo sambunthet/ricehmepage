@@ -7,6 +7,7 @@ import { IconContext } from "react-icons";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
 import { useRouter } from "next/router";
+import Image from "next/image";
 import useTranslation from "next-translate/useTranslation";
 import cookieCutter from "cookie-cutter";
 
@@ -80,14 +81,14 @@ function Nav({home}) {
             </a>
             <Link href="/">
               <a className="inline-flex items-center">
-                <img
+                <Image
                   src={companyLogo}
                   alt=""
                   width={40}
                   height={40}
                   className="img-fluid d-block mx-auto"
                 />
-                <img
+                <Image
                   src={companyNameLogo}
                   alt=""
                   width={350}
