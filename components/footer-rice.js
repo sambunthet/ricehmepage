@@ -10,6 +10,9 @@ const FooterRice = ({home}) => {
 
   const socialMedia = home.SocialMedia;
 
+  if(!socialMedia)
+     return <div></div>;
+
   const fb = socialMedia.Facebook;
   const twitter = socialMedia.Twitter;
   const instagram = socialMedia.Instagram;
