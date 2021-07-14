@@ -3,7 +3,7 @@ import useTranslation from 'next-translate/useTranslation';
 
 const OurBrand = (brands) => {
     const { t } = useTranslation('common');    
-    if (!brands || brands.length == undefined )
+    if (!brands || Object.keys(brands).length == undefined )
         return <div></div>;
     return (
         <div>
@@ -13,7 +13,6 @@ const OurBrand = (brands) => {
                     {Object.values(brands).map((brand, key) => (
                         <div key={key} className="w-60 h-60 px-4 flex-shrink-0 gallery-item" data-slider-target="image" id="5">
                             <img className="inline-block" src={`${brand.image.url}`} />
-
                         </div>
                     ))}
                 </div>

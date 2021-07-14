@@ -40,7 +40,7 @@ function HomePage({about, brand, products, recipes, home}) {
     <Feature features={products} home={home} />
     <Recipes recipes={recipes}/>
     <OurBrand {...brand}/>
-    <imgNoodle home={home} />
+    <ImageNoodle home={home} />
     </div>
   );
 }
