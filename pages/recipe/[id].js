@@ -36,7 +36,7 @@ const RecipeDetail = ({recipe}) => {
         <div className="mt-32 relative px-8 pt-4 pb-4">
           <div className="max-w-screen-xl mx-auto">
             <div className="max-w-2xl mx-auto">
-              <Image alt={recipe.title} src={recipe.image} className="rounded-lg img-fluid" />
+              <img alt={recipe.title} src={recipe.image} className="rounded-lg img-fluid" />
             </div>
             
             <div className="max-w-2xl mx-auto mt-4">

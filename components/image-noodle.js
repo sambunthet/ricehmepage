@@ -1,19 +1,13 @@
-import { AgilityImage } from "@agility/nextjs";
-import Image from "next/image";
 
 const ImageNoodle = ({home}) => {
     const cover = home.HeadlineCoverImage.url;
-
     return (
-        <div>
-            <div className="relative">
-                <Image
-                    alt={"image-noodle"}
+        <div className="relative">
+                <img
                     src={cover}
-                    layout="fill"
+                    alt={"image-noodle"}
                     className="object-cover object-center"
                 />
-            </div>
         </div>
     );
 }

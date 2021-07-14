@@ -31,7 +31,7 @@ const ProductDetail = ({ product }) => {
           {/* image */}
           <div className="py-4 text-center">
             <div className="relative inline-block p-4">
-              <Image src={product.image} alt={product.name} width="600" height="600" />
+              <img src={product.image} alt={product.name} width="600" height="600" />
             </div>
           </div>
 

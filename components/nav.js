@@ -81,14 +81,14 @@ function Nav({home}) {
             </a>
             <Link href="/">
               <a className="inline-flex items-center">
-                <Image
+                <img
                   src={companyLogo}
                   alt=""
                   width={40}
                   height={40}
                   className="img-fluid d-block mx-auto"
                 />
-                <Image
+                <img
                   src={companyNameLogo}
                   alt=""
                   width={350}

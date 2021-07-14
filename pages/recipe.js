@@ -1,11 +1,9 @@
 
 import Link from "next/link";
-import { AgilityImage } from "@agility/nextjs";
 import {getRecipes} from"$/utils/api/recipe";
 import truncate from "truncate-html";
 import useTranslation from 'next-translate/useTranslation';
 const _ = require("lodash");
-import Image from 'next/image'
 
 
 
@@ -54,11 +52,10 @@ const Recipe = ({recipes}) => {
                     <Link href={`${recipe.link}`} key={index}>
                         <a>
                           <div className="p-2 bg-white">
-                          <Image
+                          <img
                                 alt={recipe.title}
                                 className="rounded-lg w-full"
                                 src={recipe.image}
-                                layout="fill"
                               />
 
 
@@ -93,7 +90,7 @@ const Recipe = ({recipes}) => {
                     <Link href={`${recipe.link}`} key={index}>
                         <a>
                           <div className="p-2 bg-white">
-                          <Image
+                          <img
                                 alt={recipe.title}
                                 className="rounded-lg w-full"
                                 src={recipe.image}
