@@ -152,10 +152,6 @@ function Nav({ home }) {
                               >
                                 <span
                                   onClick={() =>
-                                    console.log(
-                                      "============ lang",
-                                      lang.locale
-                                    ) &&
                                     cookieCutter.set("NEXT_LOCALE", lang.locale)
                                   }
                                   className={`${

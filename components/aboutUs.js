@@ -16,11 +16,11 @@ const About = (about) => {
   var image =  about.image.url;
   return (
 
-    <div className="m-8 gap-4 grid grid-cols-1 sm:grid-cols-2 sm:gap-2">
+    <div className="m-8 gap-4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 sm:gap-2">
       {/* <Link href={`/products/${product.id}`}> */}
       <a>
         <div className="">
-          <div className="sm:py-4 text-center">
+          <div className="sm:py-4 text-center mt-1 sm:mt-1 md:mt-1 lg:mt-28 xl:mt-8 2xl:mt-8">
             <AgilityImage
               width={640}
               height={640}
