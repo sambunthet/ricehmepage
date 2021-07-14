@@ -1,11 +1,10 @@
 import useTranslation from 'next-translate/useTranslation';
 
 const OurBrand = (brands) => {
-    if (!brands)
+
+    if (!brands || brands.length == undefined )
         return <div></div>;
-    
-    const { t } = useTranslation('common');
-    
+    const { t } = useTranslation('common');    
     return (
         <div>
             <div className="flex flex-col my-0 sm:my-6" data-controller="slider">

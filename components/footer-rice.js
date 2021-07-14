@@ -6,9 +6,12 @@ const FooterRice = ({home}) => {
   const emails = home.Email;
   const contactNumbers = home.ContactNumber;
   const headlineText = home.HeadlineText;
-  const companyLogo = home.Logo.url;
+  const companyLogo = home.Logo ? home.Logo.url : "";
 
   const socialMedia = home.SocialMedia;
+
+  if(!socialMedia)
+     return <div></div>;
 
   const fb = socialMedia.Facebook;
   const twitter = socialMedia.Twitter;

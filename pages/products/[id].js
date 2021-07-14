@@ -2,6 +2,7 @@ import React from "react";
 import { getProduct } from "$/utils/api/product";
 import ReactMarkdown from "react-markdown";
 const gfm = require("remark-gfm");
+import Image from 'next/image'
 
 export const getStaticPaths = async (context) => {
   return {
@@ -30,7 +31,7 @@ const ProductDetail = ({ product }) => {
           {/* image */}
           <div className="py-4 text-center">
             <div className="relative inline-block p-4">
-              <img src={product.image} width="600" height="600" />
+              <Image src={product.image} alt={product.name} width="600" height="600" />
             </div>
           </div>
 
@@ -49,8 +50,8 @@ const ProductDetail = ({ product }) => {
             </li>
             <li className="">
               {product.variation ? (
-                product.variation.map((v) => (
-                  <div className="ml-5">
+                product.variation.map((v, k) => (
+                  <div key={k} className="ml-5">
                     <ui className="list-disc">
                       <li>
                       <h4 className="font-bold">{v.name} : <a className="font-normal font-sspro text-lg">{v.value}</a></h4>  
@@ -58,9 +59,8 @@ const ProductDetail = ({ product }) => {
                     </ui>
                   </div>
                 ))
-              ) : (
-                <div></div>
-              )}
+              ) : null
+              }
             </li>
           </ul>
 
