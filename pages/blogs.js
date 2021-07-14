@@ -8,7 +8,6 @@ import ReactMarkdown from 'react-markdown'
 const gfm = require('remark-gfm');
 import useTranslation from 'next-translate/useTranslation';
 
-
  export async function getStaticProps({locale}) {
 
    const posts = await  getPosts({locale});
@@ -21,7 +20,6 @@ import useTranslation from 'next-translate/useTranslation';
      revalidate: 3600 * 1 * 24, // a day in second
    }
  }
-
 
 const Blogs = ({posts}) => {
      const featuredPost = posts[0];
