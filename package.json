@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "basetag link && basetag rebase && next dev -p 8081",
+    "dev": "basetag-link && basetag-rebase && next dev -p 8081",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "basetag link && basetag rebase"
+    "postinstall": "basetag-link && basetag-rebase"
   },
   "dependencies": {
     "@agility/nextjs": "0.2.0",
