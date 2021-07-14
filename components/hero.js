@@ -6,7 +6,6 @@ const Header = ({home}) => {
   const video = home.HeadlineMedia.url;
   const { t } = useTranslation('common');
 
-  console.log("====>>> ", t);
   return (
     <>
       <div className="relative h-455 md:h-screen flex items-start justify-left overflow-hidden z-0">
