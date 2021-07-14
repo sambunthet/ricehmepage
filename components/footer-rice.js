@@ -5,7 +5,7 @@ const FooterRice = ({home}) => {
   const addresses = home.Address;
   const emails = home.Email;
   const contactNumbers = home.ContactNumber;
-  const headlineText = home.HeadlineText;
+  const headLineText = home.HeadlineText;
   const companyLogo = home.Logo.url;
 
   const socialMedia = home.SocialMedia;
@@ -32,7 +32,7 @@ const FooterRice = ({home}) => {
             />
           </div>
           <div className="pt-5 font-sspro sm:p-5 md:p-0">
-            {t("company")}
+            {headLineText}
           </div>
           <div className="grid grid-cols-4 pt-5">
               {

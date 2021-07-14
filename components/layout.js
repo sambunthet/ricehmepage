@@ -2,17 +2,22 @@ import Head from "next/head";
 import Nav from "$/components/nav";
 import FooterRice from '$/components/footer-rice';
 import React, { useState, useEffect } from "react";
+import {useRouter} from "next/router";
+import { getHome } from '$/utils/api/homepage';
+
 
 
 const Layout= ({children}) => {
 
     function getHomePage(){
         const [homePage, setHomePage] = useState();
+        const {locale} = useRouter();
+        console.log("locale: ", locale)
         useEffect(() => {
-            fetch('https://cms.devcorp.me/homepage')
-                .then(response => response.json())
-                .then(_homePage => setHomePage(_homePage));
-        }, [])
+            const data = getHome(locale).then((res) => {
+                setHomePage(res);
+            })
+        }, []);
         return homePage
     }
 
@@ -31,7 +36,7 @@ const Layout= ({children}) => {
                 <meta name="keywords" content={process.env.WEBSITE_KEYWORDS} />
                 <meta name="generator" content="Powered by Versitasoftware - versitasoftware.com"/>
             </Head>
-            <Nav></Nav>
+            <Nav home={homePage}></Nav>
                 <div>
                     <div style={{margin: "auto", position: "relative", minHeight: "100vh"}}>
                             {children}
