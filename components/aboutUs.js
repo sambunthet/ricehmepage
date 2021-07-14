@@ -30,7 +30,7 @@ const About = (about) => {
           <h1 className="text-4xl pb-5 text-center font-bold pt-2 sm:pt-0">
             {t("abt")}<span className="text-yellow-500">{t("us")}</span>
           </h1>
-          <p className="text-base font-medium text-black	tracking-wide text-center  md:text-left p-5 tracking-wide">
+          <p className="text-base font-medium text-black text-center  md:text-left p-5 tracking-wide">
             {description}
           </p>
         </div>

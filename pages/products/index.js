@@ -16,7 +16,6 @@ export async function getStaticProps({ locale }) {
 }
 
 const Products = ({ products }) => {
-  products = [...products, ...products];
   
   return (
     <div>
@@ -47,12 +46,14 @@ const Products = ({ products }) => {
                     <h2 className="text-4xl font-bold text-black tracking-normal">
                       {product.name}
                     </h2>
-                    <h3 className="text-2xl font-sspro font-bold text-black leading-6 py-4 ">
-                    ${product.salePrice > 0 ? product.salePrice : product.price}{" "}
-                    {product.salePrice > 0 ? <span className="text-gray-500 line-through text-xs ml-0 pb-4">
-                      ${product.price}
-                    </span> : ""}
-                  </h3>
+                    {
+                      products.price ? <h3 className="text-2xl font-sspro font-bold text-black leading-6 py-4 ">
+                      ${product.salePrice > 0 ? product.salePrice : product.price}{" "}
+                      {product.salePrice > 0 ? <span className="text-gray-500 line-through text-xs ml-0 pb-4">
+                        ${product.price}
+                      </span> : ""}
+                    </h3> : <div className="pb-4"></div>
+                    }
                     {product.variation ? (
                       product.variation.map((v,key) => (
                         <div key={key}>
@@ -78,12 +79,14 @@ const Products = ({ products }) => {
                     <h2 className="text-4xl font-bold text-black tracking-normal">
                       {product.name}
                     </h2>
-                    <h3 className="text-2xl font-sspro font-bold text-black leading-6 py-4 ">
-                    ${product.salePrice > 0 ? product.salePrice : product.price}{" "}
-                    {product.salePrice > 0 ? <span className="text-gray-500 line-through text-xs ml-0 pb-4">
-                      ${product.price}
-                    </span> : ""}
-                  </h3>
+                    {
+                      products.price ? <h3 className="text-2xl font-sspro font-bold text-black leading-6 py-4 ">
+                      ${product.salePrice > 0 ? product.salePrice : product.price}{" "}
+                      {product.salePrice > 0 ? <span className="text-gray-500 line-through text-xs ml-0 pb-4">
+                        ${product.price}
+                      </span> : ""}
+                    </h3> : <div className="pb-4"></div>
+                    }
                     {product.variation ? (
                       product.variation.map((v, key) => (
                         <div key={key}>
@@ -145,19 +148,21 @@ const Products = ({ products }) => {
                   <h2 className="text-2xl font-bold text-black tracking-normal">
                     {product.name}
                   </h2>
-                  <h3 className="text-2xl font-sspro font-bold text-black leading-6 py-4 ">
-                    ${product.salePrice > 0 ? product.salePrice : product.price}{" "}
-                    {product.salePrice > 0 ? <span className="text-gray-500 line-through text-xs ml-0 pb-4">
-                      ${product.price}
-                    </span> : ""}
-                  </h3>
+                  {
+                      product.price ? <h3 className="text-2xl font-sspro font-bold text-black leading-6 py-4 ">
+                      ${product.salePrice > 0 ? product.salePrice : product.price}{" "}
+                      {product.salePrice > 0 ? <span className="text-gray-500 line-through text-xs ml-0 pb-4">
+                        ${product.price}
+                      </span> : ""}
+                    </h3> : <div className="pb-4"></div>
+                    }
                   {product.variation ? (
                       product.variation.map((v, key) => (
                         <div key={key}>
                          <ui className="list-outside  text-left">
                             <li>
                               <a className="text-left font-bold text-sm tracking-tight leading-5">
-                                {v.name} : <span className="font-normal">{v.value}</span>
+                                {v.name} : <a className="font-normal">{v.value}</a>
                               </a>
                             </li>
                           </ui> 
