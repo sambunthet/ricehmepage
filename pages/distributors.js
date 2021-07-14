@@ -25,13 +25,11 @@ const Distributors = ({distributors}) => {
           <div className="max-w-screen-xl mx-auto">
            
             <div className="max-w-2xl mx-auto mt-4">
-              <div className="uppercase text-primary-500 text-md font-bold tracking-widest leading-loose">
+              <div className="uppercase text-primary-500 text-md font-bold tracking-widest pt-8 leading-loose">
               {t("distributor")}
               </div>
               <div className="border-b-2 border-primary-500 w-8"></div>
-              <h1 className="font-display text-2xl font-bold my-6 text-secondary-500">
-              {t("findtobuy")}
-              </h1>
+
                 <div className="max-w-screen-xl mx-auto">
                     <div className="sm:grid sm:gap-8 sm:grid-cols-2 lg:grid-cols-2">
                     {distributors.map((distributor, index) => (
