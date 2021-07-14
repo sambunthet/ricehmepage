@@ -108,7 +108,7 @@ const FeaturesBox = (props) => {
                         <div className="">
                           <ui className="list-disc">
                             <li>
-                              <a className="font-bold text-sm tracking-tight leading-5">
+                              <a className="font-medium text-sm tracking-tight leading-5">
                                 {v.name} : <a className="text-base font-sspro">{v.value.trim()}</a>
                               </a>
                             </li>
@@ -146,7 +146,7 @@ const FeaturesBox = (props) => {
                         <div className="">
                           <ui className="list-disc">
                             <li>
-                              <a className="font-bold text-sm tracking-tight leading-5">
+                              <a className="font-medium text-sm tracking-tight leading-5">
                                 {v.name} : <a className="text-base font-sspro">{v.value.trim()}</a>
                               </a>
                             </li>
@@ -465,6 +465,7 @@ const FeaturesBox = (props) => {
 };
 
 const Feature = (props) => {
+  const headLineText = props.home.HeadlineText;
   if (!props.features || props.features.length === 0) return <div></div>;
   const { t } = useTranslation("common");
   const features = props.features;
@@ -478,8 +479,8 @@ const Feature = (props) => {
         </div>
         <div className="justify-items-center text-center">
           <div className="grid grid-cols-1">
-            <p className=" font-sspro text-center text-base md:text-sm lg:text-2xl p-5 tracking-wide col-start-2 col-span-4">
-              {t("company")}
+            <p className=" text-base font-medium  tracking-wide text-black p-5  col-start-2 col-span-4">
+              {headLineText}
             </p>
           </div>
         </div>

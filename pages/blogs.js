@@ -25,6 +25,7 @@ import useTranslation from 'next-translate/useTranslation';
 
 const Blogs = ({posts}) => {
      const featuredPost = posts[0];
+     posts = posts.filter((el) => el !== featuredPost);
      const postDate = (date) => new Date(date).toLocaleDateString();
 
      const description = truncate(featuredPost.content, {
@@ -38,9 +39,9 @@ const Blogs = ({posts}) => {
     
     return (
 
-        <div className="mt-32 px-8">
+        <div className="mt-32 p-0 md:px-40">
 
-            <div className="relative px-4  mb-12 pt-4">
+            <div className="relative   mb-12 pt-4">
                 <div className="max-w-screen-xl mx-auto">
                 <h2 className="font-display  text-secondary-500 text-4xl mt-1 text-center font-black group-hover:text-primary-500 transition duration-300">
                             {t("blogposts")}
@@ -48,7 +49,7 @@ const Blogs = ({posts}) => {
                 </div>
             </div>
             
-            <div className="relative px-8 mb-8">
+            <div className="relative pr-2 pl-2 mb-8">
                 <Link href={`/blogs/${featuredPost.id}`}>
                     <a>
                     <div className="cursor-pointer flex flex-col sm:flex-row max-w-screen-xl mx-auto pt-8 group">
@@ -61,7 +62,7 @@ const Blogs = ({posts}) => {
                                 />
                             </div>
                         </div>
-                        <div className="sm:w-1/2 lg:w-1/3 bg-gray-10 p-8 border-2 border-t-0 rounded-b-lg sm:rounded-bl-none sm:rounded-r-lg sm:border-t-2 sm:border-l-0 relative">
+                        <div className="sm:w-1/2 lg:w-1/3 bg-gray-10 p-8    relative">
                             <div className="font-display uppercase text-primary-500 text-xs font-bold tracking-widest leading-loose after:content">
                                 {featuredPost.category ? featuredPost.category.name : ''}
                             </div>
@@ -79,13 +80,13 @@ const Blogs = ({posts}) => {
                 </Link>
             </div>
             
-            <div className="relative px-4 mb-12">
+            <div className="relative pr-2 pl-2 mb-12">
                 <div className="max-w-screen-xl mx-auto">
                     <div className="sm:grid sm:gap-8 sm:grid-cols-2 lg:grid-cols-3">
                     {posts.map((post, index) => (
                         <Link href={`/blogs/${post.id}`} key={index}>
                         <a>
-                            <div className="flex-col group mb-8 md:mb-0 border-2 rounded-lg">
+                            <div className="flex-col group mb-8 md:mb-0 ">
                             <div className="relative h-64">
                                 <AgilityImage
                                 src={post.gallery[0].url}

@@ -16,8 +16,15 @@ const language = [
   { id: 3, name: " 中文 ", locale: "zh" },
 ];
 
-function Nav() {
+function Nav({home}) {
+
+  console.log("home nav :: ", home);
+
+
+
   const { pathname, locale, asPath, query } = useRouter();
+  const companyLogo = home.Logo.url;
+  const companyNameLogo = home.CompanyNameLogo.url;
   const { t } = useTranslation("common");
   const [sidebar, setSidebar] = useState(false);
   const [selected, setSelected] = useState(
@@ -74,14 +81,14 @@ function Nav() {
             <Link href="/">
               <a className="inline-flex items-center">
                 <img
-                  src={"http://rice.com.kh/imgs/2/logo_03.png"}
+                  src={companyLogo}
                   alt=""
                   width={40}
                   height={40}
                   className="img-fluid d-block mx-auto"
                 />
                 <img
-                  src={"http://rice.com.kh/imgs/93/Untitled-1.png"}
+                  src={companyNameLogo}
                   alt=""
                   width={350}
                   height={90}
