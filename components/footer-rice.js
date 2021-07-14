@@ -18,9 +18,9 @@ const FooterRice = ({home}) => {
 
   const { t } = useTranslation('common');
   return (
-    <div className="grid grid-cols-6 py-10" style={{backgroundColor: "#252424"}}>
+    <div className="grid grid-cols-6 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-1 2xl:grid-cols-6 md:p-6 py-10" style={{backgroundColor: "#252424"}}>
       <div className="col-start-2 col-span-4 sm:col-start-1 sm:col-end-7  md:col-start-1 md:col-end-7  xl:col-start-2 xl:col-span-4">
-      <div className="grid gap-10 sm:gap-0 grid-cols-1 sm:grid-cols-4  text-white justify-items-center">
+      <div className="grid gap-10 sm:gap-0 grid-cols-1 sm:grid-cols-4 text-white justify-items-center">
       <div>
         <div className="text-center">
           <div>
@@ -31,7 +31,7 @@ const FooterRice = ({home}) => {
               height={80}
             />
           </div>
-          <div className="pt-5">
+          <div className="pt-5 font-sspro sm:p-5 md:p-0">
             {t("company")}
           </div>
           <div className="grid grid-cols-4 pt-5">
@@ -77,14 +77,14 @@ const FooterRice = ({home}) => {
       <div className="text-center sm:text-left">
         <h1 className="font-bold pb-3">{t("callus")}</h1>
           {contactNumbers.map((contactNumbers, index)=>
-              <h3 className="text-sm" key={index}>{contactNumbers.PhoneNumber}</h3>
+              <h3 className="text-base font-sspro" key={index}>{contactNumbers.PhoneNumber}</h3>
           )}
       </div>
       <div className="text-center sm:text-left">
         <h1 className="font-bold pb-3">{t("email")}</h1>
 
           {emails.map((email, index)=>
-              <h3 className="text-sm" key={index}>{email.Email}</h3>
+              <h3 className="text-base font-sspro" key={index}>{email.Email}</h3>
           )}
       </div>
 
@@ -92,7 +92,7 @@ const FooterRice = ({home}) => {
         <h1 className="font-bold pb-3">{t("address")}</h1>
 
           {addresses.map((address, index)=>
-              <h3 className="text-sm pb-2" key={index}>{address.Address}</h3>
+              <h3 className="text-base pb-2 font-sspro" key={index}>{address.Address}</h3>
           )}
       </div>
 

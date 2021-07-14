@@ -10,11 +10,11 @@ const About = (about) => {
   var image =  about.image.url;
   const { t } = useTranslation('common');
   return (
-    <div className="m-8 grid grid-cols-2 gap-4">
+    <div className="m-8 gap-4 grid grid-cols-1 sm:grid-cols-2 sm:gap-2 justify-items-center text-center">
       {/* <Link href={`/products/${product.id}`}> */}
-      <a data-aos="fade-right">
+      <a>
         <div className="">
-          <div className="py-4 text-center">
+          <div className="sm:py-4 text-center">
             <AgilityImage
               width={640}
               height={640}
@@ -25,12 +25,12 @@ const About = (about) => {
         </div>
       </a>
       {/* </Link> */}
-      <div data-aos="fade-left">
-        <div className="py-20">
-          <h1 className="text-4xl pb-5 text-center font-bold pt-5 sm:pt-0">
+      <div>
+        <div className="sm:py-20">
+          <h1 className="text-4xl pb-5 text-center font-bold pt-2 sm:pt-0">
             {t("abt")}<span className="text-yellow-500">{t("us")}</span>
           </h1>
-          <p className="font-sspro text-center text-sm md:text-sm lg:text-2xl md:text-left p-5 tracking-wide">
+          <p className="font-sspro text-center text-base md:text-sm lg:text-2xl md:text-left tracking-wide">
             {description}
           </p>
         </div>

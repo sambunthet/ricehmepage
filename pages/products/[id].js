@@ -39,10 +39,10 @@ const ProductDetail = ({ product }) => {
           <ul className="grid grid-cols-1 gap-0 sm:gap-14 sm:grid-cols-2 sm:px-20">
             <li className="">
               <div>
-                <h2 className="text-4xl font-bold text-black tracking-normal">
+                <h2 className="text-4xl text-center sm:text-right  font-bold text-black tracking-normal">
                   {product.name}
                 </h2>
-                <div className="text-2xl font-bold text-black leading-4 py-4">
+                <div className="text-2xl text-center sm:text-right font-bold text-black leading-4 py-4">
                   ${product.price}
                 </div>
               </div>
@@ -53,7 +53,7 @@ const ProductDetail = ({ product }) => {
                   <div className="ml-5">
                     <ui className="list-disc">
                       <li>
-                      <h4 className="font-bold">{v.name} :   <span className="font-normal">{v.value}</span></h4>  
+                      <h4 className="font-bold">{v.name} : <a className="font-normal font-sspro text-lg">{v.value}</a></h4>  
                       </li>
                     </ui>
                   </div>
@@ -69,7 +69,7 @@ const ProductDetail = ({ product }) => {
           <div className="mt-5 sm:px-20">
             {product.description ? (
               <div>
-                <div className="py-4">
+                <div className="py-4 font-sspro text-lg">
                   <ReactMarkdown
                     remarkPlugins={[gfm]}
                     children={product.description}

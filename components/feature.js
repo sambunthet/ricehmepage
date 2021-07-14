@@ -66,7 +66,7 @@ const FeaturesBox = (props) => {
     <div>
       <div className="min-h-screen flex max-w-6xl mx-auto mt-0">
         {/* ui web */}
-        <div className="flex-1 p-10 w-full hidden md:block ">
+        <div className="flex-1 pl-10 pr-10 pb-8 w-full hidden md:block ">
           {props.features.map((product, key) =>
             key % 2 === 0 ? (
               <div className="grid grid-cols-2 gap-4">
@@ -179,13 +179,13 @@ const FeaturesBox = (props) => {
         </div>
 
         {/* ui mobile */}
-        <div className="flex-1 p-10 block md:hidden">
+        <div className="flex-1 pl-10 pr-10 pb-8 block md:hidden">
           {props.features.map((product, key) => (
             <div className="grid grid-cols-1 gap-4">
               <div className="">
                 <Link href={`/products/${product.id}`}>
                   <a>
-                    <div className="py-4 text-center">
+                    <div className="pb-2 pt-6 text-center">
                       <AgilityImage
                         width={320}
                         height={320}
@@ -469,7 +469,7 @@ const Feature = (props) => {
   const { t } = useTranslation("common");
   const features = props.features;
   return (
-    <div className="bg-white pt-10 font-body">
+    <div className="bg-white pt-0 font-body">
       <div className="mt-6 md:m-12 ">
         <div>
           <h1 className="text-4xl text-center font-bold">
@@ -478,7 +478,7 @@ const Feature = (props) => {
         </div>
         <div className="justify-items-center text-center">
           <div className="grid grid-cols-1">
-            <p className=" font-sspro text-center text-sm md:text-sm lg:text-2xl p-5 tracking-wide col-start-2 col-span-4">
+            <p className=" font-sspro text-center text-base md:text-sm lg:text-2xl p-5 tracking-wide col-start-2 col-span-4">
               {t("company")}
             </p>
           </div>
