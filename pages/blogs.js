@@ -73,7 +73,7 @@ const Blogs = ({posts}) => {
                             <h2 className="font-display text-secondary-500 mt-1 font-black text-2xl group-hover:text-primary-500 transition duration-300">
                                 {featuredPost.title}
                             </h2>
-                            <ReactMarkdown remarkPlugins={[gfm]} children={description} />
+                            <ReactMarkdown remarkPlugins={[gfm]} props={description} />
                         </div>
                     </div>
                     </a>

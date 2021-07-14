@@ -72,7 +72,7 @@ const ProductDetail = ({ product }) => {
                 <div className="py-4 font-sspro text-lg">
                   <ReactMarkdown
                     remarkPlugins={[gfm]}
-                    children={product.description}
+                    props={product.description}
                   />
                 </div>
               </div>

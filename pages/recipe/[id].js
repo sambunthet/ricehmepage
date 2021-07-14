@@ -1,7 +1,6 @@
 
 import React from "react";
 import { renderHTML } from "@agility/nextjs";
-import { AgilityImage } from "@agility/nextjs";
 import {getRecipe} from"$/utils/api/recipe";
 import ReactMarkdown from 'react-markdown'
 const gfm = require('remark-gfm')
@@ -48,7 +47,7 @@ const RecipeDetail = ({recipe}) => {
               <h1 className="font-display text-2xl font-bold my-6 text-secondary-500">
                 {recipe.title}
               </h1>
-              <ReactMarkdown remarkPlugins={[gfm]} children={recipe.description} />
+              <ReactMarkdown remarkPlugins={[gfm]} props={recipe.description} />
 
               {
                 embedHtml ? <div>
