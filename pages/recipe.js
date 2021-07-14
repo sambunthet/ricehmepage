@@ -46,8 +46,8 @@ const Recipe = ({recipes}) => {
     return (
     <div className="mt-32 p-0 md:px-60">
 
-<div className="text-black text-4xl text-center pb-5 font-bold pt-4 ">{t("recipes")}</div>
-    <div className= { list1.length > 0 ? "grid grid-cols-1 md:grid-cols-2 gap-2 pt-4" : "grid grid-cols-1 md:grid-cols-1 gap-2 pt-4"}>
+<div className="text-black text-4xl text-center pb-5 font-bold ">{t("recipes")}</div>
+    <div className= { list1.length > 0 ? "grid grid-cols-1 md:grid-cols-2 gap-2 pt-4 pb-2" : "grid grid-cols-1 md:grid-cols-1 gap-2 pt-4 pb-2"}>
       <div>
           {list0.map((recipe, index)=>
                     <Link href={`${recipe.link}`} key={index}>
