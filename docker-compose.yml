@@ -1,4 +1,4 @@
-version: "2"
+version: "3.2"
 services:
   shop_ecommerce:
     container_name: shop_ecommerce
@@ -11,4 +11,6 @@ services:
     networks:
         - default
     volumes: 
-        - shop_ecommerce: ./data/shop
+        - shop_ecommerce:/data/shop
+volumes:
+  shop_ecommerce: 
