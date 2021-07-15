@@ -20,9 +20,7 @@ function MyApp({ Component, pageProps}) {
   const [show, hanldeShow] = useState(false);
   let home = {};
   useEffect(async (locale) => {
-    console.log("lll")
     home = await Promise.all([getHome("en")]);
-    console.log("abc:: ", home)
     AOS.init({
       delay: 200,
       duration: 1200,
@@ -39,7 +37,7 @@ function MyApp({ Component, pageProps}) {
     // };
   }, []);
 
-  console.log("home __app", home);
+  // console.log("home __app", home);
 
 
 return (

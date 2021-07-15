@@ -18,7 +18,6 @@ const language = [
 ];
 
 function Nav({ home }) {
-  console.log("home nav :: ", home);
 
   const { pathname, locale, asPath, query } = useRouter();
   const companyLogo = home.Logo.url;
@@ -63,7 +62,6 @@ function Nav({ home }) {
     };
   }, []);
 
-  // console.log(router);
 
   return (
     <>

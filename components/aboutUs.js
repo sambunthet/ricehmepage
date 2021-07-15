@@ -9,8 +9,6 @@ const About = (about) => {
   const { t } = useTranslation('common');
   const description = about.description || "";
 
-  console.log("description:: ", description);
-
   if(!description)
       return <div></div>;
   var image =  about.image.url;

@@ -10,7 +10,7 @@ import { getHome } from '$/utils/api/homepage';
 const Layout= ({children}) => {
     const [homePage, setHomePage] = useState();
     const {locale} = useRouter();
-    console.log("locale: ", locale)
+
     useEffect(() => {
         const data = getHome(locale).then((res) => {
             setHomePage(res);
